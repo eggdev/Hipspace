@@ -11,19 +11,18 @@ var dotEnv          = require('dotenv').config(),
 
 // connect to db
 // process.env.MONGOLAB_URI is needed for when we deploy to Heroku
-mongoose.connect( process.env.MONGOLAB_URI || "mongodb://localhost/hipspace" );
+mongoose.connect( process.env.MONGOLAB_URI || "mongodb://localhost/hipspace_db" );
 
 // log requests to STDOUT
 app.use(morgan('dev'));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
-
 // parse application/json
 app.use(bodyParser.json());
 
 // flash messages, NEEDS express-flash
-// app.use(flash())
+// app.use(flash());
 
 // This is how we read the cookies sent over from the browser
 app.use(cookieParser());
