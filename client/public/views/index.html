@@ -3,16 +3,63 @@
   <head>
     <meta charset="utf-8">
     <title> Hello World </title>
-    <!-- Local styles -->
-    <link rel="stylesheet" href="/css/styles.css">
 
+    <!-- Semantic UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <!-- Local styles -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- For now, keep the .. to be able to do my shit without having the server running. When we're using API stuff,take those out and run nodemon + all the other shit or your scripts files won't load - dummy - CC  -->
     <!-- jQuery lib -->
+
+  </head>
+  <body>
+    <!-- ICONS ARE FROM FONT AWESOME - JUST TYPE NAME OF ICON YOU WANT; NOT ALL THE REST OF THE GARBAGE FONT AWESOME SAYS TO USE -->
+    <h1> Hello World This Is Right</h1>
+    <nav class="ui red menu">
+      <h3 class="header item">Brand</h3>
+      <a class="item">Tab 1</a>
+      <a class="item">Tab 2</a>
+      <a class="item">Tab 3</a>
+      <a class="item">Tab 4</a>
+      <span class="floated right item">Signed In As<a href="#">User</a></span>
+    </nav>
+
+    <div class="ui accordion">
+      <div class="active title">
+        <i class="dropdown icon"></i>
+        What Is Ipsum?
+      </div>
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+
+    <div class="ui four column grid">
+
+      <div class="column computer only">
+        <div class="ui message red">
+          <div class="ui horizontal divider"><i class="github icon"></i></div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+      </div>
+      <div class="column mobile only">
+        <div class="ui horizontal divider"><i class="desktop icon"></i></div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+      <div class="column tablet only"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+      <div class="column"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+    </div>
+
+
+
+
+
+
+
+<!-- V SCRIPTS AND SHIT V -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" charset="utf-8"></script>
     <!-- Cookies lib -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.1/js.cookie.min.js" charset="utf-8"></script>
-    <script src="/js/scripts.js" charset="utf-8"></script>
-  </head>
-  <body>
-    <h1> Hello World This Is Right</h1>
+    <!-- Local JavaScript -->
+    <!-- ADD AJAX JS FILE HERE -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+    <script src="../js/scripts.js" charset="utf-8"></script>
+    <!-- my front end file - CC -->
   </body>
 </html>
