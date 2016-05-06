@@ -11,10 +11,10 @@ var path = require('path');
 var Yelp = require('yelp');
 
 var yelp = new Yelp({
-  consumer_key: 'Se5JW4VgD-MMj1actPs4eA',
-  consumer_secret: 'gpSRWEKdpDcch4b_4JHo1U0K4fk',
-  token: 'Fh8tOgAFFNjOozhQSu7IoYe5kyab28AQ',
-  token_secret: 'u6dsr5i6L1bU-ADsY6XYdgW2gPk',
+  consumer_key: process.env.yelp_consumer_key,
+  consumer_secret: process.env.yelp_consumer_secret,
+  token: process.env.yelp_token,
+  token_secret: process.env.yelp_token_secret,
 });
 
 
@@ -31,5 +31,9 @@ router.get('/api/yelp', function(req, res){
   });
 });
 
+
+router.get('/api/foursquare', function(req, res){
+  res.json(data);
+})
 
 module.exports = router;
