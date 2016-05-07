@@ -51,17 +51,35 @@
 })
 
 // MODAL FUNCTIONS
-
-// SIMPLE VERSION
-// function modalOne(){
-//   $('.ui.basic.modal')
-//     .modal('show');
-// }
-// modalOne();
-
-// CARD VERSION
-function modalTwo(){
+function modal(){
   $('.ui.modal')
   .modal('show');
 }
-modalTwo();
+modal();
+
+
+// SOCIAL MEDIA BUTTON JIGGGLE - NOT WORKING
+// function jiggle(){
+//
+// $('.social-buttons.button')
+//   .transition({
+//     animation : 'jiggle',
+//     duration  : 800,
+//     interval  : 200
+//   });
+// };
+// jiggle();
+
+
+// CAROUSEL - INSTEAD OF MODAL FOR QUIZ, ETC., WHAT ABOUT A CAROUSEL?
+// $(document).ready(function(){
+//   $('.owl-carousel').owlCarousel({
+//     animateOut: 'slideOutDown',
+//     animateIn: 'flipInX',
+//     items:1,
+//     margin:30,
+//     stagePadding:30,
+//     smartSpeed:450
+// });
+// });
+// END CAROUSEL
