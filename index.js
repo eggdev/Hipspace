@@ -28,7 +28,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 // Set static file root folder
-app.use(express.static('client/public'));
+app.use(express.static('client/public/'));
 
 app.use('/', indexRouter);
 app.use('/api/auth', apiAuthRouter);
