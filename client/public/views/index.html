@@ -14,8 +14,136 @@
   </head>
   <body>
     <!-- ICONS ARE FROM FONT AWESOME - JUST TYPE NAME OF ICON YOU WANT; NOT ALL THE REST OF THE GARBAGE FONT AWESOME SAYS TO USE -->
-    <h1> Hello World This Is Right</h1>
-    <nav class="ui red menu">
+    <!-- Main Container Div -->
+    <div class="container">
+      <!-- Top Nav Bar - NOT SIGNED IN VERSION -->
+      <nav class="ui inverted clearing segment">
+        <h3 class="ui left floated header">
+          Hipspace
+        </h3>
+        <h3 class="ui right floated header">
+          Sign Up
+        </h3>
+        <h3 class="ui right floated header">
+          |
+        </h3>
+        <h3 class="ui right floated header">
+          Log In
+        </h3>
+      </nav>
+      <!-- LOGO BOX (fixed position in parallax) -->
+      <div id="big-logo">
+        <p><span class="logo-text">Hipspace</span></p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="ui animated fade button" tabindex="0">
+          <div class="visible content">Get Your Custom Hipspace Score</div>
+          <div class="hidden content">
+            Sign Up Now
+          </div>
+        </div>
+      </div>
+      <!-- INSERT DUMMY SCORE RESULT MODAL HERE -->
+      <!-- INSERT SECOND MODAL FOR SIGNUP/SIGNIN HERE -->
+      <!-- Top Nav Bar - SIGNED IN VERSION -->
+      <nav class="ui inverted clearing segment">
+        <h3 class="ui left floated header">
+          Hipspace
+        </h3>
+        <button class="ui right floated inverted basic button">Log Out</button>
+        <button class="ui right floated inverted basic button">Profile</button>
+<!-- OPTION 1: LOGO ICONS -->
+        <h3 class="ui left floated header">
+          SHARE
+        </h3>
+        <a href="#"><i class="facebook icon"></i></a>
+        <a href="#"><i class="twitter icon"></i></a>
+        <a href="#"><i class="envelope icon"></i></a>
+<!-- OPTION 2: INVERTED BUTTONS -->
+        <button class="ui left floated inverted icon basic button">
+          <i class="facebook icon"></i>
+        </button>
+        <button class="ui left floated inverted icon basic button">
+          <i class="twitter icon"></i>
+        </button>
+        <button class="ui left floated inverted icon basic button">
+          <i class="envelope icon"></i>
+        </button>
+
+      </nav>
+      <!-- PERSONALIZED SCORE - #2 PARALLAX - AFTER LOG IN -->
+
+<!-- PLAYING WITH PARALLAX -->
+
+      <div class="break">
+        <h1>PERSONALIZED HIPSPACE SCORE</h1>
+      </div>
+
+      <div class="bg"></div>
+
+<!-- PLAYING WITH MODALS -->
+<!-- SIMPLE VERSION -->
+<!-- <div class="ui basic modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Archive Old Messages
+  </div>
+  <div class="image content">
+    <div class="image">
+      <i class="archive icon"></i>
+    </div>
+    <div class="description">
+      <p>Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="two fluid ui inverted buttons">
+      <div class="ui red basic inverted button">
+        <i class="remove icon"></i>
+        No
+      </div>
+      <div class="ui green basic inverted button">
+        <i class="checkmark icon"></i>
+        Yes
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- END SIMPLE VERSION -->
+<!-- CARD VERSION -->
+<div class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Profile Picture
+  </div>
+  <div class="image content">
+    <div class="ui medium image">
+      <img src="/images/avatar/large/chris.jpg">
+    </div>
+    <div class="description">
+      <div class="ui header">We've auto-chosen a profile image for you.</div>
+      <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+      <p>Is it okay to use this photo?</p>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui black deny button">
+      Nope
+    </div>
+    <div class="ui positive right labeled icon button">
+      Yep, that's me
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+</div>
+<!-- END CARD VERSION -->
+
+    </div>
+    <!-- end of container -->
+
+
+    <!-- SCRAP PLAYING WITH CODE BITS ARE BELOW  -->
+
+    <!-- <nav class="ui red menu">
       <h3 class="header item">Brand</h3>
       <a class="item">Tab 1</a>
       <a class="item">Tab 2</a>
@@ -30,7 +158,7 @@
         What Is Ipsum?
       </div>
       <div class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>drop down content </p>
       </div>
     </div>
 
@@ -38,13 +166,13 @@
 
       <div class="column computer only">
         <div class="ui message red">
-          <div class="ui horizontal divider"><i class="github icon"></i></div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+          <div class="ui horizontal divider"><i class="github icon"></i></div><p>1</p></div>
       </div>
       <div class="column mobile only">
-        <div class="ui horizontal divider"><i class="desktop icon"></i></div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
-      <div class="column tablet only"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
-      <div class="column"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
-    </div>
+        <div class="ui horizontal divider"><i class="desktop icon"></i></div><p>2</p></div>
+      <div class="column tablet only"><p>3</p></div>
+      <div class="column"><p>4</p></div>
+    </div> -->
 
 
 
