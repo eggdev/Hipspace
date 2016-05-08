@@ -59,6 +59,7 @@ h1 {
 
 .left-modal-head {
   float: left;
+  text-align: center;
 }
 
 .right-modal-head {
@@ -67,4 +68,22 @@ h1 {
 
 .clear {
   float: none;
+}
+
+/*.checkbox {
+  padding: 2%;
+}*/
+
+#map {
+  /*width: 200px;
+  height: 600px;*/
+  background-color: snow;
+  /*border: 1px solid black;*/
+}
+
+#selectors {
+  /*width: 400px;
+  height: 600px;*/
+  background-color: snow;
+  /*border: 1px solid black;*/
 }

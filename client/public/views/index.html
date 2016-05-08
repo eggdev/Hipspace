@@ -6,14 +6,17 @@
 
     <!-- Semantic UI -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="../css/owl.carousel.css">
+<!-- <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css"> -->
     <!-- Local styles -->
+    <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/styles.css">
     <!-- For now, keep the .. to be able to do my shit without having the server running. When we're using API stuff,take those out and run nodemon + all the other shit or your scripts files won't load - dummy - CC  -->
     <!-- jQuery lib -->
 
   </head>
   <body>
-    <!-- ICONS ARE FROM FONT AWESOME - JUST TYPE NAME OF ICON YOU WANT; NOT ALL THE REST OF THE GARBAGE FONT AWESOME SAYS TO USE -->
     <!-- Main Container Div -->
     <div class="container">
       <!-- Top Nav Bar - NOT SIGNED IN VERSION -->
@@ -42,8 +45,114 @@
           </div>
         </div>
       </div>
-      <!-- INSERT DUMMY SCORE RESULT MODAL HERE -->
-      <!-- INSERT SECOND MODAL FOR SIGNUP/SIGNIN HERE -->
+
+<!-- INSERT DUMMY SCORE RESULT MODAL HERE -->
+      <!-- <div class="ui basic modal">
+        <i class="close icon"></i>
+        <div class="header">
+          <div class="left-modal-head">
+            <h4>YOUR HIPSCORE IS 8: YOU SHOULD LIVE IN FORT GREENE
+            </h4>
+          </div>
+          <div class="right-modal-head">
+            <h4></h4>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="image content">
+          <div class="image">
+            <i class="archive icon"></i>
+          </div>
+          <div class="description">
+            <p>Maybe instead of a screenshot, we could do a text description of the neighborhood instead with a single image - like image to the left.</p>
+          </div>
+        </div>
+        <div class="actions">
+          <div class="two fluid ui inverted buttons">
+            <div class="ui green basic inverted button">
+              <i class="bicycle icon"></i>
+              LOG IN
+            </div>
+            <div class="ui green basic inverted button">
+              <i class="paw icon"></i>
+              Get Your Custom Hipscore
+            </div>
+          </div>
+        </div>
+      </div> -->
+  <!-- END OF DUMMY SCORE MODAL -->
+
+
+<!-- MODAL 2 - HIPSCORE -->
+
+<div class="ui basic modal">
+  <i class="close icon"></i>
+  <div class="header">
+      <h4>WHAT IS MOST IMPORTANT TO YOU IN A NEIGHBORHOOD?</h4>
+  </div>
+  <div class="ui inverted form">
+    <div class="floated left inline field">
+      <div class="ui checkbox">
+        <input type="checkbox" tabindex="0" class="hidden">
+        <label>Bars with PBR</label>
+      </div>
+      <br>
+      <br>
+      <div class="ui checkbox">
+        <input type="checkbox" tabindex="0" class="hidden">
+        <label>Pooches and Stuff</label>
+      </div>
+      <br>
+      <br>
+      <div class="ui checkbox">
+        <input type="checkbox" tabindex="0" class="hidden">
+        <label>Farmers Markets</label>
+      </div>
+      <br>
+      <br>
+      <div class="ui checkbox">
+        <input type="checkbox" tabindex="0" class="hidden">
+        <label>Women In Yoga Pants</label>
+      </div>
+    </div>
+
+    <div class="floated right inline field">
+      <div class="ui checkbox">
+        <input type="checkbox" tabindex="0" class="hidden">
+        <label>Mustache Wax</label>
+      </div>
+      <br>
+      <br>
+      <div class="ui checkbox">
+        <input type="checkbox" tabindex="0" class="hidden">
+        <label>Divey Dive Dives</label>
+      </div>
+      <br>
+      <br>
+      <div class="ui checkbox">
+        <input type="checkbox" tabindex="0" class="hidden">
+        <label>Fixies</label>
+      </div>
+      <br>
+      <br>
+      <div class="ui checkbox">
+        <input type="checkbox" tabindex="0" class="hidden">
+        <label>Shazbot</label>
+      </div>
+    </div>
+  </div>
+  </form>
+
+  <div class="actions">
+      <div class="ui green basic inverted button">
+        <i class="bicycle icon"></i>
+        GET YOUR CUSTOM HIPSPACE SCORE
+      </div>
+  </div>
+</div>
+
+<!-- END OF SIGN UP MODAL -->
+
       <!-- Top Nav Bar - SIGNED IN VERSION -->
       <nav class="ui inverted clearing segment">
         <h3 class="ui left floated header">
@@ -59,6 +168,7 @@
         <a href="#"><i class="twitter icon"></i></a>
         <a href="#"><i class="envelope icon"></i></a>
 <!-- OPTION 2: INVERTED BUTTONS -->
+        <div class="social-buttons">
         <button class="ui left floated inverted icon basic button">
           <i class="facebook icon"></i>
         </button>
@@ -68,149 +178,41 @@
         <button class="ui left floated inverted icon basic button">
           <i class="envelope icon"></i>
         </button>
-
+      </div>
       </nav>
       <!-- PERSONALIZED SCORE - #2 PARALLAX - AFTER LOG IN -->
 
 <!-- PLAYING WITH PARALLAX -->
 
       <div class="break">
-        <h1>PERSONALIZED HIPSPACE SCORE</h1>
+        <h3>PERSONALIZED HIPSPACE SCORE</h3>
+        <div class="ui two column padded grid">
+          <div id="map" class="column">
+          </div>
+          <div id="selectors" class="column">
+          </div>
+        </div>
       </div>
 
       <div class="bg"></div>
+<!-- END OF PARALLAX -->
 
-<!-- PLAYING WITH MODALS -->
-<!-- SIMPLE VERSION -->
-<!-- <div class="ui basic modal">
-  <i class="close icon"></i>
-  <div class="header">
-    Archive Old Messages
-  </div>
-  <div class="image content">
-    <div class="image">
-      <i class="archive icon"></i>
-    </div>
-    <div class="description">
-      <p>Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
-    </div>
-  </div>
-  <div class="actions">
-    <div class="two fluid ui inverted buttons">
-      <div class="ui red basic inverted button">
-        <i class="remove icon"></i>
-        No
-      </div>
-      <div class="ui green basic inverted button">
-        <i class="checkmark icon"></i>
-        Yes
-      </div>
-    </div>
-  </div>
-</div> -->
-<!-- END SIMPLE VERSION -->
-<!-- CARD VERSION -->
-<div class="ui modal">
-  <i class="close icon"></i>
-  <div class="header">
-    <div class="left-modal-head">
-      <h4>HIPSCORE 8
-      <br>FORT GREENE
-      </h4>
-    </div>
-    <div class="right-modal-head">
-      <h4>GET CUSTOM HIPSCORE - BOUNCE BUTTON</h4>
-    </div>
-    <div class="clear"></div>
-  </div>
-  <div class="ui two column grid">
-    <div class="column">
-      <div class="ui fluid card">
-        <div class="image">
-          <img src="http://semantic-ui.com/images/avatar/large/daniel.jpg">
-        </div>
-        <div class="content">
-          <a class="header">SEARCH NEIGHBORHOOD</a>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-      <div class="ui fluid card">
-        <div class="image">
-          <img src="http://semantic-ui.com/images/avatar/large/daniel.jpg">
-        </div>
-        <div class="content">
-          <a class="header">SEARCH NEIGHBORHOOD</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <!-- <div class="image content">
-    <div class="ui medium image">
-      <img src="/images/avatar/large/chris.jpg">
-    </div> -->
-    <div class="description">
-      <div class="ui header">We've auto-chosen a profile image for you.</div>
-      <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
-      <p>Is it okay to use this photo?</p>
-    </div>
-  </div>
-  <div class="actions">
-    <div class="ui black deny button">
-      Nope
-    </div>
-    <div class="ui positive right labeled icon button">
-      Yep, that's me
-      <i class="checkmark icon"></i>
-    </div>
-  </div>
+<!-- CAROUSEL -->
+<div class="owl-carousel">
+  <div> Your Content </div>
+  <div> Your Content </div>
+  <div> Your Content </div>
+  <div> Your Content </div>
+  <div> Your Content </div>
+  <div> Your Content </div>
+  <div> Your Content </div>
 </div>
-<!-- END CARD VERSION -->
+<!-- END CAROUSEL -->
 
+
+<!-- end of container -->
     </div>
-    <!-- end of container -->
-
-
-    <!-- SCRAP PLAYING WITH CODE BITS ARE BELOW  -->
-
-    <!-- <nav class="ui red menu">
-      <h3 class="header item">Brand</h3>
-      <a class="item">Tab 1</a>
-      <a class="item">Tab 2</a>
-      <a class="item">Tab 3</a>
-      <a class="item">Tab 4</a>
-      <span class="floated right item">Signed In As<a href="#">User</a></span>
-    </nav>
-
-    <div class="ui accordion">
-      <div class="active title">
-        <i class="dropdown icon"></i>
-        What Is Ipsum?
-      </div>
-      <div class="content">
-        <p>drop down content </p>
-      </div>
-    </div>
-
-    <div class="ui four column grid">
-
-      <div class="column computer only">
-        <div class="ui message red">
-          <div class="ui horizontal divider"><i class="github icon"></i></div><p>1</p></div>
-      </div>
-      <div class="column mobile only">
-        <div class="ui horizontal divider"><i class="desktop icon"></i></div><p>2</p></div>
-      <div class="column tablet only"><p>3</p></div>
-      <div class="column"><p>4</p></div>
-    </div> -->
-
-
-
-
-
-
-
+<!-- end of container -->
 <!-- V SCRIPTS AND SHIT V -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" charset="utf-8"></script>
     <!-- Cookies lib -->
@@ -218,6 +220,8 @@
     <!-- Local JavaScript -->
     <!-- ADD AJAX JS FILE HERE -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+    <script src="../js/owl.carousel.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
     <script src="../js/scripts.js" charset="utf-8"></script>
     <!-- my front end file - CC -->
   </body>
