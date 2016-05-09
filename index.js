@@ -8,6 +8,7 @@ var dotEnv          = require('dotenv').config(),
     indexRouter     = require('./server/routes/index.js'),
     apiAuthRouter   = require('./server/routes/api/auth.js'),
     apiUsersRouter  = require('./server/routes/api/users.js');
+    locationsRouter = require('./server/routes/api/locations.js');
 
 // connect to db
 // process.env.MONGOLAB_URI is needed for when we deploy to Heroku
@@ -20,7 +21,6 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 // parse application/json
 app.use(bodyParser.json());
-
 // flash messages, NEEDS express-flash
 // app.use(flash());
 
@@ -33,6 +33,7 @@ app.use(express.static('client/public/'));
 app.use('/', indexRouter);
 app.use('/api/auth', apiAuthRouter);
 app.use('/api/users', apiUsersRouter);
+app.use('/api/locations', locationsRouter);
 
 // Listen on port for connections
 // process.env.PORT is needed for when we deploy to Heroku
