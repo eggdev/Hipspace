@@ -150,6 +150,24 @@ hipspace.getAllAPIinfo = function(loc, categories){
 }
 
 
+
+var map;
+function initMap() {
+  var mylatlong = {lat: parseFloat(williamsburg.latitude), lng: parseFloat(williamsburg.longitude) }
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: mylatlong,
+    scrollwheel: false,
+    zoom: 14
+  });
+
+  var marker = new google.maps.Marker({
+    map: map,
+    position: mylatlong,
+    title: 'Hello World!'
+  });
+}
+
+
 $(document).ready(function(){
   $('#button').on('click', function(){
     hipspace.getAllAPIinfo(  locationArray, hipspace.categoryIds);
@@ -159,7 +177,7 @@ $(document).ready(function(){
     $.ajax({
       method: 'POST',
       url: '/api/locations',
-      data: lowerEastSide,
+      data: redHook,
       success: function(){
         console.log('information sent');
       }
