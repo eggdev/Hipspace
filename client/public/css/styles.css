@@ -4,3 +4,134 @@
 body {
   background: lemonchiffon;
 }
+
+#top-bar {
+  /*position: fixed;*/
+  width: 100%;
+}
+
+#big-logo {
+  margin-top: 3%;
+  background-color: #6721cd;
+  height: 60%;
+  width: 100%;
+  color: snow;
+  font-family: 'Cutive Mono';
+  padding-top: 15%;
+  padding-bottom: 15%;
+  text-align: center;
+
+  /*position: absolute;*/
+  z-index: -5;
+  top: 0;
+  left: 0;
+}
+
+.logo-text {
+  font-size: 4em;
+  font-family: 'Cutive Mono', ;
+}
+
+/*PLAYING WITH PARALLAX*/
+
+.bg {
+  background: url('../images/curve-wood-texture-tekstura.jpg') repeat;
+  width: 100%;
+  height: 1000%;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  position: absolute;
+}
+
+/*img {
+  position: relative;
+  display: inline-block;
+  width: 30%;
+}*/
+
+#hipscore {
+  background-color: snow;
+  width: 100%;
+  height: 400%;
+  display: block;
+  text-align: center;
+  z-index: 1
+  position: relative;
+}
+
+#adspace {
+  background-color: snow;
+  width: 100%;
+  height: 400%;
+  display: block;
+  text-align: center;
+  z-index: 1
+  position: relative;
+}
+
+#listings {
+  width: 60%;
+}
+
+#listings img {
+  width: 100%;
+  /*height: 80%;*/
+}
+
+#ads {
+width: 30%;
+}
+
+#ads img {
+  width: 100%;
+  /*height: 80%;*/
+}
+h1 {
+  position: relative;
+  color: white;
+  font-size: 5em;
+  padding-top: 0.75em;
+}
+
+
+/* PLAYING WITH MODALS */
+
+.left-modal-head {
+  float: left;
+  text-align: center;
+}
+
+.right-modal-head {
+  float: right;
+}
+
+.clear {
+  float: none;
+}
+
+/*.checkbox {
+  padding: 2%;
+}*/
+
+#map {
+  width: 100%;
+  height: 60%;
+  background-color: snow;
+  /*border: 1px solid black;*/
+}
+
+#selectors {
+  width: 100%;
+  height: 60;
+  background-color: snow;
+  /*border: 1px solid black;*/
+}
+
+.snow {
+color: snow;
+}
+
+.purple-head {
+  color: #8f25b8;
+}
