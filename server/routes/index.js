@@ -11,11 +11,6 @@ router.get('/', function(req, res, next) {
   res.sendFile( path.resolve('client/public/views/index.html'));
 });
 
-router.get('/ajax', function(req, res, next){
-  res.sendFile( path.resolve('client/public/views/ajax.html'));
-});
-
-
 
 router.get('/api/foursquare', function(req, res){
   res.json(data);
