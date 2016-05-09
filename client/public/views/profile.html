@@ -2,21 +2,18 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title> Hello World </title>
+    <title> Hipspace </title>
 
     <!-- Semantic UI -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
 
     <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="../css/profile_styles.css">
 
     <!-- Local styles -->
     <link rel="stylesheet" href="../css/animate.css">
-    <!-- <link rel="stylesheet" href="../css/styles.css"> -->
 
     <!-- jQuery lib -->
 
@@ -40,88 +37,130 @@
         </h3>
       </nav>
 
-      <h1 id="welcome-back">Welcome back!</h1>
+      <!-- <h1 id="welcome-back">Clyde Davis</h1> -->
+
 
       <div class="ui class two column grid">
         <!--  COLUMN 1 -->
         <div class="column">
 
           <div id="profile-div">
-            <h2 id="your-profile-h2">Your Profile</h2>
+            <h2 id="profile-h2">Profile</h2>
 
-            <div class="ui form" id="profile-form">
-              <label>Your name:</label><br>
-              <input type="text" name="name" value="Clyde">
-              <br>
-              <label>Your last name:</label><br>
+            <div class="ui horizontal divider">
+              <i class="inverted user icon"></i>
+            </div>
+
+            <form class="ui inverted form" id="profile-form">
+              <div class="nine wide required field">
+                <label>Your name:</label>
+                <input type="text" name="name" value="Clyde">
+                <br>
+              </div>
+
+              <div class="nine wide required field">
+              <label>Your last name:</label>
               <input type="text" name="surname" value="Davis">
               <br>
-              <label>Your email:</label><br>
+            </div>
+
+            <div class="nine wide required field">
+              <label>Your email:</label>
               <input type="text" name="email" value="clyde@davis.com">
               <br>
-              <label>Favorite color:</label><br>
+            </div>
+
+            <div class="eight wide required field">
+              <label>Favorite color:</label>
               <select name="carlist" form="carform">
                 <option value="brown">Brown</option>
                 <option value="rusty-orange">Rusty Orange</option>
               </select>
-              <br>
+            </div>
 
               <div class="ui button" id="edit-profile-button">
                 <div class="visible content">Edit</div>
               </div>
-            </div>
+
+            </form>
 
           </div>
         </div>
+
 
         <!-- COLUMN 2 -->
         <div class= "column">
 
           <div id="preferences-div">
-            <h2 id="your-preferences-h2">Your Preferences</h2>
-            <form id="preferences-form">
+            <h2 id="preferences-h2">Your Preferences</h2>
+
+            <div class="ui horizontal divider">
+              <i class="inverted dashboard icon"></i>
+            </div>
+
+            <form class="ui inverted form" id="preferences-form">
 
               <table style="width:100%">
                 <tr>
                   <td>
+                    <div class="ui toggle checkbox">
                     <input type="checkbox" name="parks" value="">
                     <label>Indie Theatre</label>
                     <br>
+                    </div>
                   </td>
                   <td>
+                    <div class="ui toggle checkbox">
                     <input type="checkbox" name="dog cafes" value="">
                     <label>Coffee Shops</label>
                     <br>
+                  </div>
                   </td>
                 </tr>
                 <tr>
                   <td>
+                    <div class="ui toggle checkbox">
                     <input type="checkbox" name="yoga studios" value="">
                     <label>Yoga Studios</label>
                     <br>
+                  </div>
                   </td>
-                  <td><input type="checkbox" name="quiet" value="">
-                  <label>Farmer's market</label></td>
+                  <td>
+                    <div class="ui toggle checkbox">
+                    <input type="checkbox" name="quiet" value="">
+                    <label>Farmer's market</label></td>
+                    <br>
+                    <br>
+                    </div>
                 </tr>
                 <tr>
                   <td>
+                    <div class="ui toggle checkbox">
                     <input type="checkbox" name="dive bars" value="">
                     <label>Dive Bars</label>
                     <br>
+                    </div>
                   </td>
                   <td>
+                    <div class="ui toggle checkbox">
                     <input type="checkbox" name="vinyl stores" value="">
                     <label>Vinyl Stores</label>
                     <br>
+                    </div>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <input type="checkbox" name="pinball" value="">
-                    <label>Pinball</label>
+                    <div class="ui toggle checkbox">
+                      <input type="checkbox" name="pinball" value="">
+                      <label>Pinball</label>
+                    </div>
                   </td>
-                  <td><input type="checkbox" name="thrift shops" value="">
+                  <td>
+                    <div class="ui toggle checkbox">
+                    <input type="checkbox" name="thrift shops" value="">
                   <label>Thrift Shops</label></td>
+                  </div>
                 </tr>
               </table>
               <div class="ui animated button" id="edit-preferences-button">
@@ -135,17 +174,7 @@
           </div>
         </div>
 
-
       </div>
-
-
-
-
-
-
-
-
-
 <!-- end of container -->
     </div>
 <!-- end of container -->
@@ -156,9 +185,7 @@
     <!-- Local JavaScript -->
     <!-- ADD AJAX JS FILE HERE -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
-    <script src="../js/owl.carousel.js"></script>
-    <script src="../js/owl.carousel.min.js"></script>
-    <script src="../js/scripts.js" charset="utf-8"></script>
+    <script src="../js/profile_scripts.js" charset="utf-8"></script>
     <!-- my front end file - CC -->
   </body>
 </html>
