@@ -1,26 +1,3 @@
-// THIS CAN ALL BE DELETED EVENTUALLY SO I CAN HAVE MY OWN FRONT END JS FILE TO WORK IN -- RIGHT?????
-
-// var hipspace = {};
-//
-// hipspace.getYelpAPI = function(){
-//   $.getJSON('/api/yelp', function(data){
-//     console.log(data);
-//   })
-// }
-//
-// hipspace.getGooglePlacesAPI = function(){
-//   // $.getJSON('https://')
-// }
-//
-//
-//
-//
-// $(function() {
-//   console.log('scripts loaded...');
-//   hipspace.getYelpAPI();
-// });
-
-
 // CC -- PLAYING WITH SEMANTIC UI ELEMENTS
 
 // $(function(){
@@ -30,6 +7,60 @@
 //   });
 //   $('.accordion').accordion();
 // });
+
+// $(function(){
+//   $('.ui.checkbox')
+//     .checkbox();
+// }
+
+// SIGNUP FORM VALIDATION
+
+$('.ui.form')
+  .form({
+    fields: {
+      username: {
+        identifier: 'username',
+        rules: [
+          {
+            type   : 'empty',
+            prompt : 'Please enter a username'
+          }
+        ]
+      },
+      email: {
+        identifier  : 'email',
+        rules: [
+          {
+            type   : 'email',
+            prompt : 'Please enter a valid e-mail'
+          }
+        ]
+      },
+      password: {
+        identifier: 'password',
+        rules: [
+          {
+            type   : 'empty',
+            prompt : 'Please enter a password'
+          },
+          {
+            type   : 'minLength[6]',
+            prompt : 'Your password must be at least {ruleValue} characters'
+          }
+        ]
+      },
+      terms: {
+        identifier: 'terms',
+        rules: [
+          {
+            type   : 'checked',
+            prompt : 'You must agree to the terms and conditions'
+          }
+        ]
+      }
+    }
+  })
+;
 
 
 // PARALLAX FUNCTIONS - CC
@@ -44,8 +75,10 @@
 
     var $background = $('.bg');
     $background.css("top", ($scrolled * -1) + "px");
+    // var $logoBox = $('#big-logo');
+    // $logoBox.css("top", ($scrolled * -1) + "px");
 
-    var $scoreBox = $('.break');
+    var $scoreBox = $('.hipscore');
     $scoreBox.css("top", ($scrolled * 1.5) + "px");
 
 })
