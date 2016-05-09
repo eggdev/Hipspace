@@ -3,6 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>ajax</title>
+    <style media="screen">
+      #map{
+        height: 500px;
+        width: 1000px;
+      }
+    </style>
   </head>
   <body>
     <button type="button" id='button' name="button">CALL TO AJAX</button>
@@ -10,14 +16,11 @@
     <button type="button" id='getLocations' name="button">Get From JSON</button>
 
 
-    <form action="/api/users" method="post">
-      <input type='text' name='user[username]' placeholder='username'>
-      <input type='text' name='user[email]' placeholder='email'>
-      <input type='password' name='user[password]' placeholder='password'>
-      <input type="submit" value='Sign Up'>
-    </form>
+    <div id='map'></div>
 
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAc9EXE72TMHf3k91hH-uRfKyaj8bftpko&callback=initMap"
+    async defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" charset="utf-8"></script>
     <script src="../js/ajax.js" charset="utf-8"></script>
   </body>
