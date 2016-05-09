@@ -138,7 +138,9 @@ hipspace.makeAJAXRequest = function(arr, catID ){
         }
       }
     }
-  });
+  }).done(function(data){
+    hipspace.createMarkers();
+  });;
 }
 
 hipspace.getAllAPIinfo = function(loc, categories){
@@ -148,22 +150,30 @@ hipspace.getAllAPIinfo = function(loc, categories){
     }
   }
 }
-
+var map;
 
 function initMap() {
   var myLatLng = {lat: parseFloat(williamsburg.latitude), lng: parseFloat(williamsburg.longitude)};
   // Create a map object and specify the DOM element for display.
-  var map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     center: myLatLng,
     scrollwheel: false,
+    draggable: false,
     zoom: 15
   });
-  // Create a marker and set its position.
-  var marker = new google.maps.Marker({
-    map: map,
-    position: myLatLng,
-    title: 'Hello World!'
-  });
+}
+
+hipspace.createMarkers = function(){
+  for(var i=0; i< williamsburg.venues.length; i++){
+    if(williamsburg.venues[i].category == 'Bar'){
+      venueLoc = {lat: williamsburg.venues[i].lat, lng: williamsburg.venues[i].long }
+      var marker = new google.maps.Marker({
+        map: map,
+        position: venueLoc,
+        title: williamsburg.venues[i].name
+      });
+    }
+  }
 }
 
 
@@ -176,11 +186,11 @@ $(document).ready(function(){
     $.ajax({
       method: 'POST',
       url: '/api/locations',
-      data: lowerEastSide,
+      data: williamsburg,
       success: function(){
         console.log('information sent');
       }
-    });
+    })
   });
 
   $('#getLocations').on('click', function(e){
@@ -189,7 +199,7 @@ $(document).ready(function(){
       method:'get',
       url: '/api/locations',
       success: function( data ){
-        console.log( data );
+        console.log(data);
       }
     })
   })
