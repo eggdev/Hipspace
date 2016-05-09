@@ -2,21 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title> Hello World </title>
-
+    <title> _HipSpace_ </title>
 <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Cutive+Mono' rel='stylesheet' type='text/css'>
 <!-- Semantic UI -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
-<!-- Owl Carousel -->
-    <!-- <link rel="stylesheet" href="../css/owl.carousel.css"> -->
-<!-- <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css"> -->
-    <!-- Local styles -->
+<!-- Local styles -->
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/styles.css">
 <!-- For now, keep the .. to be able to do my shit without having the server running. When we're using API stuff,take those out and run nodemon + all the other shit or your scripts files won't load - dummy - CC  -->
-
-
   </head>
   <body>
 <!-- Main Container Div -->
@@ -38,7 +32,7 @@
       </nav> -->
 <!-- END of Top Nav Bar - NOT SIGNED IN VERSION -->
 <!-- Top Nav Bar - SIGNED IN VERSION -->
-      <nav class="ui inverted clearing segment">
+      <nav id="top-bar" class="ui inverted clearing segment">
         <h3 class="ui left floated header">
           Hipspace
         </h3>
@@ -62,7 +56,7 @@
       <div id="big-logo">
         <p><span class="logo-text">_Hipspace_</span></p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <div class="ui animated fade button" tabindex="0">
+        <div class="ui inverted animated fade button" tabindex="0">
           <div class="visible content">Get Your Custom Hipspace Score</div>
           <div class="hidden content">
             Sign Up Now
@@ -71,45 +65,129 @@
       </div>
 <!-- END OF LOGO BOX -->
 <!-- PERSONALIZED HIPSCORE LANDING SPOT -->
-      <div class="hipscore">
-        <h3>PERSONALIZED HIPSPACE SCORE</h3>
-        <div class="ui two column padded grid">
-          <div id="map" class="column">
-          </div>
-          <div id="selectors" class="column">
+      <div id="hipscore" class="ui raised very padded text container segment">
+<!-- RIGHT SIDE MAP -->
+        <div class="ui raised very padded right floated segment">
+          <h2 class="ui header"><span class="purple-head">YOUR IDEAL 'HOOD</span></h2>
+          <img src="http://halopets.com/wp-content/uploads/2015/03/map-placeholder.png">
+        </div>
+<!-- LEFT SIDE CHECKBOXES -->
+        <div class="ui raised very padded left floated segment">
+          <h2 class="ui header">HIPSTER SHIT</h2>
+          <div class="ui form">
+            <div class="inline field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" tabindex="0" class="hidden">
+              <label>Dive Bars</label>
+            </div>
+            </div>
+            <div class="inline field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" tabindex="0" class="hidden">
+              <label>Dog Parks</label>
+            </div>
+            </div>
+            <div class="inline field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" tabindex="0" class="hidden">
+              <label>Yoga Studios</label>
+            </div>
+            </div>
+            <div class="inline field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" tabindex="0" class="hidden">
+              <label>Indie Theatres</label>
+            </div>
+            </div>
+            <div class="inline field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" tabindex="0" class="hidden">
+              <label>Thrift Shops</label>
+            </div>
+            </div>
+            <div class="inline field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" tabindex="0" class="hidden">
+              <label>Vinyl Records</label>
+            </div>
+            </div>
+            <div class="inline field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" tabindex="0" class="hidden">
+              <label>Coffee Shops</label>
+            </div>
+            </div>
+            <div class="inline field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" tabindex="0" class="hidden">
+              <label>Bike Stores</label>
+            </div>
+            </div>
+            <div class="inline field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" tabindex="0" class="hidden">
+              <label>Farmers Markets</label>
+            </div>
+            </div>
+            <div class="inline field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" tabindex="0" class="hidden">
+              <label>Street Fairs</label>
+            </div>
+            </div>
+            <div class="inline field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" tabindex="0" class="hidden">
+              <label>Art Galleries</label>
+            </div>
+            </div>
+            <div class="inline field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" tabindex="0" class="hidden">
+              <label>Whisky Distilleries</label>
+            </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="bg"></div>
+<!-- ADS AND APARTMENT LISTINGS -->
+      <div id="adspace" class="ui raised very padded text container segment">
+
+
+        <div id="listings" class="ui raised very padded right floated segment">
+          <h2 class="ui header"><span class="purple-head">AVAILABLE LISTINGS</span></h2>
+          <img src="http://www.hutterites.org/wp-content/uploads/2012/03/placeholder.jpg" alt="" />
+        </div>
+
+        <div id="ads" class="ui raised very padded left floated segment">
+          <h2 class="ui header"><span class="purple-head">LOCAL ESTABLISHMENTS</span></h2>
+          <img src="http://pscfo.org/wp-content/uploads/2014/05/Ad-Placeholder-390x125-Gray8.gif">
+          <br>
+          <img src="http://pscfo.org/wp-content/uploads/2014/05/Ad-Placeholder-390x125-Gray8.gif">
+          <br>
+          <img src="http://pscfo.org/wp-content/uploads/2014/05/Ad-Placeholder-390x125-Gray8.gif">
+        </div>
+      </div>
 <!-- END OF PERSONALIZED HIPSCORE LANDING SPOT -->
 
+<!-- BACKGROUND WOOD IMAGE -->
+      <div class="bg"></div>
+<!-- END BACKGROUND WOOD IMAGE -->
 <!-- FOOTER -->
-<footer>
-  <div class="ui inverted menu">
-    <a class="item">Log In</a>
-    <a class="item">Profile</a>
-    <div class="right menu">
-      <a class="item">Sign Up</a>
-      <a class="item">Home</a>
+  <footer>
+    <div class="ui inverted menu">
+      <a class="item">Log In</a>
+      <a class="item">Profile</a>
+      <div class="right menu">
+        <a class="item">Sign Up</a>
+        <a class="item">Home</a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
+<!-- END FOOTER -->
 
 
-<!-- PLAYING WITH OPTIONS SCRATCHPAD BELOW -->
-<!-- CAROUSEL -->
-<!-- <div class="owl-carousel">
-  <div> Your Content </div>
-  <div> Your Content </div>
-  <div> Your Content </div>
-  <div> Your Content </div>
-  <div> Your Content </div>
-  <div> Your Content </div>
-  <div> Your Content </div>
-</div> -->
-<!-- END CAROUSEL -->
-<!-- END OF SCRATCHPAD -->
 
 
 <!-- end of container -->
@@ -119,12 +197,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" charset="utf-8"></script>
     <!-- Cookies lib -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.1/js.cookie.min.js" charset="utf-8"></script>
-    <!-- Local JavaScript -->
     <!-- ADD AJAX JS FILE HERE -->
+    <!-- Semantic UI JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
-    <!-- <script src="../js/owl.carousel.js"></script>
-    <script src="../js/owl.carousel.min.js"></script> -->
+    <!-- Local JavaScript -->
     <script src="../js/scripts.js" charset="utf-8"></script>
-    <!-- my front end file - CC -->
+
   </body>
 </html>

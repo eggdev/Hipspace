@@ -5,8 +5,14 @@ body {
   background: lemonchiffon;
 }
 
+#top-bar {
+  /*position: fixed;*/
+  width: 100%;
+}
+
 #big-logo {
-  background-color: #869D05;
+  margin-top: 3%;
+  background-color: #6721cd;
   height: 60%;
   width: 100%;
   color: snow;
@@ -29,7 +35,7 @@ body {
 /*PLAYING WITH PARALLAX*/
 
 .bg {
-  background: url('https://withanna.files.wordpress.com/2012/10/budapest-sky-via-withanna-wordpress-com.jpg') repeat;
+  background: url('../images/curve-wood-texture-tekstura.jpg') repeat;
   width: 100%;
   height: 1000%;
   top: 0;
@@ -44,17 +50,43 @@ body {
   width: 30%;
 }*/
 
-.hipscore {
-  background-color: turquoise;
+#hipscore {
+  background-color: snow;
   width: 100%;
   height: 400%;
   display: block;
   text-align: center;
   z-index: 1
-
-  /*position: relative;*/
+  position: relative;
 }
 
+#adspace {
+  background-color: snow;
+  width: 100%;
+  height: 400%;
+  display: block;
+  text-align: center;
+  z-index: 1
+  position: relative;
+}
+
+#listings {
+  width: 60%;
+}
+
+#listings img {
+  width: 100%;
+  /*height: 80%;*/
+}
+
+#ads {
+width: 30%;
+}
+
+#ads img {
+  width: 100%;
+  /*height: 80%;*/
+}
 h1 {
   position: relative;
   color: white;
@@ -83,19 +115,23 @@ h1 {
 }*/
 
 #map {
-  /*width: 200px;
-  height: 600px;*/
+  width: 100%;
+  height: 60%;
   background-color: snow;
   /*border: 1px solid black;*/
 }
 
 #selectors {
-  /*width: 400px;
-  height: 600px;*/
+  width: 100%;
+  height: 60;
   background-color: snow;
   /*border: 1px solid black;*/
 }
 
 .snow {
 color: snow;
+}
+
+.purple-head {
+  color: #8f25b8;
 }
