@@ -1,0 +1,84 @@
+body {
+  background-image: url(http://img08.deviantart.net/ebbe/i/2013/144/8/6/texture_313_by_sirius_sdz-d606xty.jpg);
+  /*background-image: url(http://learn.surbitonhigh.com/mmatthews/wp-content/uploads/sites/146/2015/12/IMG_9818-edited-2.jpg);*/
+  background-size: cover;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+label{
+  font-size: 20px;
+  font-family: Philosopher;
+}
+
+td{
+  margin-bottom: 20px;
+}
+
+#logo-thing{
+  font-family: Rock Salt;
+  font-size: 25px;
+  margin-bottom: 0;
+}
+
+#welcome-back {
+  font-family: Kaushan Script;
+  color: black;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#profile-div{
+  position: absolute;
+  width: 350px;
+  height: 400px;
+  border-radius: 20px;
+  padding: 10px 0px 10px 50px;
+  margin-left: 130px;
+  margin-top: 10px;
+}
+
+#preferences-div{
+  width: 550px;
+  height: 380px;
+  border-radius: 20px;
+  padding-left: 40px;
+  margin-top: 25px;
+  margin-right: 140px;
+}
+
+#profile-form{
+  margin-left: 0px;
+}
+
+#your-profile-h2{
+  font-family: Lucida Grande;
+  font-size: 30px;
+  margin: 5px 0px 10px 58px;
+}
+
+#your-preferences-h2{
+  font-family: Lucida Grande;
+  font-size: 30px;
+  margin-top: 15px;
+  margin-left: 50px;
+}
+
+#edit-profile-button{
+  margin-top: 10px;
+  margin-left: 110px;
+}
+
+#edit-preferences-button{
+  text-align: center;
+  margin-left: 150px;
+  margin-top: 100px;
+}
+
+#preferences-form{
+  margin-top: 30px;
+  height: 200px;
+}

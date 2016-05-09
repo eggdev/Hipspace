@@ -22,6 +22,9 @@ router.get('/', function(req, res, next) {
   res.sendFile( path.resolve('client/public/views/index.html'));
 });
 
+router.get('/profile', function(req, res, next) {
+  res.sendFile( path.resolve('client/public/views/profile.html'));
+});
 
 router.get('/api/yelp', function(req, res){
   yelp.search({ term: 'bars', location: 'williamsburg, ny' }).then(function(data) {
