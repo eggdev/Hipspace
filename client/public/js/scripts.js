@@ -57,7 +57,6 @@
 
 // BEGINNING OF LATEST VERSION FORM VALIDATION
 $(document).ready(function() {
-
 // validation
  $('.ui.form').form({
     email: {
@@ -120,7 +119,6 @@ function myformposted(data) {
 
 // this sets the scroll on the window
   $(window).on("scroll", function(){
-
     var $height = $(window).height();
     var $scrolled = $(window).scrollTop();
 // background
