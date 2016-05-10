@@ -12,6 +12,11 @@ router.get('/', function(req, res, next) {
 });
 
 
+router.get('/profile', function(req, res, next) {
+  res.sendFile( path.resolve('client/public/views/profile.html'));
+});
+
+
 router.get('/ajax', function(req, res, next){
   res.sendFile( path.resolve('client/public/views/ajax.html'));
 })

@@ -5,3 +5,5 @@ $(function(){
 function checkbox(){
    $('.ui.checkbox').checkbox();
 }
+
+$('select.dropdown').dropdown();

@@ -51,7 +51,7 @@
               <i class="inverted user icon"></i>
             </div>
 
-            <form class="ui inverted form" id="profile-form">
+            <form class="ui form" id="profile-form">
               <div class="nine wide required field">
                 <label>Your name:</label>
                 <input type="text" name="name" value="Clyde">
@@ -71,11 +71,16 @@
             </div>
 
             <div class="eight wide required field">
-              <label>Favorite color:</label>
-              <select name="carlist" form="carform">
-                <option value="brown">Brown</option>
-                <option value="rusty-orange">Rusty Orange</option>
-              </select>
+              <div class="ui form">
+                <div class="field">
+                  <label>Favorite beer:</label>
+                  <select class="ui compact dropdown" form="carform">
+                    <option value=""> Beer</option>
+                    <option value="0">PBR</option>
+                    <option value="1"> Moonshine</option>
+                  </select>
+                </div>
+              </div>
             </div>
 
               <div class="ui button" id="edit-profile-button">
@@ -95,10 +100,10 @@
             <h2 id="preferences-h2">Your Preferences</h2>
 
             <div class="ui horizontal divider">
-              <i class="inverted dashboard icon"></i>
+              <i class="inverted options icon"></i>
             </div>
 
-            <form class="ui inverted form" id="preferences-form">
+            <form class="ui form" id="preferences-form">
 
               <table style="width:100%">
                 <tr>
@@ -163,7 +168,7 @@
                   </div>
                 </tr>
               </table>
-              <div class="ui animated button" id="edit-preferences-button">
+              <div class="ui inverted animated button" id="edit-preferences-button">
                 <div class="visible content">Edit</div>
                 <div class="hidden content">
                   :)
