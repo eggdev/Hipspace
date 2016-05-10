@@ -18,6 +18,12 @@ td{
   margin-bottom: 20px;
 }
 
+#owl {
+  position: absolute;
+  width: 8.5%;
+  bottom: 0;
+}
+
 #logo-thing{
   font-family: Rock Salt;
   font-size: 25px;
