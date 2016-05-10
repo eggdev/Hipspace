@@ -133,6 +133,10 @@ function myformposted(data) {
 // dummy listings + ads
     var $listingBox = $('#adspace');
     $listingBox.css("top", ($scrolled * -2) + "px");
+
+// hipster owl
+    var $hipsterOwl = $('#hipster-owl');
+    $hipsterOwl.css("top", ($scrolled * 0.5) + "px");
 });
 
 // MODAL FUNCTIONS
@@ -149,6 +153,16 @@ function checkbox(){
 ;
 }
 checkbox();
+
+// DROPDOWN FUNCTIONS
+function dropdown(){
+    $('.ui.dropdown')
+  .dropdown({
+    maxSelections: 1
+  })
+;
+}
+dropdown();
 
 
 // SOCIAL MEDIA BUTTON JIGGGLE - NOT WORKING
