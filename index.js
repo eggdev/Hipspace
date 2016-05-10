@@ -7,13 +7,12 @@ var dotEnv          = require('dotenv').config(),
     app             = express(),
     indexRouter     = require('./server/routes/index.js'),
     apiAuthRouter   = require('./server/routes/api/auth.js'),
-    apiUsersRouter  = require('./server/routes/api/users.js');
+    apiUsersRouter  = require('./server/routes/api/users.js'),
     locationsRouter = require('./server/routes/api/locations.js');
-    loginRouter     = require('./server/routes/login.js');
 
 // connect to db
 // process.env.MONGOLAB_URI is needed for when we deploy to Heroku
-mongoose.connect( process.env.MONGOLAB_URI || "mongodb://localhost/hipspace_db" );
+mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/hipspace_db" );
 
 // log requests to STDOUT
 app.use(morgan('dev'));
@@ -32,7 +31,6 @@ app.use(cookieParser());
 app.use(express.static('client/public/'));
 
 app.use('/', indexRouter);
-app.use('/login', loginRouter);
 
 
 app.use('/api/auth', apiAuthRouter);
