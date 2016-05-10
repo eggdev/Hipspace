@@ -46,7 +46,7 @@ td{
   height: 410px;
   border-radius: 20px;
   padding-top: 20px;
-  margin-top: 70px;
+  margin-top: 80px;
   background-color: rgba(255,255,255,1);
   animation: fadein 3.5s;
 }
@@ -92,6 +92,7 @@ td{
 
 #edit-preferences-button{
   text-align: center;
-  margin-top: 100px;
-  margin-left: 140px;
+  /*margin-top: 100px;
+  margin-left: 140px;*/
+  bottom: 0;
 }

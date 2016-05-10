@@ -31,10 +31,6 @@ app.use(cookieParser());
 app.use(express.static('client/public/'));
 
 app.use('/', indexRouter);
-<<<<<<< HEAD
-=======
-
->>>>>>> 4dd31424a550f0ea1dcd1b0e7db5ea1142a40aee
 
 app.use('/api/auth', apiAuthRouter);
 app.use('/api/users', apiUsersRouter);
