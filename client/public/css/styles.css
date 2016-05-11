@@ -157,3 +157,17 @@ color: snow;
 .purple-head {
   color: #8f25b8;
 }
+
+.save {
+  background: white;
+  width: 70px;
+  padding: 5px;
+  border-radius: 10px;
+  font-family: Lucida Grande;
+  border: 2px solid gold;
+}
+
+.save:hover {
+  background-color: gold;
+  cursor: pointer;
+}
