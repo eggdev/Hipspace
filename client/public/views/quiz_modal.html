@@ -8,9 +8,6 @@
     <link href='https://fonts.googleapis.com/css?family=Cutive+Mono' rel='stylesheet' type='text/css'>
 <!-- Semantic UI -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
-<!-- Owl Carousel -->
-    <!-- <link rel="stylesheet" href="../css/owl.carousel.css"> -->
-<!-- <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css"> -->
     <!-- Local styles -->
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/styles.css">
@@ -21,28 +18,41 @@
   <body>
 <!-- Main Container Div -->
     <div class="container">
-<!-- Top Nav Bar - NOT SIGNED IN VERSION -->
-      <nav class="ui inverted clearing segment">
-        <h3 class="ui left floated header">
-          Hipspace
-        </h3>
-        <h3 class="ui right floated header">
-          Sign Up
-        </h3>
-        <h3 class="ui right floated header">
-          |
-        </h3>
-        <h3 class="ui right floated header">
-          Log In
-        </h3>
-      </nav>
-<!-- END of Top Nav Bar - NOT SIGNED IN VERSION -->
+    <div class="logged-out-pages">
+    <!-- Top Nav Bar - NOT SIGNED IN VERSION -->
+          <nav class="ui inverted clearing segment">
+            <h3 class="ui left floated header">
+              Hipspace
+            </h3>
+            <a href="login_modal.html"><h3 class="ui right floated header">
+              Sign Up
+            </h3></a>
+            <h3 class="ui right floated header">
+              |
+            </h3>
+            <a href="login_modal.html"><h3 class="ui right floated header">
+              Log In
+            </h3></a>
+          </nav>
+    <!-- END of Top Nav Bar - NOT SIGNED IN VERSION -->
+    <!-- IF YOU CLICK OUT OF THE BOX, THIS IS ALL YOU SEE -->
+          <div id="big-logo">
+            <p><span class="logo-text">_Hipspace_</span></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a href="login_modal.html"><div class="ui inverted animated fade button" tabindex="0">
+              <div class="visible content">Get Your Custom Hipspace Score</div>
+              <div class="hidden content">
+                Sign Up Now
+              </div>
+            </div></a>
+          </div>
+    <!-- END -->
 
 <!-- MODAL 2 - HIPSCORE QUIZ MODAL -->
 <div class="ui basic modal">
   <i class="close icon"></i>
   <div class="ui center aligned header">
-      <h4>WHAT IS MOST IMPORTANT TO YOU IN A NEIGHBORHOOD?</h4>
+      <h4>WHAT AMENITIES ARE IMPORTANT IN YOUR IDEAL NEIGHBORHOOD?</h4>
   </div>
   <form class="ui inverted form" method="POST" action="/">
     <div class="ui center aligned two column centered grid">
@@ -51,16 +61,54 @@
         <div class="column">
           <div class="ui toggle checkbox">
             <input type="checkbox" tabindex="0" class="hidden">
-            <label>Bars with PBR</label>
+            <label>Well-worn Bars</label>
           </div>
           <br>
           <br>
           <div class="ui toggle checkbox">
             <input type="checkbox" tabindex="0" class="hidden">
-            <label>Pooches and Stuff</label>
+            <label>Dog Friendly Parks</label>
           </div>
           <br>
           <br>
+          <div class="ui toggle checkbox">
+            <input type="checkbox" tabindex="0" class="hidden">
+            <label>Record Stores</label>
+          </div>
+          <br>
+          <br>
+          <div class="ui toggle checkbox">
+            <input type="checkbox" tabindex="0" class="hidden">
+            <label>Thrift Boutiques</label>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="ui toggle checkbox">
+            <input type="checkbox" tabindex="0" class="hidden">
+            <label>Yoga Opportunities</label>
+          </div>
+          <br>
+          <br>
+          <div class="ui toggle checkbox">
+            <input type="checkbox" tabindex="0" class="hidden">
+            <label>Arthouse Cinemas</label>
+          </div>
+          <br>
+          <br>
+          <div class="ui toggle checkbox">
+            <input type="checkbox" tabindex="0" class="hidden">
+            <label>Coffeehouses</label>
+          </div>
+          <br>
+          <br>
+          <div class="ui toggle checkbox">
+            <input type="checkbox" tabindex="0" class="hidden">
+            <label>Bike Accomodations</label>
+          </div>
+        </div>
+
+        <div class="column">
           <div class="ui toggle checkbox">
             <input type="checkbox" tabindex="0" class="hidden">
             <label>Farmers Markets</label>
@@ -69,67 +117,96 @@
           <br>
           <div class="ui toggle checkbox">
             <input type="checkbox" tabindex="0" class="hidden">
-            <label>Women In Yoga Pants</label>
+            <label>Street Fairs</label>
+          </div>
+          <br>
+          <br>
+          <div class="ui toggle checkbox">
+            <input type="checkbox" tabindex="0" class="hidden">
+            <label>Art Venues</label>
+          </div>
+          <br>
+          <br>
+          <div class="ui toggle checkbox">
+            <input type="checkbox" tabindex="0" class="hidden">
+            <label>Distilled Spirits</label>
           </div>
         </div>
 
         <div class="column">
-          <div class="ui toggle checkbox">
-            <input type="checkbox" tabindex="0" class="hidden">
-            <label>Mustache Wax</label>
+<!-- DROP DOWN MENU 1  -->
+          <div class="ui dropdown">
+            <div class="text">Price</div>
+              <i class="dropdown icon"></i>
+            <div class="menu">
+              <div class="item">
+                <i class="usd icon"></i>
+                $900 - $1,500
+              </div>
+              <div class="item">
+                <i class="usd icon"></i>
+                $1,501 - $2,500
+              </div>
+              <div class="item">
+                <i class="usd icon"></i>
+                $2,501 +
+              </div>
+            </div>
           </div>
+<!-- END DROP DOWN 1 -->
           <br>
           <br>
-          <div class="ui toggle checkbox">
-            <input type="checkbox" tabindex="0" class="hidden">
-            <label>Divey Dive Dives</label>
+<!-- DROP DOWN MENU 2  -->
+          <div class="ui dropdown">
+            <div class="text">Safety Level</div>
+              <i class="dropdown icon"></i>
+            <div class="menu">
+              <div class="item">
+                <i class="child icon"></i>
+                Kids All Over
+              </div>
+              <div class="item">
+                <i class="bicycle icon"></i>
+                Post Gentrification
+              </div>
+              <div class="item">
+                <i class="bomb icon"></i>
+                DDDDangerzone
+              </div>
+            </div>
           </div>
+<!-- END DROP DOWN 2 -->
           <br>
           <br>
-          <div class="ui toggle checkbox">
-            <input type="checkbox" tabindex="0" class="hidden">
-            <label>Fixies</label>
+<!-- DROP DOWN MENU 3  -->
+          <div class="ui dropdown">
+            <div class="text">Apartment Style</div>
+              <i class="dropdown icon"></i>
+            <div class="menu">
+              <div class="item">
+                <i class="building icon"></i>
+                Loft / Studio
+              </div>
+              <div class="item">
+                <i class="building icon"></i>
+                1 Bedroom
+              </div>
+              <div class="item">
+                <i class="building icon"></i>
+                Palace
+              </div>
+            </div>
           </div>
-          <br>
-          <br>
-          <div class="ui toggle checkbox">
-            <input type="checkbox" tabindex="0" class="hidden">
-            <label>Shazbot</label>
-          </div>
-        </div>
+<!-- END DROP DOWN 3 -->
 
-        <div class="column">
-          <div class="ui toggle checkbox">
-            <input type="checkbox" tabindex="0" class="hidden">
-            <label>Turtles</label>
-          </div>
-          <br>
-          <br>
-          <div class="ui toggle checkbox">
-            <input type="checkbox" tabindex="0" class="hidden">
-            <label>Binkies</label>
-          </div>
-          <br>
-          <br>
-          <div class="ui toggle checkbox">
-            <input type="checkbox" tabindex="0" class="hidden">
-            <label>Rabbits</label>
-          </div>
-          <br>
-          <br>
-          <div class="ui toggle checkbox">
-            <input type="checkbox" tabindex="0" class="hidden">
-            <label>Hippos</label>
-          </div>
         </div>
-
       </div>
     </div>
   </form>
   <div class="actions">
       <button type="submit" class="ui green basic inverted button">
         <i class="bicycle icon"></i>
-        GET YOUR CUSTOM HIPSPACE SCORE
+        PROCEED TO REGISTER OR SIGN IN
       </button>
   </div>
 </div>
@@ -138,6 +215,7 @@
 
 
 <!-- end of container -->
+      </div>
     </div>
 <!-- end of container -->
 <!-- V SCRIPTS AND SHIT V -->
