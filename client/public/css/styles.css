@@ -183,9 +183,6 @@ color: snow;
 }
 
 
-
-
-
 /* LOGGED OUT PAGES */
 .logged-out-pages {
   background: url('../images/sativa.png') repeat;
@@ -201,3 +198,6 @@ color: snow;
 .right-modal-head {
   float: right;
 }
+
+.hidden {
+  display: none;

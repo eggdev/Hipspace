@@ -8,6 +8,7 @@ var LocationSchema = mongoose.Schema({
     name: { type: String },
     latitude: {type: String},
     longitude: {type: String},
+    score: {type: Number, default: 0},
     venues: [{
       name: { type: String },
       category: { type: String },

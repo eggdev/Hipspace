@@ -54,33 +54,10 @@
 // FORM VALIDATION NOT WORKING
 // $('.ui.form').form(validationRules, { onSuccess: submitForm });
 // END FORM VALIDATION NOT WORKING
-var map;
-function initMap() {
-  var myLatLng = {lat: parseFloat(williamsburg.latitude), lng: parseFloat(williamsburg.longitude)};
-  // Create a map object and specify the DOM element for display.
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: myLatLng,
-    scrollwheel: false,
-    draggable: false,
-    zoom: 15
-  });
-}
-
-function createMarkers(){
-  for(var i=0; i< williamsburg.venues.length; i++){
-    if(williamsburg.venues[i].category == 'Bar'){
-      venueLoc = {lat: williamsburg.venues[i].lat, lng: williamsburg.venues[i].long }
-      var marker = new google.maps.Marker({
-        map: map,
-        position: venueLoc,
-        title: williamsburg.venues[i].name
-      });
-    }
-  }
-}
 
 // BEGINNING OF LATEST VERSION FORM VALIDATION
 $(document).ready(function() {
+
 // validation
  $('.ui.form').form({
     email: {
@@ -168,10 +145,83 @@ modal();
 // CHECKBOX FUNCTIONS
 function checkbox(){
   $('.ui.checkbox')
-  .checkbox()
-;
+  .checkbox();
 }
-checkbox();
+checkbox()
+
+$(".ui.checkbox").on('click', function(){
+  // checkbox();
+  clearMarkers();
+  getChecked();
+})
+
+var map;
+var markers = [];
+function initMap() {
+  var myLatLng = {lat: parseFloat($('#hiddenlat').text()), lng: parseFloat($('#hiddenlong').text())};
+  // Create a map object and specify the DOM element for display.
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: myLatLng,
+    scrollwheel: false,
+    draggable: false,
+    zoom: 15
+  });
+}
+
+function getChecked(){
+  var $location = $('#hiddenloc').text();
+  var $inputs = $('.checked').find('input');
+  var allInputs = $('.ui.toggle.checkbox');
+  console.log($inputs);
+  for(var i=0; i < $inputs.length; i++){
+    $.ajax({
+      index: i,
+      method: 'get',
+      url: '/api/locations/'+$location,
+      success: function(data){
+        createMarkers( data, $inputs[this.index].name );
+      }
+    });
+  }
+}
+function createMarkers( location, category ){
+  for(var i=0; i< location.venues.length; i++){
+    if(location.venues[i].category == category ){
+      console.log( location.venues[i] );
+      venueLoc = {lat: parseFloat(location.venues[i].lat), lng: parseFloat(location.venues[i].long) }
+      // var iconBase = '/images/'
+      var marker = new google.maps.Marker({
+        position: venueLoc,
+        map: map
+        // icon: {url: iconBase + 'yoga.svg', scaledSize: new google.maps.Size(40,40)}
+      });
+      markers.push(marker);
+    }
+  }
+}
+// Sets the map on all markers in the array.
+function setMapOnAll(map) {
+  for (var i = 0; i < markers.length; i++) {
+    markers[i].setMap(map);
+  }
+}
+// Removes the markers from the map, but keeps them in the array.
+function clearMarkers() {
+  setMapOnAll(null);
+}
+
+// Shows any markers currently in the array.
+function showMarkers() {
+  setMapOnAll(map);
+}
+
+// Deletes all markers in the array by removing references to them.
+function deleteMarkers() {
+  clearMarkers();
+  markers = [];
+}
+
+
 
 // DROPDOWN FUNCTIONS
 function dropdown(){
