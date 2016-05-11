@@ -93,7 +93,7 @@ var brownsville = {
   venues: []
 }
 
-var locationArray = [fortGreene, brooklynHeights, redHook, williamsburg, lowerEastSide, eastNewYork, concourse, sunsetPark, corona, brownsville]
+hipspace.locationArray = [fortGreene, brooklynHeights, redHook, williamsburg, lowerEastSide, eastNewYork, concourse, sunsetPark, corona, brownsville]
 
 var divebarsID = '4bf58dd8d48988d118941735';
 var speakeasyID = '4bf58dd8d48988d1d4941735';
@@ -169,23 +169,12 @@ function initMap() {
   });
 }
 
-function updateCategories(){
-  $('#updateCats').on('click', function(){
-    var locations = [fortGreene, brooklynHeights, redHook, williamsburg, lowerEastSide, eastNewYork, concourse, sunsetPark, corona, brownsville];
-    for(var i=0; i< locations.length; i++){
-      for(var x=0; x< locations[i].venues.length; i++){
-        console.log( locations[i].venues[x] );
-      }
-    }
-  });
-}
-
 
 
 
 $(document).ready(function(){
   $('#button').on('click', function(){
-    hipspace.getAllAPIinfo( locationArray, hipspace.categoryIds);
+    hipspace.getAllAPIinfo( hipspace.locationArray, hipspace.categoryIds);
   });
 
   $('#submit').on('click', function(e){
@@ -203,8 +192,17 @@ $(document).ready(function(){
     }
   });
 
-  updateCategories();
+  $('#updateCats').on('click', function(){
+    for(var i=0; i < hipspace.locationArray.length; i++){
+      var venueArray = hipspace.locationArray[i].venues
+      console.log( hipspace.locationArray[i].name);
 
+      for(var x = 0; x < venueArray.length; x++){
+        var category = venueArray[x].category;
+        console.log( category );
+      }
+    }
+  });
 
   $('#getLocations').on('click', function(e){
     e.preventDefault();
@@ -212,12 +210,12 @@ $(document).ready(function(){
       method:'get',
       url: '/api/locations',
       success: function( locations ){
-        console.log(locations);
-        // for(var i=0; i<locations.length; i++){
-        //   for(var x=0; x<locations[i].venues.length; x++){
-        //     console.log(locations[i].venues[x].category);
-        //   }
-        // }
+        // console.log(locations);
+        for(var i=0; i<locations.length; i++){
+          for(var x=0; x<locations[i].venues.length; x++){
+            console.log(locations[i].venues[x].category);
+          }
+        }
       }
     });
   });
