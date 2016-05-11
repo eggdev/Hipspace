@@ -139,7 +139,7 @@ hipspace.makeAJAXRequest = function(arr, catID ){
     }
   }).done(function(data){
     hipspace.createMarkers();
-  });;
+  });
 }
 
 hipspace.getAllAPIinfo = function(loc, categories){

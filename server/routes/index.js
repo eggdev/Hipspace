@@ -20,8 +20,10 @@ router.get('/profile', function(req, res, next) {
 
 router.get('/ajax', function(req, res, next){
   var currentUser = JSON.parse(req.cookies.current_user);
-  res.render('ajax');
-  // res.sendFile('public/index1.html' , { root : __dirname})
+  User.findOne({username: currentUser.username }, function(err, data){
+    console.log(data);
+    res.render('ajax', {data: data});
+  })
 })
 
 router.get('/login', function(req, res, next){
