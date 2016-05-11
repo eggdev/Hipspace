@@ -1,81 +1,126 @@
 /*
-  Styles go here
+  OH SHIT, THINGS ARE BROKEN, IT'S:
 */
 body {
   background: lemonchiffon;
 }
 
-#top-bar {
-  /*position: fixed;*/
-  width: 100%;
-}
-
-#logged-out-nav img {
-  width: 60px;
-  height: 50px;
-}
-
-#big-logo {
-  margin-top: 3%;
-  background-color: #6721cd;
-  /*background-color: #9600FF;*/
-  height: 60%;
-  width: 100%;
-  color: snow;
-  font-family: 'Cutive Mono';
-  padding-top: 15%;
-  padding-bottom: 15%;
-  text-align: center;
-
-  /*position: absolute;*/
-  z-index: -5;
-  top: 0;
-  left: 0;
-}
-
-#big-logo img {
-  width: 30%;
-  height: 25%;
-  margin-bottom: 5%;
-}
-
-.logo-text {
-  font-size: 4em;
-  font-family: 'Cutive Mono', ;
-}
-
-/*PLAYING WITH PARALLAX*/
-
+/* BACKGROUND IMAGE */
 .bg {
   background: url('../images/sativa.png') repeat;
   width: 100%;
   height: 1000%;
   top: 0;
   left: 0;
-  z-index: -10;
+  right: 0;
+  z-index: 0;
   position: absolute;
 }
 
-.logged-out-pages {
-  background: url('../images/sativa.png') repeat;
+/* ALL LINKS */
+a {
+  cursor: pointer;
 }
 
-/*img {
+/* ALL HEADINGS */
+h1 {
   position: relative;
-  display: inline-block;
-  width: 30%;
-}*/
+  color: white;
+  font-size: 5em;
+  padding-top: 0.75em;
+}
 
+/* ALL WHITE TEXT */
+.snow {
+color: snow;
+}
+
+/* ALL PURPLE TEXT */
+.purple-head {
+  color: #8f25b8;
+}
+
+/* CLEARS */
+.clear {
+  float: none;
+}
+
+/* STICKY TOP NAV BAR */
+#top-bar {
+  z-index: 50;
+  top: 0;
+  position: fixed;
+  width: 100%;
+}
+
+#top-bar img {
+  width: 15%;
+  height: 80%;
+  margin-right: 4%;
+  margin-left: 0.5%;
+  padding-top: 0.5%;
+  bottom: 0;
+}
+
+#top-bar button {
+  margin-left: 0.5%;
+}
+
+/* BIG PURPLE LOGO BOX */
+#big-logo {
+  position: absolute;
+  margin-top: 100px;
+  background-color: #6721cd;
+  /*background-color: #9600FF;*/
+  height: 100%;
+  width: 100%;
+  color: snow;
+  padding-bottom: 15%;
+  text-align: center;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+#big-logo img {
+  width: 40%;
+  height: 40%;
+  padding-bottom: 3%;
+  padding-top: 3%;
+}
+
+/* HIPSCORE MAP + LISTINGS CONTAINER */
+#main-content {
+  position:absolute;
+  top: 85%;
+}
+
+/* HIPSCORE MAP + TOGGLES CONTAINER */
 #hipscore {
   background-color: snow;
   width: 100%;
   height: 400%;
   display: block;
   text-align: center;
-  z-index: 1
+  z-index: 1;
   position: relative;
 }
 
+/* HIPSCORE MAP */
+#map {
+  width: 60vw;
+  height: 70vh;
+  background-color: snow;
+}
+
+/* MAP OVERLAY TOGGLES BOX */
+#selectors {
+  width: 100%;
+  height: 60;
+  background-color: snow;
+}
+
+/* AD + LISTINGS CONTAINER */
 #adspace {
   margin-top: 2%;
   background-color: snow;
@@ -87,77 +132,41 @@ body {
   position: relative;
 }
 
-#hipster-owl {
-  position: relative;
-  z-index: 5;
-}
-
-#listings {
-  width: 60%;
-}
-
-#listings img {
-  width: 100%;
-}
-
+/* ADVERTISEMENTS BOX */
 #ads {
-width: 30%;
+  width: 30%;
 }
 
+/* INDIVIDUAL ADS */
 #ads img {
   width: 100%;
   /*height: 80%;*/
 }
 
-h1 {
-  position: relative;
-  color: white;
-  font-size: 5em;
-  padding-top: 0.75em;
+/* APARTMENT LISTINGS BOX */
+#listings {
+  width: 60%;
 }
 
+/* APARTMENT LISTINGS IMAGES */
+#listings img {
+  /*width: 100%;*/
+}
 
-/* PLAYING WITH MODALS */
+.conatiner {
+  width: 60%;
+  margin: 0 auto;
+}
 
-.left-modal-head {
+.listing-headline {
   float: left;
-  text-align: center;
 }
 
-.right-modal-head {
-  float: right;
+.rental-body {
+  margin-top: 1%;
 }
 
-.clear {
-  float: none;
-}
-
-/*.checkbox {
-  padding: 2%;
-}*/
-
-#map {
-  width: 60vw;
-  height: 70vh;
-  background-color: snow;
-  /*border: 1px solid black;*/
-}
-
-#selectors {
-  width: 100%;
-  height: 60;
-  background-color: snow;
-  /*border: 1px solid black;*/
-}
-
-.snow {
-color: snow;
-}
-
-.purple-head {
-  color: #8f25b8;
-}
-
+/* APARTMENT LISTINGS SAVE BUTTON */
 .save {
   background: white;
   width: 70px;
@@ -165,9 +174,30 @@ color: snow;
   border-radius: 10px;
   font-family: Lucida Grande;
   border: 2px solid gold;
+  float: right;
 }
 
 .save:hover {
   background-color: gold;
   cursor: pointer;
+}
+
+
+
+
+
+/* LOGGED OUT PAGES */
+.logged-out-pages {
+  background: url('../images/sativa.png') repeat;
+}
+
+
+/* MODALS */
+.left-modal-head {
+  float: left;
+  text-align: center;
+}
+
+.right-modal-head {
+  float: right;
 }
