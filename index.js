@@ -9,6 +9,7 @@ var dotEnv          = require('dotenv').config(),
     apiAuthRouter   = require('./server/routes/api/auth.js'),
     apiUsersRouter  = require('./server/routes/api/users.js'),
     locationsRouter = require('./server/routes/api/locations.js');
+    path            = require('path');
 
 // connect to db
 // process.env.MONGOLAB_URI is needed for when we deploy to Heroku
@@ -23,6 +24,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // flash messages, NEEDS express-flash
 // app.use(flash());
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'client/public/views'));
 
 // This is how we read the cookies sent over from the browser
 app.use(cookieParser());
