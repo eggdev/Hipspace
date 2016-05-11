@@ -158,24 +158,24 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: myLatLng,
     scrollwheel: false,
-    draggable: false,
     zoom: 15
   });
 }
 
 hipspace.createMarkers = function(){
   for(var i=0; i< williamsburg.venues.length; i++){
-    if(williamsburg.venues[i].category == 'Bar'){
+    if(williamsburg.venues[i].category == 'Yoga Studio'){
       venueLoc = {lat: williamsburg.venues[i].lat, lng: williamsburg.venues[i].long }
+      var iconBase = '/images/'
       var marker = new google.maps.Marker({
-        map: map,
         position: venueLoc,
-        title: williamsburg.venues[i].name
+        map: map,
+        icon: {url: iconBase + 'yoga.svg', scaledSize: new google.maps.Size(40,40)}
       });
     }
+    console.log("yo");
   }
 }
-
 
 $(document).ready(function(){
   $('#button').on('click', function(){
