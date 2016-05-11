@@ -7,12 +7,13 @@ var dotEnv          = require('dotenv').config(),
     app             = express(),
     indexRouter     = require('./server/routes/index.js'),
     apiAuthRouter   = require('./server/routes/api/auth.js'),
-    apiUsersRouter  = require('./server/routes/api/users.js');
+    apiUsersRouter  = require('./server/routes/api/users.js'),
     locationsRouter = require('./server/routes/api/locations.js');
+    path            = require('path');
 
 // connect to db
 // process.env.MONGOLAB_URI is needed for when we deploy to Heroku
-mongoose.connect( process.env.MONGOLAB_URI || "mongodb://localhost/hipspace_db" );
+mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/hipspace_db" );
 
 // log requests to STDOUT
 app.use(morgan('dev'));
@@ -23,6 +24,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // flash messages, NEEDS express-flash
 // app.use(flash());
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'client/public/views'));
 
 // This is how we read the cookies sent over from the browser
 app.use(cookieParser());
@@ -31,6 +34,7 @@ app.use(cookieParser());
 app.use(express.static('client/public/'));
 
 app.use('/', indexRouter);
+
 app.use('/api/auth', apiAuthRouter);
 app.use('/api/users', apiUsersRouter);
 app.use('/api/locations', locationsRouter);

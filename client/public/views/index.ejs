@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> _HipSpace_ </title>
+<!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Cutive+Mono' rel='stylesheet' type='text/css'>
+<!-- Semantic UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/styles.css">
+<!-- For now, keep the .. to be able to do my shit without having the server running. When we're using API stuff,take those out and run nodemon + all the other shit or your scripts files won't load - dummy - CC  -->
+  </head>
+  <body>
+<!-- BODY BACKGROUND -->
+    <div class="logged-out-pages">
+<!-- Top Nav Bar - NOT SIGNED IN VERSION -->
+      <nav id="top-bar" class="ui inverted clearing segment">
+        <a href="/index"><img class="ui left floated header" src="/images/HipSpaceLogoHoriz-White.svg" alt="HipSpace Logo"></a>
+        <a href="login_modal.html"><button class="ui right floated inverted basic button">Sign Up</button></a>
+        <a href="login_modal.html"><button class="ui right floated inverted basic button">Log In</button></a>
+      </nav>
+<!-- END of Top Nav Bar - NOT SIGNED IN VERSION -->
+<!-- PURPLE LOGO BOX -->
+      <div id="index-big-logo">
+        <img src="/images/HipSpaceLogoOutl-White.svg" alt="Hipspace Logo" />
+        <p>You carefully cultivate your appearance. </p>
+        <p>You know the difference between Barterhouse and Speakeasy.  </p>
+        <p>You would rather give up coffee than go to Starbucks.</p>
+        <p>You are in the right place! HipSpace is the only real estate listing service that focuses on the the specific neighborhood amenities that matter most to you.</p>
+        <p>Simply fill out the brief questionnaire and register with HipSpace to see a custom recommendation based on your unique interests, and save listings to your account for later perusal! </p>
+<!-- FUNCTIONALITY ISSUE ===== THIS BUTTON NEEDS TO TRIGGER THE MODAL -->
+        <div id="get-score-button" class="ui inverted animated fade button" tabindex="0">
+          <div class="visible content">Get Your Custom Hipspace Score</div>
+          <div class="hidden content">
+            Take The Quiz!
+          </div>
+        </div>
+        <div class="quiz-block-redirect">
+          <a href="#quiz-block"><i class="huge angle down icon"></i></a>
+        </div>
+      </div>
+<!-- END OF PURPLE LOGO BOX -->
+<!-- HIPSPACE QUIZ -->
+      <div id="quiz-block">
+      <!-- FORMER QUIZ MODAL CONTENT STARTS HERE -->
+      <div id="quiz-head" class="ui center aligned header">
+          <span class="purple-head"><h2>WHAT AMENITIES ARE IMPORTANT IN YOUR IDEAL NEIGHBORHOOD?</h2></span>
+      </div>
+
+      <form class="ui form" method="POST" action="/">
+        <div class="ui center aligned two column centered grid">
+          <div class="four column centered row">
+
+            <div class="column">
+              <div class="ui toggle checkbox">
+                <input type="checkbox" tabindex="0" class="hidden">
+                <label>Well-worn Bars</label>
+              </div>
+              <br>
+              <br>
+              <div class="ui toggle checkbox">
+                <input type="checkbox" tabindex="0" class="hidden">
+                <label>Dog Friendly Parks</label>
+              </div>
+              <br>
+              <br>
+              <div class="ui toggle checkbox">
+                <input type="checkbox" tabindex="0" class="hidden">
+                <label>Record Stores</label>
+              </div>
+              <br>
+              <br>
+              <div class="ui toggle checkbox">
+                <input type="checkbox" tabindex="0" class="hidden">
+                <label>Thrift Boutiques</label>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="ui toggle checkbox">
+                <input type="checkbox" tabindex="0" class="hidden">
+                <label>Yoga Opportunities</label>
+              </div>
+              <br>
+              <br>
+              <div class="ui toggle checkbox">
+                <input type="checkbox" tabindex="0" class="hidden">
+                <label>Arthouse Cinemas</label>
+              </div>
+              <br>
+              <br>
+              <div class="ui toggle checkbox">
+                <input type="checkbox" tabindex="0" class="hidden">
+                <label>Coffeehouses</label>
+              </div>
+              <br>
+              <br>
+              <div class="ui toggle checkbox">
+                <input type="checkbox" tabindex="0" class="hidden">
+                <label>Bike Accomodations</label>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="ui toggle checkbox">
+                <input type="checkbox" tabindex="0" class="hidden">
+                <label>Farmers Markets</label>
+              </div>
+              <br>
+              <br>
+              <div class="ui toggle checkbox">
+                <input type="checkbox" tabindex="0" class="hidden">
+                <label>Street Fairs</label>
+              </div>
+              <br>
+              <br>
+              <div class="ui toggle checkbox">
+                <input type="checkbox" tabindex="0" class="hidden">
+                <label>Art Venues</label>
+              </div>
+              <br>
+              <br>
+              <div class="ui toggle checkbox">
+                <input type="checkbox" tabindex="0" class="hidden">
+                <label>Distilled Spirits</label>
+              </div>
+            </div>
+
+            <div class="column">
+    <!-- DROP DOWN MENU 1  -->
+              <div class="ui dropdown">
+                <div class="text">Price</div>
+                  <i class="dropdown icon"></i>
+                <div class="menu">
+                  <div class="item">
+                    <i class="usd icon"></i>
+                    $900 - $1,500
+                  </div>
+                  <div class="item">
+                    <i class="usd icon"></i>
+                    $1,501 - $2,500
+                  </div>
+                  <div class="item">
+                    <i class="usd icon"></i>
+                    $2,501 +
+                  </div>
+                </div>
+              </div>
+    <!-- END DROP DOWN 1 -->
+              <br>
+              <br>
+    <!-- DROP DOWN MENU 2  -->
+              <div class="ui dropdown">
+                <div class="text">Safety Level</div>
+                  <i class="dropdown icon"></i>
+                <div class="menu">
+                  <div class="item">
+                    <i class="child icon"></i>
+                    Kids All Over
+                  </div>
+                  <div class="item">
+                    <i class="bicycle icon"></i>
+                    Post Gentrification
+                  </div>
+                  <div class="item">
+                    <i class="bomb icon"></i>
+                    DDDDangerzone
+                  </div>
+                </div>
+              </div>
+    <!-- END DROP DOWN 2 -->
+              <br>
+              <br>
+    <!-- DROP DOWN MENU 3  -->
+              <div class="ui dropdown">
+                <div class="text">Apartment Style</div>
+                  <i class="dropdown icon"></i>
+                <div class="menu">
+                  <div class="item">
+                    <i class="building icon"></i>
+                    Loft / Studio
+                  </div>
+                  <div class="item">
+                    <i class="building icon"></i>
+                    1 Bedroom
+                  </div>
+                  <div class="item">
+                    <i class="building icon"></i>
+                    Palace
+                  </div>
+                </div>
+              </div>
+    <!-- END DROP DOWN 3 -->
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="actions">
+          <button type="submit" class="ui green basic button">
+            <i class="bicycle icon"></i>
+            PROCEED TO REGISTER OR SIGN IN
+          </button>
+      </div>
+
+      <!-- FORMER QUIZ MODAL CONTENT ENDS HERE -->
+      </div>
+<!-- END OF HIPSPACE QUIZ -->
+
+
+
+
+
+<!-- END LOGGED-OUT-PAGES DIV -->
+  </div>
+<!-- END LOGGED-OUT-PAGES DIV -->
+
+
+<!-- LOG IN OR SIGN UP FOR ACCOUNT MODAL -->
+<div class="ui basic modal">
+  <i class="close icon"></i>
+  <div class="ui left aligned header">
+      <!-- <h4>GET YOUR PERSONALIZED HIPSPACE SCORE</h4> -->
+  </div>
+
+<div class="ui two column middle aligned very relaxed stackable grid">
+  <div class="column">
+    <form class="ui inverted form" id='create-user'>
+    <!-- <form class="ui inverted form"> -->
+
+      <div class="field">
+        <label>Username</label>
+        <div class="ui left icon input">
+          <input type="text" id='username' placeholder="Username" autocomplete="off" style="">
+          <i class="user icon"></i>
+        </div>
+      </div>
+      <div class="field">
+        <label>Email Address</label>
+        <div class="ui left icon input">
+          <input type="email" id='email' placeholder="Email" autocomplete="off">
+          <i class="envelope icon"></i>
+        </div>
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <div class="ui left icon input">
+          <input type="password" id='password' placeholder="Password" autocomplete="off">
+          <i class="lock icon"></i>
+        </div>
+      </div>
+      <div class="ui toggle checkbox">
+        <input type="checkbox" name="terms" tabindex="0" class="hidden">
+        <label>I agree to the Hipspace <a href="/terms.html">Terms and Conditions</a></label>
+      </div>
+      <br><br>
+      <button class="ui green basic inverted button" type="submit">Apply</button>
+    </form>
+  </div>
+  <div class="ui fitted vertical divider">
+  <span class="snow">OR</span>
+  </div>
+  <div class="left aligned column">
+    <form id='login-form' class='ui inverted form'>
+      <div class="field">
+        <label>Username</label>
+        <div class="ui left icon input">
+          <input type="text" id='username' placeholder="Username" autocomplete="off" style="">
+          <i class="user icon"></i>
+        </div>
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <div class="ui left icon input">
+          <input type="password" id='password' placeholder="Password" autocomplete="off">
+          <i class="lock icon"></i>
+        </div>
+      </div>
+      <br>
+      <br>
+      <button type="submit" id="login-submit" class="ui big inverted green labeled icon button">
+        <i class="signup icon"></i>
+        Log In
+      </button>
+    </form>
+    </div>
+  <!-- <div class="ui success message">
+    <i class="close icon"></i>
+  <div class="header">
+    Your application has been accepted.
+  </div>
+    <p>You may now log-in with the username you have chosen</p>
+  </div> -->
+  <!-- <div class="ui error message">
+    <i class="close icon"></i>
+  <div class="header">
+    Your application has been denied due to the following errors:
+  </div>
+  <ul class="list">
+    <li>You did not supply a valid email address</li>
+    <li>You're already one of the cool kids</li>
+  </ul>
+  </div> -->
+</div>
+<!-- END OF SIGN UP MODAL -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- DUMMY SCORE RESULT MODAL -->
+      <!-- <div class="ui basic modal">
+        <i class="close icon"></i>
+        <div class="header">
+          <div class="left-modal-head">
+            <h4>YOUR HIPSCORE IS 8: YOU SHOULD LIVE IN FORT GREENE
+            </h4>
+          </div>
+          <div class="right-modal-head">
+            <h4></h4>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="image content">
+          <div class="image">
+            <i class="archive icon"></i>
+          </div>
+          <div class="description">
+            <p>Maybe instead of a screenshot, we could do a text description of the neighborhood instead with a single image - like image to the left.</p>
+          </div>
+        </div>
+        <div class="actions">
+          <a href="login_modal.html"><div class="two fluid ui inverted buttons">
+            <div class="ui green basic inverted button">
+              <i class="bicycle icon"></i>
+              LOG IN
+            </div>
+            <div class="ui green basic inverted button">
+              <i class="paw icon"></i>
+              Get Your Custom Hipscore
+            </div>
+          </div></a>
+        </div>
+      </div> -->
+  <!-- END OF DUMMY SCORE MODAL -->
+
+
+
+<!-- end of container -->
+    </div>
+      </div>
+<!-- end of container -->
+<!-- V SCRIPTS AND SHIT V -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" charset="utf-8"></script>
+    <!-- Cookies lib -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.1/js.cookie.min.js" charset="utf-8"></script>
+    <!-- Local JavaScript -->
+    <!-- ADD AJAX JS FILE HERE -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+    <script src="../js/scripts.js" charset="utf-8"></script>
+    <!-- my front end file - CC -->
+  </body>
+</html>

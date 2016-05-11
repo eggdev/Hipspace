@@ -1,6 +1,5 @@
 var hipspace = {};
 
-
 //HIPSTER PLACES
 
 //40.689420, -73.968094
@@ -8,6 +7,7 @@ var fortGreene = {
   name: "Fort Greene",
   latitude: '40.689420',
   longitude: '-73.968094',
+  score: 8,
   venues: []
 }
 
@@ -16,6 +16,7 @@ var brooklynHeights = {
   name: 'Brooklyn Heights',
   latitude: '40.696197',
   longitude: '-73.988433',
+  score: 7,
   venues: []
 }
 
@@ -24,14 +25,16 @@ var redHook = {
   name: 'Red Hook',
   latitude: '40.677178',
   longitude: '-74.006497',
+  score: 5,
   venues: []
 }
 
-//40.710612, -73.956657
+//40.714088, -73.954456
 var williamsburg = {
   name: "Williamsburg",
-  latitude: '40.710612',
-  longitude: '-73.956657',
+  latitude: '40.714088',
+  longitude: '-73.954456',
+  score: 11,
   venues: []
 }
 
@@ -40,6 +43,7 @@ var lowerEastSide = {
   name: 'Lower East Side',
   latitude: '40.722208',
   longitude: '-73.986307',
+  score: 9,
   venues: [ ]
 };
 
@@ -49,6 +53,7 @@ var eastNewYork = {
   name: "East New York",
   latitude: '40.662206' ,
   longitude: '-73.882501',
+  score: 4,
   venues: []
 }
 
@@ -57,6 +62,7 @@ var concourse = {
   name: 'Concourse Village',
   latitude: '40.834517',
   longitude: '-73.917673',
+  score: 3,
   venues: []
 }
 
@@ -65,6 +71,7 @@ var sunsetPark = {
   name: 'Sunset Park',
   latitude: '40.644525',
   longitude: '-74.010917',
+  score: 2,
   venues: []
 }
 
@@ -73,6 +80,7 @@ var corona = {
   name: 'Corona',
   latitude: '40.745242',
   longitude: '-73.866009',
+  score: 1,
   venues: []
 }
 //
@@ -81,6 +89,7 @@ var brownsville = {
   name: 'Brownsville',
   latitude: '40.663867',
   longitude: '-73.910267',
+  score: 0,
   venues: []
 }
 
@@ -138,7 +147,7 @@ hipspace.makeAJAXRequest = function(arr, catID ){
         }
       }
     }
-  });
+  })
 }
 
 hipspace.getAllAPIinfo = function(loc, categories){
@@ -148,49 +157,68 @@ hipspace.getAllAPIinfo = function(loc, categories){
     }
   }
 }
-
+var map;
 
 function initMap() {
-  var myLatLng = {lat: parseFloat(williamsburg.latitude), lng: parseFloat(williamsburg.longitude)};
+  var myLatLng = {lat: parseFloat($('#hiddenlat').text()), lng: parseFloat($('#hiddenlong').text())};
   // Create a map object and specify the DOM element for display.
-  var map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     center: myLatLng,
     scrollwheel: false,
     zoom: 15
   });
-  // Create a marker and set its position.
-  var marker = new google.maps.Marker({
-    map: map,
-    position: myLatLng,
-    title: 'Hello World!'
+}
+
+function updateCategories(){
+  $('#updateCats').on('click', function(){
+    var locations = [fortGreene, brooklynHeights, redHook, williamsburg, lowerEastSide, eastNewYork, concourse, sunsetPark, corona, brownsville];
+    for(var i=0; i< locations.length; i++){
+      for(var x=0; x< locations[i].venues.length; i++){
+        console.log( locations[i].venues[x] );
+      }
+    }
   });
 }
 
 
+
+
 $(document).ready(function(){
   $('#button').on('click', function(){
-    hipspace.getAllAPIinfo(  locationArray, hipspace.categoryIds);
+    hipspace.getAllAPIinfo( locationArray, hipspace.categoryIds);
   });
+
   $('#submit').on('click', function(e){
     e.preventDefault();
-    $.ajax({
-      method: 'POST',
-      url: '/api/locations',
-      data: lowerEastSide,
-      success: function(){
-        console.log('information sent');
-      }
-    });
+    locations = [fortGreene, brooklynHeights, redHook, williamsburg, lowerEastSide, eastNewYork, concourse, sunsetPark, corona, brownsville];
+    for(var i=0; i< locations.length;i++){
+      $.ajax({
+        method: 'POST',
+        url: '/api/locations',
+        data: locations[i],
+        success: function(){
+          console.log('information sent');
+        }
+      });
+    }
   });
+
+  updateCategories();
+
 
   $('#getLocations').on('click', function(e){
     e.preventDefault();
     $.ajax({
       method:'get',
       url: '/api/locations',
-      success: function( data ){
-        console.log( data );
+      success: function( locations ){
+        console.log(locations);
+        // for(var i=0; i<locations.length; i++){
+        //   for(var x=0; x<locations[i].venues.length; x++){
+        //     console.log(locations[i].venues[x].category);
+        //   }
+        // }
       }
-    })
-  })
+    });
+  });
 });

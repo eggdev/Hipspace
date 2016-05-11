@@ -6,7 +6,7 @@
     <style media="screen">
       #map{
         height: 500px;
-        width: 1000px;
+        width: 800px;
       }
     </style>
   </head>
@@ -14,14 +14,19 @@
     <button type="button" id='button' name="button">CALL TO AJAX</button>
     <button type='button' id='submit' name='Submit'>SUBMIT TO DB</button>
     <button type="button" id='getLocations' name="button">Get From JSON</button>
+    <button type="button" id='updateCats'>Update Categories</button>
+
+    <!-- userData.username %> -->
+    <!-- locationData.name %> -->
 
 
     <div id='map'></div>
 
+    <!-- <span id='hiddenlat'>locationData.latitude %></span>
+    <span id='hiddenlong'>locationData.longitude %></span> -->
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAc9EXE72TMHf3k91hH-uRfKyaj8bftpko&callback=initMap"
-    async defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" charset="utf-8"></script>
     <script src="../js/ajax.js" charset="utf-8"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAc9EXE72TMHf3k91hH-uRfKyaj8bftpko&callback=initMap" async defer></script>
   </body>
 </html>
