@@ -6,10 +6,8 @@
 
     <!-- Semantic UI -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
-
     <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../css/profile_styles.css">
 
     <!-- Local styles -->
@@ -22,82 +20,104 @@
     <!-- Main Container Div -->
     <div class="container">
       <!-- Top Nav Bar - NOT SIGNED IN VERSION -->
-      <nav class="ui inverted clearing segment">
-        <h3 class="ui left floated header" id="logo-thing">
-          Whatup dawg
-        </h3>
-        <h3 class="ui right floated header">
-          Log Out
-        </h3>
-        <h3 class="ui right floated header">
-          |
-        </h3>
-        <h3 class="ui right floated header">
-          Profile
-        </h3>
-      </nav>
+      <nav id="top-bar" class="ui inverted clearing segment">
+       <img class="ui left floated header" src="/images/HipSpaceLogoHoriz-White.svg" alt="HipSpace Logo">
+       <button class="ui right floated inverted basic button">Log Out</button>
+       <a href="/profile"><button class="ui right floated inverted basic button">Profile</button></a>
+       <div class="social-buttons">
+       <a href="http://www.facebook.com"><button class="ui left floated inverted icon basic button">
+         <i class="facebook icon"></i>
+       </button></a>
+       <a href="http://www.twitter.com"><button class="ui left floated inverted icon basic button">
+         <i class="twitter icon"></i>
+       </button></a>
+       <a href="http://www.mail.google.com"><button class="ui left floated inverted icon basic button">
+         <i class="envelope icon"></i>
+       </button></a>
+       </div>
+     </nav>
 
-      <!-- <h1 id="welcome-back">Clyde Davis</h1> -->
+      <h1 id="your-score">Your score is <i id="score">_</i> </h1>
 
 
-      <div class="ui class two column grid">
-        <!--  COLUMN 1 -->
+      <div class="ui stackable three column grid">
+
         <div class="column">
+          <div class="ui raised very padded segment" id="profile-div">
 
-          <div id="profile-div">
             <h2 id="profile-h2">Profile</h2>
 
             <div class="ui horizontal divider">
               <i class=" user icon"></i>
             </div>
 
-            <form class="ui form" id="profile-form">
-              <div class="nine wide required field">
-                <label>Your name:</label>
-                <input type="text" name="name" value="Clyde">
+            <div class='around'>
+              <form class='ui form' id="profile-form">
+                <div class="twelve wide required field">
+                  <label>Your name:</label>
+                  <input type="text" name="name" value="Clyde">
+                  <br>
+                </div>
+
+                <div class="twelve wide required field">
+                <label>Your last name:</label>
+                <input type="text" name="surname" value="Davis">
                 <br>
               </div>
 
-              <div class="nine wide required field">
-              <label>Your last name:</label>
-              <input type="text" name="surname" value="Davis">
-              <br>
-            </div>
+              <div class="twelve wide required field">
+                <label>Your email:</label>
+                <input type="text" name="email" value="clyde@davis.com">
+                <br>
+              </div>
 
-            <div class="nine wide required field">
-              <label>Your email:</label>
-              <input type="text" name="email" value="clyde@davis.com">
-              <br>
-            </div>
-
-            <div class="eight wide required field">
-              <div class="ui form">
-                <div class="field">
-                  <label>Favorite beer:</label>
-                  <select class="ui compact dropdown" form="carform">
-                    <option value=""> Beer</option>
-                    <option value="0">PBR</option>
-                    <option value="1"> Moonshine</option>
-                  </select>
+              <div class="twelve wide required field">
+                <div class="ui form">
+                  <div class="field">
+                    <label>Favorite beer:</label>
+                    <select class="ui compact dropdown" form="carform">
+                      <option value=""> Beer</option>
+                      <option value="0">PBR</option>
+                      <option value="1"> Moonshine</option>
+                    </select>
+                  </div>
                 </div>
               </div>
+
+                <div class="ui animated fade button" id="edit-profile-button">
+                  <div class="visible content">Edit</div>
+                  <div class="hidden content">:)</div>
+                </div>
+
+              </form>
             </div>
-
-              <div class="ui button" id="edit-profile-button">
-                <div class="visible content">Edit</div>
-              </div>
-
-            </form>
 
           </div>
         </div>
 
+        <div class="column">
+          <div class="ui raised very padded segment" id="saved-listings">
+            <h2 id="preferences-h2">Saved Listings</h2>
 
-        <!-- COLUMN 2 -->
+            <div class="ui horizontal divider">
+              <i class="home icon"></i>
+            </div>
+
+            <div class="">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <hr>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
         <div class= "column">
-
-          <div id="preferences-div">
-            <h2 id="preferences-h2">Your Preferences</h2>
+          <div class="ui raised very padded segment" id="preferences-div">
+            <h2 id="preferences-h2">Update Your Score</h2>
 
             <div class="ui horizontal divider">
               <i class=" options icon"></i>
@@ -109,47 +129,47 @@
                 <tr>
                   <td>
                     <div class="ui toggle checkbox">
-                    <input type="checkbox" name="parks" value="">
-                    <label>Indie Theatre</label>
-                    <br>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="ui toggle checkbox">
-                    <input type="checkbox" name="dog cafes" value="">
-                    <label>Coffee Shops</label>
-                    <br>
-                  </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui toggle checkbox">
-                    <input type="checkbox" name="yoga studios" value="">
-                    <label>Yoga Studios</label>
-                    <br>
-                  </div>
-                  </td>
-                  <td>
-                    <div class="ui toggle checkbox">
-                    <input type="checkbox" name="quiet" value="">
-                    <label>Farmer's market</label></td>
-                    <br>
-                    <br>
-                    </div>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui toggle checkbox">
-                    <input type="checkbox" name="dive bars" value="">
+                    <input type="checkbox" name="parks" value="1">
                     <label>Dive Bars</label>
                     <br>
                     </div>
                   </td>
                   <td>
                     <div class="ui toggle checkbox">
-                    <input type="checkbox" name="vinyl stores" value="">
-                    <label>Vinyl Stores</label>
+                    <input type="checkbox" name="dog parks" value="1">
+                    <label>Dog Parks</label>
+                    <br>
+                  </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="ui toggle checkbox">
+                    <input type="checkbox" name="yoga studios" value="1">
+                    <label>Yoga Studios</label>
+                    <br>
+                  </div>
+                  </td>
+                  <td>
+                    <div class="ui toggle checkbox">
+                    <input type="checkbox" name="indie theater" value="1">
+                    <label>Indie Theatres</label>
+                    <br>
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="ui toggle checkbox">
+                    <input type="checkbox" name="thrift shops" value="1">
+                    <label>Thrift Shops</label>
+                    <br>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="ui toggle checkbox">
+                    <input type="checkbox" name="vinyl records" value="1">
+                    <label>Vinyl Records</label>
                     <br>
                     </div>
                   </td>
@@ -157,21 +177,56 @@
                 <tr>
                   <td>
                     <div class="ui toggle checkbox">
-                      <input type="checkbox" name="pinball" value="">
-                      <label>Pinball</label>
+                      <input type="checkbox" name="coffee shops" value="1">
+                      <label>Coffee Shops</label>
+                      <br>
                     </div>
                   </td>
                   <td>
                     <div class="ui toggle checkbox">
-                    <input type="checkbox" name="thrift shops" value="">
-                  <label>Thrift Shops</label></td>
+                    <input type="checkbox" name="bike stores" value="1">
+                  <label>Bike Stores</label>
+                  <br>
                   </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="ui toggle checkbox">
+                      <input type="checkbox" name="farmers market" value="1">
+                      <label>Farmers Market</label>
+                      <br>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="ui toggle checkbox">
+                    <input type="checkbox" name="bike stores" value="1">
+                  <label>Street Fairs</label>
+                  <br>
+                  </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="ui toggle checkbox">
+                      <input type="checkbox" name="art galleries" value="1">
+                      <label>Art Galleries</label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="ui toggle checkbox">
+                    <input type="checkbox" name="whisky distillery" value="1">
+                  <label>Whisky Distilleries</label>
+                  </div>
+                  </td>
                 </tr>
               </table>
-              <div class="ui animated button" id="edit-preferences-button">
-                <div class="visible content">Edit</div>
-                <div class="hidden content">
-                  :)
+              <div class="button-div">
+                <div class="ui animated fade button middle aligned" id="save-preferences-button">
+                  <div class="visible content">Update</div>
+                  <div class="hidden content">
+                    Now
+                  </div>
                 </div>
               </div>
 
@@ -186,6 +241,10 @@
 
     <div class="owl">
       <img id="owl" src="http://i.imgur.com/6PFckkH.png" alt="" />
+    </div>
+
+    <div class="drop">
+      <img id="raindrop" src="/images/raindrop.png" alt="" />
     </div>
 <!-- V SCRIPTS AND SHIT V -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" charset="utf-8"></script>
