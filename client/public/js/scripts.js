@@ -149,18 +149,13 @@ function myformposted(data) {
     var $background = $('.bg');
     $background.css("top", ($scrolled * -1) + "px");
 // logo bar thing
-    var $logoBox = $('#big-logo');
-    $logoBox.css("top", ($scrolled * -2) + "px");
-// custom hipscore
-    var $scoreBox = $('#hipscore');
-    $scoreBox.css("top", ($scrolled * -2) + "px");
-// dummy listings + ads
-    var $listingBox = $('#adspace');
-    $listingBox.css("top", ($scrolled * -2) + "px");
 
-// hipster owl
-    var $hipsterOwl = $('#hipster-owl');
-    $hipsterOwl.css("top", ($scrolled * 0.5) + "px");
+    var $logoBox = $('#big-logo');
+    $logoBox.css("top",  ($scrolled * .5) + "px");
+// custom hipscore
+    var $currentTop = $("#main-content").css("top")
+    var $content = $("#main-content");
+    $content.css('top', $currentTop + (($scrolled * -1) + "px"));
 });
 
 // MODAL FUNCTIONS
