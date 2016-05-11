@@ -167,6 +167,7 @@ color: snow;
   /*text-align: center;*/
   z-index: 1;
   position: relative;
+  marign: 0 auto;
 }
 
 #hipscore h2 {
