@@ -54,6 +54,30 @@
 // FORM VALIDATION NOT WORKING
 // $('.ui.form').form(validationRules, { onSuccess: submitForm });
 // END FORM VALIDATION NOT WORKING
+var map;
+function initMap() {
+  var myLatLng = {lat: parseFloat(williamsburg.latitude), lng: parseFloat(williamsburg.longitude)};
+  // Create a map object and specify the DOM element for display.
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: myLatLng,
+    scrollwheel: false,
+    draggable: false,
+    zoom: 15
+  });
+}
+
+function createMarkers(){
+  for(var i=0; i< williamsburg.venues.length; i++){
+    if(williamsburg.venues[i].category == 'Bar'){
+      venueLoc = {lat: williamsburg.venues[i].lat, lng: williamsburg.venues[i].long }
+      var marker = new google.maps.Marker({
+        map: map,
+        position: venueLoc,
+        title: williamsburg.venues[i].name
+      });
+    }
+  }
+}
 
 // BEGINNING OF LATEST VERSION FORM VALIDATION
 $(document).ready(function() {
@@ -133,6 +157,10 @@ function myformposted(data) {
 // dummy listings + ads
     var $listingBox = $('#adspace');
     $listingBox.css("top", ($scrolled * -2) + "px");
+
+// hipster owl
+    var $hipsterOwl = $('#hipster-owl');
+    $hipsterOwl.css("top", ($scrolled * 0.5) + "px");
 });
 
 // MODAL FUNCTIONS
@@ -149,6 +177,16 @@ function checkbox(){
 ;
 }
 checkbox();
+
+// DROPDOWN FUNCTIONS
+function dropdown(){
+    $('.ui.dropdown')
+  .dropdown({
+    maxSelections: 1
+  })
+;
+}
+dropdown();
 
 
 // SOCIAL MEDIA BUTTON JIGGGLE - NOT WORKING
