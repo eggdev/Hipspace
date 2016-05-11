@@ -17,6 +17,9 @@ label{
 td{
   margin-bottom: 20px;
 }
+.savings-content{
+  margin: 10px;
+}
 #top-bar{
   z-index: 50;
   top: 0;
@@ -28,6 +31,7 @@ td{
   width: 15%;
   height: 80%;
   margin-right: 4%;
+  margin-bottom: 0;
   margin-left: 0.5%;
   padding-top: 0.5%;
   bottom: 0;
