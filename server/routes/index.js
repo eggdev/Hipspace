@@ -23,21 +23,19 @@ router.get('/hipmap', function(req, res, next){
     //     });
     //   });
     // }
-
-
   var currentUser = JSON.parse(req.cookies.current_user);
   if(currentUser){
     // console.log(currentUser);
-
     User.findOne({username: currentUser.username }, function(err, userData){
         Location.findOne({score: userData.hipscore }, function(err, locationData){
           res.render('hipmap', { userData: userData, locationData: locationData })
         });
       });
+    }
     // }else {
     //   res.render('login_modal');
     // }
-  }
+});
 
 
 router.get('/profile', function(req, res, next) {
