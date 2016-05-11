@@ -142,12 +142,20 @@ function modal(){
 }
 modal();
 
+// THIS FUNCTION IS NOT WORKING FOR SOME REASON
+function loginModal(){
+    $('#get-score-button').click($('.ui.modal')
+        .modal('show')
+    );
+}
+modal();
+
 // CHECKBOX FUNCTIONS
 function checkbox(){
   $('.ui.checkbox')
   .checkbox();
 }
-checkbox()
+checkbox();
 
 $(".ui.checkbox").on('click', function(){
   // checkbox();
