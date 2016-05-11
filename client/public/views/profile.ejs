@@ -40,14 +40,7 @@
       <h1 id="your-score">Your score is <i id="score">_</i> </h1>
 
 
-      <div class="ui stackable two column grid">
-
-        <!--  COLUMN 1 -->
-        <!-- <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
-      </div> -->
+      <div class="ui stackable three column grid">
 
         <div class="column">
           <div class="ui raised very padded segment" id="profile-div">
@@ -58,55 +51,70 @@
               <i class=" user icon"></i>
             </div>
 
-            <form class="ui form" id="profile-form">
-              <div class="nine wide required field">
-                <label>Your name:</label>
-                <input type="text" name="name" value="Clyde">
+            <div class='around'>
+              <form class='ui form' id="profile-form">
+                <div class="twelve wide required field">
+                  <label>Your name:</label>
+                  <input type="text" name="name" value="Clyde">
+                  <br>
+                </div>
+
+                <div class="twelve wide required field">
+                <label>Your last name:</label>
+                <input type="text" name="surname" value="Davis">
                 <br>
               </div>
 
               <div class="twelve wide required field">
-              <label>Your last name:</label>
-              <input type="text" name="surname" value="Davis">
-              <br>
-            </div>
+                <label>Your email:</label>
+                <input type="text" name="email" value="clyde@davis.com">
+                <br>
+              </div>
 
-            <div class="nine wide required field">
-              <label>Your email:</label>
-              <input type="text" name="email" value="clyde@davis.com">
-              <br>
-            </div>
-
-            <div class="eight wide required field">
-              <div class="ui form">
-                <div class="field">
-                  <label>Favorite beer:</label>
-                  <select class="ui compact dropdown" form="carform">
-                    <option value=""> Beer</option>
-                    <option value="0">PBR</option>
-                    <option value="1"> Moonshine</option>
-                  </select>
+              <div class="twelve wide required field">
+                <div class="ui form">
+                  <div class="field">
+                    <label>Favorite beer:</label>
+                    <select class="ui compact dropdown" form="carform">
+                      <option value=""> Beer</option>
+                      <option value="0">PBR</option>
+                      <option value="1"> Moonshine</option>
+                    </select>
+                  </div>
                 </div>
               </div>
+
+                <div class="ui animated fade button" id="edit-profile-button">
+                  <div class="visible content">Edit</div>
+                  <div class="hidden content">:)</div>
+                </div>
+
+              </form>
             </div>
-
-              <div class="ui animated fade button" id="edit-profile-button">
-                <div class="visible content">Edit</div>
-                <div class="hidden content">:)</div>
-              </div>
-
-            </form>
 
           </div>
         </div>
-        <!-- <div class="column">
 
-        </div> -->
-        <!-- <div class="column">
+        <div class="column">
+          <div class="ui raised very padded segment" id="saved-listings">
+            <h2 id="preferences-h2">Saved Listings</h2>
 
-        </div> -->
+            <div class="ui horizontal divider">
+              <i class="home icon"></i>
+            </div>
 
-        <!-- COLUMN 2 -->
+            <div class="">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <hr>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
         <div class= "column">
           <div class="ui raised very padded segment" id="preferences-div">
             <h2 id="preferences-h2">Update Your Score</h2>
@@ -213,10 +221,12 @@
                   </td>
                 </tr>
               </table>
-              <div class="ui animated fade button" id="save-preferences-button">
-                <div class="visible content">Update</div>
-                <div class="hidden content">
-                  Now
+              <div class="button-div">
+                <div class="ui animated fade button middle aligned" id="save-preferences-button">
+                  <div class="visible content">Update</div>
+                  <div class="hidden content">
+                    Now
+                  </div>
                 </div>
               </div>
 
@@ -224,13 +234,17 @@
           </div>
         </div>
 
-      </div> <!-- hanging out -->
+      </div>
 <!-- end of container -->
     </div>
 <!-- end of container -->
 
     <div class="owl">
       <img id="owl" src="http://i.imgur.com/6PFckkH.png" alt="" />
+    </div>
+
+    <div class="drop">
+      <img id="raindrop" src="/images/raindrop.png" alt="" />
     </div>
 <!-- V SCRIPTS AND SHIT V -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" charset="utf-8"></script>

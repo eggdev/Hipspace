@@ -23,6 +23,12 @@ td{
   width: 8.5%;
   bottom: 0;
 }
+#raindrop {
+  position: absolute;
+  width: 3.5%;
+  top: 0;
+  left: 400px;
+}
 
 #logo-thing{
   font-family: Rock Salt;
@@ -35,51 +41,47 @@ td{
   color: black;
   font-size: 60px;
   text-align: center;
+  animation: fadein 4s;
 }
 
 #profile-div{
   width: 90%;
-  height: 430px;
+  height: 430px, auto;
   border-radius: 20px;
   padding: 10px 0px 10px 0px;
-  /*margin-top: 30px;*/
-  /*margin-left: 52px;*/
   background-color: rgba(255,255,255,1);
   animation: fadein 3.5s;
   margin: 30px auto;
-}
-
-#preferences-div{
-  width: 90%;
-  height: 430px;
-  border-radius: 20px;
-  padding-top: 20px;
-  /*margin-top: 30px;*/
-  margin: 30px auto;
-  /*margin-right: 52px;*/
-  background-color: rgba(255,255,255,1);
-  animation: fadein 3.5s;
-}
-
-
-@keyframes fadein {
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-
-#profile-form{
-  margin-left: 100px;
   text-align: center;
 }
-
-#preferences-form{
-  padding: 5%;
+.around{
+  width: 100%;
+  text-align: center;
 }
+#profile-form{
+  position: relative;
+}
+#saved-listings{
+  width: 100%;
+  margin: 30px auto;
+  border-radius: 20px;
+  background-color: rgba(255,255,255,1);
+  animation: fadein 3.5s;
+}
+#preferences-div{
+  width: 90%;
+  height: 420px, auto;
+  border-radius: 20px;
+  padding-top: 20px;
+  padding-bottom: 0;
+  margin: 30px auto;
+  background-color: rgba(255,255,255,1);
+  animation: fadein 3.5s;
+}
+#preferences-form{
+  padding: 5% 5% 0 5%;
 
+}
 #profile-h2{
   font-family: Lucida Grande;
   font-size: 30px;
@@ -93,14 +95,47 @@ td{
   text-align: center;
   color: black;
 }
-
-#edit-profile-button{
-  margin-right: 120px;
-  margin-top: 5px;
+#save-preferences-button{
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.ui.form .twelve.wide.field{
+  padding: 8px;
+  margin: 0 auto;
+}
+.button-div {
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+#profile-div .ui.horizontal.divider{
+  margin-bottom: 0;
+}
+#preferences-div .ui.horizontal.divider{
+  margin-bottom: 0;
 }
 
-#save-preferences-button{
-  text-align: center;
-  margin-top: 60px;
-  margin-left: 140px;
+@media (max-width: 760px) {
+  #saved-listings {
+    width: 90%;
+  }
+  #profile-div {
+    width: 50%;
+  }
+  #preferences-div {
+    width: 70%;
+  }
+  #saved-listings {
+    width: 70%;
+  }
+}
+
+@keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
 }

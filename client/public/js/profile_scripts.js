@@ -1,6 +1,7 @@
 $(function(){
   checkbox();
   movingOwl();
+  raindrop();
   $('select.dropdown').dropdown();
   newScore();
 })
@@ -17,6 +18,19 @@ function movingOwl(){
     $owl.css('left', distance + 'px');
     if(distance < -300) {
       distance = 1200;
+    } else {
+      distance -= 5;
+    }
+  }, 80);
+}
+
+function raindrop(){
+  var $drop = $("#raindrop");
+  var distance = 900;
+  setInterval(function(){
+    $drop.css('top', distance + 'px');
+    if(distance < -300) {
+      distance = 900;
     } else {
       distance -= 5;
     }
