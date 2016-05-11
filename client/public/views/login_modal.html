@@ -80,10 +80,15 @@
         <span class="snow">OR</span>
         </div>
         <div class="center aligned column">
-          <a href="quiz_modal.html"><button type="submit" class="ui big inverted green labeled icon button">
+          <form id='login-form' class='ui inverted form'>
+            <input type="text" name="username" value="" placeholder='username'>
+            <input type="password" name="password" value="" placeholder='password'>
+            <input class='ui button' id='login-submit' value="Submit">
+          </form>
+          <!-- <a href="quiz_modal.html"><button type="submit" class="ui big inverted green labeled icon button">
             <i class="signup icon"></i>
             Log In
-          </button></a>
+          </button></a> -->
         </div>
         <!-- <div class="ui success message">
           <i class="close icon"></i>
@@ -120,7 +125,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
     <script src="../js/scripts.js" charset="utf-8"></script>
     <script src="../js/users.js" charset="utf-8"></script>
-    <script src="../js/sessions.js" charset="utf-8"></script>
     <!-- my front end file - CC -->
   </body>
 </html>

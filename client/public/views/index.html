@@ -36,7 +36,7 @@
         <h3 class="ui left floated header">
           Hipspace
         </h3>
-        <button class="ui right floated inverted basic button">Log Out</button>
+        <button class="ui right floated inverted basic button" id='logout'>Log Out</button>
         <button class="ui right floated inverted basic button">Profile</button>
         <div class="social-buttons">
         <button class="ui left floated inverted icon basic button">
@@ -69,7 +69,8 @@
 <!-- RIGHT SIDE MAP -->
         <div class="ui raised very padded right floated segment">
           <h2 class="ui header"><span class="purple-head">YOUR IDEAL 'HOOD</span></h2>
-          <img src="http://halopets.com/wp-content/uploads/2015/03/map-placeholder.png">
+          <!-- <img src="http://halopets.com/wp-content/uploads/2015/03/map-placeholder.png"> -->
+          <div id='map'></div>
         </div>
 <!-- LEFT SIDE CHECKBOXES -->
         <div class="ui raised very padded left floated segment">
@@ -194,6 +195,8 @@
     </div>
 <!-- end of container -->
 <!-- V SCRIPTS AND SHIT V -->
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" charset="utf-8"></script>
     <!-- Cookies lib -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.1/js.cookie.min.js" charset="utf-8"></script>
@@ -202,6 +205,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
     <!-- Local JavaScript -->
     <script src="../js/scripts.js" charset="utf-8"></script>
+    <script src="../js/users.js" charset="utf-8"></script>
+    <script src="../js/ajax.js" charset="utf-8"></script>
+    <script src="../js/maps.js" charset="utf-8"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAc9EXE72TMHf3k91hH-uRfKyaj8bftpko&callback=initMap" async defer></script>
 
   </body>
 </html>

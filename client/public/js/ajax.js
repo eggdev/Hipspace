@@ -1,6 +1,5 @@
 var hipspace = {};
 
-
 //HIPSTER PLACES
 
 //40.689420, -73.968094
@@ -147,31 +146,6 @@ hipspace.getAllAPIinfo = function(loc, categories){
   for(var x=0; x<loc.length; x++){
     for(var i=0; i<categories.length; i++){
       hipspace.makeAJAXRequest(loc[x], categories[i] )
-    }
-  }
-}
-var map;
-
-function initMap() {
-  var myLatLng = {lat: parseFloat(williamsburg.latitude), lng: parseFloat(williamsburg.longitude)};
-  // Create a map object and specify the DOM element for display.
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: myLatLng,
-    scrollwheel: false,
-    draggable: false,
-    zoom: 15
-  });
-}
-
-hipspace.createMarkers = function(){
-  for(var i=0; i< williamsburg.venues.length; i++){
-    if(williamsburg.venues[i].category == 'Bar'){
-      venueLoc = {lat: williamsburg.venues[i].lat, lng: williamsburg.venues[i].long }
-      var marker = new google.maps.Marker({
-        map: map,
-        position: venueLoc,
-        title: williamsburg.venues[i].name
-      });
     }
   }
 }
