@@ -36,7 +36,7 @@ $(document).ready(function(){
       success: function(data){
         Cookies.set('jwt_token', data.token);
         Cookies.set('current_user', data.current_user);
-        window.location.replace('/ajax');
+        window.location.replace('/');
         //Don't reload when live, but call the remove modal function.
       }
     });

@@ -171,3 +171,7 @@ color: snow;
   background-color: gold;
   cursor: pointer;
 }
+
+.hidden {
+  display: none;
+}
