@@ -13,19 +13,12 @@
 <!-- For now, keep the .. to be able to do my shit without having the server running. When we're using API stuff,take those out and run nodemon + all the other shit or your scripts files won't load - dummy - CC  -->
   </head>
   <body>
-<!-- Main Container Div -->
-    <div class="container">
 <!-- Top Nav Bar - SIGNED IN VERSION -->
       <nav id="top-bar" class="ui inverted clearing segment">
-        <h3 class="ui left floated header">
-          Hipspace
-        </h3>
-
-        <button class="ui right floated inverted basic button" id='logout'>Log Out</button>
-        <button class="ui right floated inverted basic button">Profile</button>
+        <a href="/index"><img class="ui left floated header" src="/images/HipSpaceLogoHoriz-White.svg" alt="HipSpace Logo"></a>
 
         <button class="ui right floated inverted basic button">Log Out</button>
-        <a href="profile.html"><button class="ui right floated inverted basic button">Profile</button></a>
+        <a href="/profile"><button class="ui right floated inverted basic button">Profile</button></a>
 
         <div class="social-buttons">
         <a href="http://www.facebook.com"><button class="ui left floated inverted icon basic button">
@@ -37,33 +30,37 @@
         <a href="http://www.mail.google.com"><button class="ui left floated inverted icon basic button">
           <i class="envelope icon"></i>
         </button></a>
-      </div>
+        </div>
       </nav>
 <!-- END OF Top Nav Bar - SIGNED IN VERSION -->
 
 <!-- LOGO BOX (background in parallax) -->
       <div id="big-logo">
-        <p><span class="logo-text">_Hipspace_</span></p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <div class="ui inverted animated fade button" tabindex="0">
+        <img src="/images/HipSpaceLogoOutl-White.svg" alt="Hipspace Logo" />
+        <p>You carefully cultivate your appearance. </p>
+        <p>You know the difference between Barterhouse and Speakeasy.  </p>
+        <p>You would rather give up coffee than go to Starbucks.</p>
+        <p>You are in the right place! HipSpace is the only real estate listing service that focuses on the the specific neighborhood amenities that matter most to you.</p>
+        <p>Simply fill out the brief questionnaire and register with HipSpace to see a custom recommendation based on your unique interests, and save listings to your account for later perusal! </p>
+        <a href="/quiz_modal.ejs"><div class="ui inverted animated fade button" tabindex="0">
           <div class="visible content">Get Your Custom Hipspace Score</div>
           <div class="hidden content">
-            Sign Up Now
+            Take The Quiz!
           </div>
-        </div>
+        </div></a>
       </div>
 <!-- END OF LOGO BOX -->
 <!-- PERSONALIZED HIPSCORE LANDING SPOT -->
+    <div id="main-content">
       <div id="hipscore" class="ui raised very padded text container segment">
-<!-- RIGHT SIDE MAP -->
+<!-- PERSONALIZED NEIGHBORHOOD RIGHT SIDE MAP -->
         <div class="ui raised very padded right floated segment">
           <h2 class="ui header"><span class="purple-head">YOUR IDEAL 'HOOD</span></h2>
-          <!-- <img src="http://halopets.com/wp-content/uploads/2015/03/map-placeholder.png"> -->
           <div id='map'></div>
         </div>
-<!-- LEFT SIDE CHECKBOXES -->
+<!-- LEFT SIDE TOGGLES CONTROLLING MAP PINS -->
         <div class="ui raised very padded left floated segment">
-          <h2 class="ui header">HIPSTER SHIT</h2>
+          <h2 class="ui header"><span class="purple-head">HIPSTER SHIT</span></h2>
           <div class="ui form">
             <div class="inline field">
             <div class="ui toggle checkbox">
@@ -143,104 +140,119 @@
 
 <!-- ADS AND APARTMENT LISTINGS -->
       <div id="adspace" class="ui raised very padded text container segment">
-
-
+<!-- APARTMENT LISTINGS HEADER -->
         <div id="listings" class="ui raised very padded right floated segment">
           <h2 class="ui header"><span class="purple-head">AVAILABLE LISTINGS</span></h2>
-            <div class="yo">
-              <div class="container">
+<!-- INDIVIDUAL APARTMENT LISTINGS -->
+            <div class="rental-container">
+<!-- LISTING 1 -->
+              <div class="conatiner">
                 <div class="photo">
-                  <img src="http://ivory.blackmonk.com/site_media/photos/gallery/d05ad382-c785-40b1-9318-b80569ef2b51.jpg" alt="" />
+                  <img src="/images/listing-1.jpg" alt="" />
                 </div>
                 <div class="text">
-              <h2>119 McKibbin St #2D</h2> <div class="save"><b>★ SAVE</b></div>
-              <br>
-              <p>$2150<i> for rent</i></p>
-              <hr>
-              <p> 1 bed | 1 bath </p>
-              <hr>
-              <p> Condo in <a href="#">Williamsburg </a></p>
-            </div>
-            <div class="clear"></div>
-          </div>
-          <hr>
-          <div class="container">
-            <div class="photo">
-              <img src="http://ivory.blackmonk.com/site_media/photos/gallery/d05ad382-c785-40b1-9318-b80569ef2b51.jpg" alt="" />
-            </div>
-              <div class="text">
-                <h2>119 McKibbin St #2D</h2>
-                <br>
-                <p>$2150<i> for rent</i></p>
+                  <div class="rental-head">
+                    <div class="listing-headline"><h2>356 Berry St. #8J</h2></div>
+                    <div class="save"><b>★ SAVE</b></div>
+                    <div class="clear"></div>
+                  </div>
+                  <br>
+                  <br>
+                  <div class="rental-body">
+                  <br>
+                    <p>$2500<i> rent</i></p>
+                    <hr>
+                    <p> Studio </p>
+                    <hr>
+                    <p> Apartment | <a href="http://www.trulia.com/for_rent/5274_nh/map_v/tiles:1%7Cpoints:1_crime"> Crime Map & More Listings</a></p>
+                  </div>
+                </div>
                 <hr>
-                <p> 1 bed | 1 bath </p>
-                <hr>
-                <p> Condo in <a href="#">Williamsburg </a></p>
               </div>
-              <div class="clear"></div>
-            </div>
-            <hr>
-          <div class="container">
-            <div class="photo">
-              <img src="http://www.book-a-flat.com/images/paris-salon-2.jpg" alt="" />
-            </div>
-              <div class="text">
-                <h2>119 McKibbin St #2D</h2>
-                <br>
-                <p>$2150<i> for rent</i></p>
+<!-- LISTING 2 -->
+              <div class="conatiner">
+                <div class="photo">
+                  <img src="/images/listing-2.jpg" alt="" />
+                </div>
+                <div class="text">
+                  <div class="rental-head">
+                    <div class="listing-headline"><h2>119 McKibbin St #2D</h2></div>
+                    <div class="save"><b>★ SAVE</b></div>
+                    <div class="clear"></div>
+                  </div>
+                  <br>
+                  <br>
+                  <div class="rental-body">
+                  <br>
+                    <p>$5500<i> rent</i></p>
+                    <hr>
+                    <p> 2 bed | 1 bath </p>
+                    <hr>
+                    <p> Condo | <a href="http://www.trulia.com/for_rent/5274_nh/map_v/tiles:1%7Cpoints:1_crime"> Crime Map & More Listings</a></p>
+                  </div>
+                </div>
                 <hr>
-                <p> 1 bed | 1 bath </p>
-                <hr>
-                <p> Condo in <a href="#">Williamsburg </a></p>
               </div>
-              <div class="clear"></div>
-            </div>
-          </div>
-        </div>
+<!-- LISTING 3 -->
+              <div class="conatiner">
+                <div class="photo">
+                  <img src="/images/listing-3.jpg" alt="" />
+                </div>
+                <div class="text">
+                  <div class="rental-head">
+                    <div class="listing-headline"><h2>1732 Union Ave. #B</h2></div>
+                    <div class="save"><b>★ SAVE</b></div>
+                    <div class="clear"></div>
+                  </div>
+                  <br>
+                  <br>
+                  <div class="rental-body">
+                  <br>
+                    <p>$3300<i> rent</i></p>
+                    <hr>
+                    <p> 1 bed | 1 bath </p>
+                    <hr>
+                    <p> Single Family Home | <a href="http://www.trulia.com/for_rent/5274_nh/map_v/tiles:1%7Cpoints:1_crime"> Crime Map & More Listings</a></p>
+                  </div>
+                </div>
+                <hr>
+              </div>
 
+            </div>
+        </div>
+<!-- ADVERTISEMENTS -->
         <div id="ads" class="ui raised very padded left floated segment">
-          <h2 class="ui header"><span class="purple-head">LOCAL ESTABLISHMENTS</span></h2>
-          <img src="http://pscfo.org/wp-content/uploads/2014/05/Ad-Placeholder-390x125-Gray8.gif">
+          <h2 class="ui header"><span class="purple-head">LOCAL WARES</span></h2>
+          <img src="/images/ad-carpet.png">
           <br>
           <img src="http://pscfo.org/wp-content/uploads/2014/05/Ad-Placeholder-390x125-Gray8.gif">
           <br>
           <img src="http://pscfo.org/wp-content/uploads/2014/05/Ad-Placeholder-390x125-Gray8.gif">
         </div>
+      </div>
       </div>
 <!-- END OF PERSONALIZED HIPSCORE LANDING SPOT -->
 
 
+
+
+<!-- end of container -->
+    </div>
+<!-- end of container -->
+
 <!-- BACKGROUND IMAGE -->
-      <div class="bg"></div>
-<!-- END BACKGROUND WOOD IMAGE -->
-<!-- FOOTER -->
-  <footer>
-    <div class="ui inverted menu">
-      <a class="item">Log In</a>
-      <a class="item">Profile</a>
-      <div class="right menu">
-        <a class="item">Sign Up</a>
-        <a class="item">Home</a>
-      </div>
-    </div>
-  </footer>
-<!-- END FOOTER -->
+<div class="bg"></div>
 
-
-
-
-<!-- end of container -->
-    </div>
-<!-- end of container -->
-<!-- V SCRIPTS AND SHIT V -->
-
-
+<<<<<<< HEAD
 
   <!-- hidden -->
   <span class='hidden' id='hiddenloc'><%= locationData.name %></span>
   <span class='hidden' id='hiddenlat'><%= locationData.latitude %></span>
   <span class='hidden' id='hiddenlong'><%= locationData.longitude %></span>
 
+=======
+<!-- V SCRIPTS AND SHIT V -->
+>>>>>>> 4605304839bfbe7ffb8aba715352e4730689633a
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" charset="utf-8"></script>
     <!-- Cookies lib -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.1/js.cookie.min.js" charset="utf-8"></script>
