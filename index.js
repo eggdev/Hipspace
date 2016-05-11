@@ -32,7 +32,6 @@ app.use(express.static('client/public/'));
 
 app.use('/', indexRouter);
 
-
 app.use('/api/auth', apiAuthRouter);
 app.use('/api/users', apiUsersRouter);
 app.use('/api/locations', locationsRouter);

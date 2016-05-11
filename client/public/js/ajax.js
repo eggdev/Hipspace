@@ -150,7 +150,6 @@ hipspace.getAllAPIinfo = function(loc, categories){
   }
 }
 
-
 $(document).ready(function(){
   $('#button').on('click', function(){
     hipspace.getAllAPIinfo(  locationArray, hipspace.categoryIds);

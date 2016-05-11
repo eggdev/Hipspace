@@ -24,7 +24,7 @@
       <!-- Top Nav Bar - NOT SIGNED IN VERSION -->
       <nav class="ui inverted clearing segment">
         <h3 class="ui left floated header" id="logo-thing">
-          Hipspace
+          Whatup dawg
         </h3>
         <h3 class="ui right floated header">
           Log Out
@@ -48,10 +48,10 @@
             <h2 id="profile-h2">Profile</h2>
 
             <div class="ui horizontal divider">
-              <i class="inverted user icon"></i>
+              <i class=" user icon"></i>
             </div>
 
-            <form class="ui inverted form" id="profile-form">
+            <form class="ui form" id="profile-form">
               <div class="nine wide required field">
                 <label>Your name:</label>
                 <input type="text" name="name" value="Clyde">
@@ -71,11 +71,16 @@
             </div>
 
             <div class="eight wide required field">
-              <label>Favorite color:</label>
-              <select name="carlist" form="carform">
-                <option value="brown">Brown</option>
-                <option value="rusty-orange">Rusty Orange</option>
-              </select>
+              <div class="ui form">
+                <div class="field">
+                  <label>Favorite beer:</label>
+                  <select class="ui compact dropdown" form="carform">
+                    <option value=""> Beer</option>
+                    <option value="0">PBR</option>
+                    <option value="1"> Moonshine</option>
+                  </select>
+                </div>
+              </div>
             </div>
 
               <div class="ui button" id="edit-profile-button">
@@ -95,10 +100,10 @@
             <h2 id="preferences-h2">Your Preferences</h2>
 
             <div class="ui horizontal divider">
-              <i class="inverted dashboard icon"></i>
+              <i class=" options icon"></i>
             </div>
 
-            <form class="ui inverted form" id="preferences-form">
+            <form class="ui form" id="preferences-form">
 
               <table style="width:100%">
                 <tr>
@@ -178,6 +183,10 @@
 <!-- end of container -->
     </div>
 <!-- end of container -->
+
+    <div class="owl">
+      <img id="owl" src="http://i.imgur.com/6PFckkH.png" alt="" />
+    </div>
 <!-- V SCRIPTS AND SHIT V -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" charset="utf-8"></script>
     <!-- Cookies lib -->
