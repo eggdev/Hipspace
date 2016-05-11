@@ -10,7 +10,6 @@ var Location = require( '../models/location.js');
 
 
 router.get('/', function(req, res, next) {
-
   res.render('index');
 });
 
@@ -38,7 +37,7 @@ router.get('/hipmap', function(req, res, next){
     // }else {
     //   res.render('login_modal');
     // }
-  })
+  }
 
 
 router.get('/profile', function(req, res, next) {
@@ -63,6 +62,5 @@ router.get('/api/foursquare', function(req, res){
   res.json(data);
 })
 
-// usersRouter.use(passport.authenticate('jwt', { session: false}));
 
-module.exports = router;
+module.exports = router
