@@ -12,7 +12,7 @@ var Location = require( '../models/location.js');
 router.get('/', function(req, res, next) {
   var currentUser = JSON.parse(req.cookies.current_user);
   if(currentUser){
-    console.log(currentUser);
+    // console.log(currentUser);
     User.findOne({username: currentUser.username }, function(err, userData){
       Location.findOne({score: userData.hipscore }, function(err, locationData){
         res.render('index', { userData: userData, locationData: locationData })
@@ -45,5 +45,7 @@ router.get('/login', function(req, res, next){
 router.get('/api/foursquare', function(req, res){
   res.json(data);
 })
+
+// usersRouter.use(passport.authenticate('jwt', { session: false}));
 
 module.exports = router;

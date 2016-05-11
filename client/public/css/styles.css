@@ -93,6 +93,7 @@ color: snow;
 #main-content {
   position:absolute;
   top: 85%;
+  width: 100%;
 }
 
 /* HIPSCORE MAP + TOGGLES CONTAINER */
@@ -104,6 +105,7 @@ color: snow;
   text-align: center;
   z-index: 1;
   position: relative;
+  marign: 0 auto;
 }
 
 /* HIPSCORE MAP */

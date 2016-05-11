@@ -184,10 +184,11 @@ function getChecked(){
     });
   }
 }
+
 function createMarkers( location, category ){
   for(var i=0; i< location.venues.length; i++){
     if(location.venues[i].category == category ){
-      console.log( location.venues[i] );
+      // console.log( location.venues[i] );
       venueLoc = {lat: parseFloat(location.venues[i].lat), lng: parseFloat(location.venues[i].long) }
       // var iconBase = '/images/'
       var marker = new google.maps.Marker({
@@ -199,6 +200,19 @@ function createMarkers( location, category ){
     }
   }
 }
+
+function addVenueInfo( venue, marker) {
+  console.log(marker);
+  var infowindow = new google.maps.InfoWindow();
+  marker.addListener('click', function(){
+    console.log('marker clicked');
+    infowindow.open(map, this);
+    var contentStr = '<h5>'+venue.name+'</h5>';
+    infowindow.setContent(contentStr);
+  });
+}
+
+
 // Sets the map on all markers in the array.
 function setMapOnAll(map) {
   for (var i = 0; i < markers.length; i++) {
@@ -228,8 +242,7 @@ function dropdown(){
     $('.ui.dropdown')
   .dropdown({
     maxSelections: 1
-  })
-;
+  });
 }
 dropdown();
 
