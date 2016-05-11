@@ -38,6 +38,7 @@ router.get('/hipmap', function(req, res, next){
     //   res.render('login_modal');
     // }
   }
+});
 
 
 router.get('/profile', function(req, res, next) {
