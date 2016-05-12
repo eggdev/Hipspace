@@ -21,10 +21,5 @@ usersRouter.get('/', function(req, res, next) {
   });
 });
 
-// usersRouter.put('/:id', function(req, res, next){
-//   User.findOne(req.params.id, function(err, user){
-//     res.json( user );
-//   })
-// })
 
 module.exports = usersRouter;

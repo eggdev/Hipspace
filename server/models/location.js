@@ -13,7 +13,8 @@ var LocationSchema = mongoose.Schema({
       name: { type: String },
       category: { type: String },
       lat: { type: String },
-      long: { type: String }
+      long: { type: String },
+      address: { type: String }
     }]
 });
 
