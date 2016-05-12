@@ -4,7 +4,8 @@
   OH SHIT, THINGS ARE BROKEN, IT'S:
 */
 body {
-  background: lemonchiffon;
+  /*background: lemonchiffon;*/
+  background-color: #EBEBEB;
 }
 
 /* ALL LINKS */
@@ -60,15 +61,16 @@ color: snow;
   margin-left: 0.5%;
 }
 
+/* ====================== */
 /* vvvv THIS IS FOR LOGGED OUT PAGE */
 
 html {
-  background: url('../images/sativa.png') repeat;
+  background: url('../images/backgrounds_logos/sativa.png') repeat;
 }
 
 /* BACKGROUND */
 .logged-out-pages {
-  background: url('../images/sativa.png') repeat;
+  background: url('../images/backgrounds_logos/sativa.png') repeat;
   width: 100%;
   height: 200%;
   top: 0;
@@ -94,6 +96,15 @@ html {
   height: 15em;
   padding-bottom: 3%;
   padding-top: 3%;
+}
+
+.quiz-block-redirect {
+  top: 0;
+  bottom: 0;
+}
+
+.quiz-block-redirect img {
+  position:inherit;
 }
 
 /* HIPSCORE QUIZ */
@@ -126,7 +137,8 @@ html {
   margin-top: 5%;
 }
 
-
+/* ====================== */
+/* ====================== */
 /* vvv THIS IS ALL FOR LOGGED IN PAGES vvv */
 
 /* BACKGROUND IMAGE LOGGED IN PAGES */
@@ -202,7 +214,7 @@ html {
 }
 
 /* AD + LISTINGS CONTAINER */
-#adspace {
+#custom-graphics-space {
   margin-top: 2%;
   background-color: snow;
   width: 100%;
@@ -214,15 +226,15 @@ html {
 }
 
 /* ADVERTISEMENTS BOX */
-#ads {
+#custom-graphics {
   width: 30%;
 }
 
 /* INDIVIDUAL ADS */
-#ads img {
+#custom-graphics img {
   width: 100%;
   padding: 10%;
-  margin-bottom: 4%;
+  margin-bottom: 2%;
 }
 
 /* APARTMENT LISTINGS BOX */
@@ -236,7 +248,7 @@ html {
 }
 
 /* APARTMENT LISTINGS */
-.conatiner {
+.container {
   width: 60%;
   margin: 0 auto;
 }
