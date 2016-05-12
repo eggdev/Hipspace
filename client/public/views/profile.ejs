@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title> Hipspace </title>
+    <title> _Hipspace_ </title>
 
     <!-- Semantic UI -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
@@ -10,16 +10,14 @@
     <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../css/profile_styles.css">
 
-    <!-- Local styles -->
-    <link rel="stylesheet" href="../css/animate.css">
-
-    <!-- jQuery lib -->
-
   </head>
   <body>
     <!-- Main Container Div -->
     <div class="container">
       <!-- Top Nav Bar - NOT SIGNED IN VERSION -->
+<<<<<<< HEAD
+      <% include partials/logged-in-nav.ejs %>
+=======
       <nav id="top-bar" class="ui inverted clearing segment">
        <img class="ui left floated header" src="/images/HipSpaceLogoHoriz-White.svg" alt="HipSpace Logo">
        <button class="ui right floated inverted basic button" id='logout'>Log Out</button>
@@ -36,9 +34,9 @@
        </button></a>
        </div>
      </nav>
+>>>>>>> master
 
       <!-- <h1 id="your-score">Your score is <i id="score">_</i> </h1> -->
-
 
       <div class="ui stackable three column grid">
 
@@ -50,24 +48,39 @@
             <div class="ui horizontal divider">
               <i class=" user icon"></i>
             </div>
-
+            <span id='userID'><%= userData._id %></span>
+            <span id='userScore'><%= userData.hipscore %></span>
             <div class='around'>
               <form class='ui form' id="profile-form">
                 <div class="twelve wide required field">
+<<<<<<< HEAD
+                  <label>Username:</label>
+                  <input id="username" type="text" name="username" value="<%= userData.username %>">
+=======
                   <label>Your name:</label>
                   <input type="text" name="name" value="<%=userData.username%>" >
+>>>>>>> master
                   <br>
                 </div>
                 
                 <div class="twelve wide required field">
+<<<<<<< HEAD
+                <label>Password:</label>
+                <input id="password" type="password" name="password" value="<%= userData.password %>">
+=======
                 <label>Your last name:</label>
                 <input type="password" name="surname" value= "<%=userData.password%>" >
+>>>>>>> master
                 <br>
               </div>
 
               <div class="twelve wide required field">
                 <label>Your email:</label>
+<<<<<<< HEAD
+                <input id="email"  type="text" name="email" value="<%= userData.email %>">
+=======
                 <input type="text" name="email" value= "<%=userData.email%>" >
+>>>>>>> master
                 <br>
               </div>
 
@@ -85,7 +98,7 @@
               </div>
 
                 <div class="ui animated fade button" id="edit-profile-button">
-                  <div class="visible content">Edit</div>
+                  <div class="visible content" id="update-profile">Update</div>
                   <div class="hidden content">:)</div>
                 </div>
 
@@ -247,13 +260,18 @@
     </div> -->
 <!-- V SCRIPTS AND SHIT V -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" charset="utf-8"></script>
+    <script src="/js/users.js" charset="utf-8"></script>
     <!-- Cookies lib -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.1/js.cookie.min.js" charset="utf-8"></script>
     <!-- Local JavaScript -->
     <!-- ADD AJAX JS FILE HERE -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+
     <script src="../js/profile_scripts.js" charset="utf-8"></script>
+<<<<<<< HEAD
+=======
     <script src="../js/users.js" charset="utf-8"></script>
     <!-- my front end file - CC -->
+>>>>>>> master
   </body>
 </html>
