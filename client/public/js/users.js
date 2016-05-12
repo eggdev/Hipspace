@@ -66,7 +66,6 @@ function loginUser(){
         Cookies.set('jwt_token', data.token);
         Cookies.set('current_user', data.current_user);
         window.location.replace('/hipmap');
-        //Don't reload when live, but call the remove modal function.
       }
     });
   });
@@ -91,11 +90,7 @@ $(document).ready(function(){
   });
 
   loginUser();
-  // addScore();
-  $('#edit').on('click', function(e){
-    e.preventDefault();
-    console.log('waddup');
-  })
+
 
   $('#logout').on('click', function(e){
     e.preventDefault();
