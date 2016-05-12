@@ -71,7 +71,26 @@ function loginUser(){
   });
 }
 
-function editUser(){
+function updateThis(){
+  var id = $("#userID").text();
+  $("#profile-form").on('click', '#edit-profile-button', function(e){
+    e.preventDefault();
+    var newUsername = $('#profile-form #username').val();
+    var newPassword = $('#profile-form #password').val();
+    var newEmail = $('#profile-form #email').val();
+    var hipscore = addScore();
+    var payload = JSON.stringify({ username: newUsername, password: newPassword, email: newEmail, hipscore: hipscore });
+
+    $.ajax({
+      url: '/api/users/'+id,
+      method: 'PUT',
+      contentType: 'application/json',
+      data: payload,
+      success: function(response){
+        window.location.reload();
+      }
+    });
+  });
 
 }
 
@@ -90,10 +109,12 @@ $(document).ready(function(){
   });
 
   loginUser();
-
+  updateThis();
 
   $('#logout').on('click', function(e){
     e.preventDefault();
     logout();
   });
+
+  
 });
