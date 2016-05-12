@@ -27,7 +27,7 @@ usersRouter.put('/:id', function(req, res, next){
   // console.log(req.body.username);
   // console.log(req.body.password);
   // console.log(req.body.email);
-})
+});
 
 usersRouter.use(passport.authenticate('jwt', { session: false}));
 
