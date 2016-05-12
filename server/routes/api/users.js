@@ -27,7 +27,7 @@ usersRouter.put('/:id', function(req, res, next){
   // console.log(req.body.username);
   // console.log(req.body.password);
   // console.log(req.body.email);
-})
+});
 
 usersRouter.use(passport.authenticate('jwt', { session: false}));
 
@@ -37,33 +37,5 @@ usersRouter.get('/', function(req, res, next) {
     res.json( dbUsers );
   });
 });
-
-<<<<<<< HEAD
-// router.put('/profile/:id', function(req,res){
-//   var id = req.params.id;
-//   var newUsername = req.body.newUsername;
-//   var newEmail = req.body.newEmail;
-//   var newPassword = req.body.newPassword;
-//
-//   users.forEach(function(user,index){
-//     if( user.id === Number(id)){
-//       user.username = newUsername;
-//       user.password = newPassword;
-//       user.email = newEmail;
-//     }
-//   });
-//
-//   res.send('successfully update product');
-//
-// });
-
-
-// usersRouter.put('/:id', function(req, res, next){
-//   User.findOne(req.params.id, function(err, user){
-//     res.json( user );
-//   })
-// })
-=======
->>>>>>> master
 
 module.exports = usersRouter;
