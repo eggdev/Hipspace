@@ -145,6 +145,11 @@ html {
   margin-top: -50px;
 }
 
+/* THIS IS THE BUTTON ON THE FRONT PAGE THAT MAY NOT BE PERFECTLY ALIGNED TO THE PURPLE MUSTACHE */
+#loginquiz {
+  margin-left: 0%;
+}
+
 /* ====================== */
 /* ====================== */
 /* vvv THE STYLES BELOW AFFECT ALL LOGGED IN PAGES THAT USE THIS STYLESHEET vvv */
