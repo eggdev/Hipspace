@@ -16,8 +16,8 @@ $(document).ready(function(){
         //Get rid of the modal,
         //Have them take quiz
       }
-    })
-  })
+    });
+  });
   // login on click
   // prev default
   // get fields (username/pass) in object - payload
@@ -45,11 +45,16 @@ $(document).ready(function(){
     });
   });
 
+  $('#edit').on('click', function(e){
+    e.preventDefault();
+  })
+
 
   //logout on click
   $('#logout').on('click', function(e){
     e.preventDefault();
-    Cookies.remove('user_token');
+    Cookies.remove('jwt_token');
+    Cookies.remove('current_user');
     window.location.replace('/');
-  })
-})
+  });
+});

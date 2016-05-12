@@ -261,7 +261,7 @@ $(document).ready(function(){
       url: '/api/locations',
       success: function( locations ){
         // console.log(locations);
-        for(var i=0; i<locations.length; i++){
+        for(var i=0; i < locations.length; i++){
           for(var x=0; x<locations[i].venues.length; x++){
             console.log(locations[i].venues[x].category);
           }
