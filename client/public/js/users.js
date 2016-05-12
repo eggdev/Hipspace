@@ -57,6 +57,7 @@ function loginUser(){
     var username = $('#username').val();
     var password = $("#password").val();
     var payload = { username: username, password: password };
+    $(this).addClass('loading');
     console.log(username, password);
     $.ajax({
       method: 'post',
