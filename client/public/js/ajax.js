@@ -1,40 +1,12 @@
 var hipspace = {};
 
 //HIPSTER PLACES
-
-//40.689420, -73.968094
-var fortGreene = {
-  name: "Fort Greene",
-  latitude: '40.689420',
-  longitude: '-73.968094',
-  score: 8,
-  venues: []
-}
-
-//40.696197, -73.988433
-var brooklynHeights = {
-  name: 'Brooklyn Heights',
-  latitude: '40.696197',
-  longitude: '-73.988433',
-  score: 7,
-  venues: []
-}
-
-//40.677178, -74.006497
-var redHook = {
-  name: 'Red Hook',
-  latitude: '40.677178',
-  longitude: '-74.006497',
-  score: 5,
-  venues: []
-}
-
 //40.714088, -73.954456
 var williamsburg = {
   name: "Williamsburg",
   latitude: '40.714088',
   longitude: '-73.954456',
-  score: 11,
+  score: 12,
   venues: []
 }
 
@@ -43,11 +15,68 @@ var lowerEastSide = {
   name: 'Lower East Side',
   latitude: '40.722208',
   longitude: '-73.986307',
-  score: 9,
+  score: 11,
   venues: [ ]
 };
 
+//40.724378, -73.943344
+var greenPoint = {
+  name: 'Greenpoint',
+  latitude: '40.724378',
+  longitude: '-73.943344',
+  score: 10,
+  venues: []
+}
+
+
+//40.689420, -73.968094
+var fortGreene = {
+  name: "Fort Greene",
+  latitude: '40.689420',
+  longitude: '-73.968094',
+  score: 9,
+  venues: []
+}
+
+//40.696197, -73.988433
+var brooklynHeights = {
+  name: 'Brooklyn Heights',
+  latitude: '40.696197',
+  longitude: '-73.988433',
+  score: 8,
+  venues: []
+}
+
+//40.677178, -74.006497
+var redHook = {
+  name: 'Red Hook',
+  latitude: '40.677178',
+  longitude: '-74.006497',
+  score: 7,
+  venues: []
+}
+
+//40.812175, -73.948022
+var harlem = {
+  name: 'Harlem',
+  latitude: '40.812175',
+  longitude: '-73.948022',
+  score: 6,
+  venues: []
+}
+
+
+
 //NON HIPSTER
+// 40.582855, -73.956765
+var brightonBeach = {
+  name: 'Brighton Beach',
+  latitude:  '40.582855',
+  longitude: '-73.956765',
+  score: 5,
+  venues: []
+}
+
 //40.662206, -73.882501
 var eastNewYork = {
   name: "East New York",
@@ -93,7 +122,7 @@ var brownsville = {
   venues: []
 }
 
-hipspace.locationArray = [fortGreene, brooklynHeights, redHook, williamsburg, lowerEastSide, eastNewYork, concourse, sunsetPark, corona, brownsville]
+hipspace.locationArray = [fortGreene, brooklynHeights, redHook, williamsburg, lowerEastSide, eastNewYork, concourse, sunsetPark, corona, brownsville, harlem, greenPoint, brightonBeach]
 
 var divebarsID = '4bf58dd8d48988d118941735';
 var speakeasyID = '4bf58dd8d48988d1d4941735';
@@ -134,7 +163,7 @@ hipspace.makeAJAXRequest = function(arr, catID ){
     url: apiURL,
     success: function(data){
       var venueArray = data.response.groups[0].items
-      // console.log(venueArray);
+      console.log(venueArray);
       for(var i=0; i< venueArray.length; i++){
         var venue = {};
         var distance = venueArray[i].venue.location.distance
@@ -143,6 +172,9 @@ hipspace.makeAJAXRequest = function(arr, catID ){
           venue.category = venueArray[i].venue.categories[0].name;
           venue.lat = venueArray[i].venue.location.lat;
           venue.long = venueArray[i].venue.location.lng;
+          venue.address = venueArray[i].venue.location.formattedAddress[0]+', '+venueArray[i].venue.location.formattedAddress[0];
+
+
           arr.venues.push( venue );
         }
       }
@@ -227,7 +259,8 @@ $(document).ready(function(){
 
   $('#submit').on('click', function(e){
     e.preventDefault();
-    locations = [fortGreene, brooklynHeights, redHook, williamsburg, lowerEastSide, eastNewYork, concourse, sunsetPark, corona, brownsville];
+    var locations = hipspace.locationArray;
+
     for(var i=0; i< locations.length;i++){
       $.ajax({
         method: 'POST',
@@ -261,8 +294,8 @@ $(document).ready(function(){
       url: '/api/locations',
       success: function( locations ){
         // console.log(locations);
-        for(var i=0; i<locations.length; i++){
-          for(var x=0; x<locations[i].venues.length; x++){
+        for(var i=0; i < locations.length; i++){
+          for(var x=0; x< locations[i].venues.length; x++){
             console.log(locations[i].venues[x].category);
           }
         }

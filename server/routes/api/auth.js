@@ -6,7 +6,6 @@ var express = require('express'),
 
 // initialize passport
 usersRouter.use(passport.initialize());
-
 // Log In and if successful send back the token
 // We would need to install express-flash for flash messages to work
 // We would also have to add the failureFlash: true option here, exp: { session: false, failureFlash : true }

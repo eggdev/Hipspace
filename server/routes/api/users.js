@@ -38,6 +38,7 @@ usersRouter.get('/', function(req, res, next) {
   });
 });
 
+<<<<<<< HEAD
 // router.put('/profile/:id', function(req,res){
 //   var id = req.params.id;
 //   var newUsername = req.body.newUsername;
@@ -62,5 +63,7 @@ usersRouter.get('/', function(req, res, next) {
 //     res.json( user );
 //   })
 // })
+=======
+>>>>>>> master
 
 module.exports = usersRouter;

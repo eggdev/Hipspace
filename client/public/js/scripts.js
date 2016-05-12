@@ -1,5 +1,6 @@
 
-// SIGNUP FORM VALIDATION
+// SIGNUP FORM VALIDATION - NOT WORKING???? PROBABLY NEEDS TO BE DELETED
+
 // function formSubmit (){
 //
 //   $('.ui.signup form')
@@ -82,7 +83,6 @@ function validationpassed() {
     // Multiple instances may have been bound to the form, only submit one.
     // This is a workaround and not ideal.
     // Improvements welcomed.
-
     if (window.lock != "locked") {
         var myform = $('.ui.form');
         $.ajax({
@@ -108,39 +108,34 @@ $('.ui.form').submit(function(e){
 function myformposted(data) {
     // clear your form and do whatever you want here
     $('.ui.form').find("input[type=text], textarea").val("");
-    //$('.ui.submit.button').after("<div>Message sent. Thank you.</div>");
+    //
+    // $('.ui.submit.button').after("<div>Message sent. Thank you.</div>");
     $('.ui.submit.button').after(data);
     }
 });
 // END OF FORM VALIDATION
 
 
-// PARALLAX FUNCTIONS - CC
+// THIS FUNCTION CONTROLS THE PARALLAX ON THE HIPMAP PAGE
 
 // this sets the scroll on the window
   $(window).on("scroll", function(){
     var $height = $(window).height();
     var $scrolled = $(window).scrollTop();
-// background
+// this sets the background scroll
     var $background = $('.bg');
     $background.css("top", ($scrolled * -1) + "px");
-// logo bar thing
+// this sets the logo bar scroll
     var $logoBox = $('#big-logo');
     $logoBox.css("top",  ($scrolled * .5) + "px");
-// custom hipscore
+// this sets the custom hipscore box + ad box scroll (these divs are slaved)
     var $currentTop = $("#main-content").css("top")
     var $content = $("#main-content");
     $content.css('top', $currentTop + (($scrolled * -1) + "px"));
 });
 
-// MODAL FUNCTIONS
-// function modal(){
-//   $('.ui.modal')
-//   .modal('show');
-// }
-// modal();
 
-// LOG IN MODAL - CALLED WHEN GET SCORE BUTTON ON INDEX IS CALLED
+// THIS FUNCTION CONTROLS THE LOG IN MODAL - CALLED WHEN GET SCORE BUTTON ON INDEX IS CALLED
 function loginModal(){
     $('#get-score-button').click(function(){$('.ui.modal')
         .modal('show')
@@ -148,6 +143,8 @@ function loginModal(){
 }
 loginModal();
 
+
+// THIS FUNCTION TRIGGERS THE LOGIN MODAL WHEN YOU CLICK THE BUTTON IN THE HEADER
 function loginModalHeader(){
     $('#log-in-header-button').click(function(){$('.ui.modal')
         .modal('show')
@@ -155,6 +152,8 @@ function loginModalHeader(){
 }
 loginModalHeader();
 
+
+// THIS FUNCTION CONTROLS THE LOGIN MODAL AFTER YOU TAKE THE QUIZ
 function loginModalAfterQuiz(){
     $('#loginquiz').click(function(){$('.ui.modal')
         .modal('show')
@@ -162,7 +161,8 @@ function loginModalAfterQuiz(){
 }
 loginModalAfterQuiz();
 
-// CHECKBOX FUNCTIONS
+
+// THIS FUNCTION CONTROLS ALL CHECKBOXES
 function checkbox(){
   $('.ui.checkbox')
   .checkbox();
@@ -170,8 +170,7 @@ function checkbox(){
 checkbox();
 
 
-
-// DROPDOWN FUNCTIONS
+// THIS FUNCTION CONTROLS ALL DROPDOWNS
 function dropdown(){
     $('.ui.dropdown')
   .dropdown({
@@ -179,16 +178,3 @@ function dropdown(){
   });
 }
 dropdown();
-
-
-// SOCIAL MEDIA BUTTON JIGGGLE - NOT WORKING
-function jiggle(){
-
-$('.social-buttons.button')
-  .transition({
-    animation : 'jiggle',
-    duration  : 800,
-    interval  : 200
-  });
-};
-jiggle();

@@ -11,12 +11,6 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-router.get('/login', function(req, res, next){
-  res.render('login_modal');
-});
-
-// router.use(passport.authenticate('jwt', { session: false}));
-
 router.get('/hipmap', function(req, res, next){
   var currentUser = JSON.parse(req.cookies.current_user);
   if(currentUser){

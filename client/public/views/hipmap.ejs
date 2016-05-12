@@ -19,7 +19,7 @@
 
 <!-- PURPLE LOGO BOX (background in parallax) -->
       <div id="big-logo">
-        <img src="/images/HipSpaceLogoOutl-White.svg" alt="Hipspace Logo" />
+        <img src="/images/backgrounds_logos/HipSpaceLogoOutl-White.svg" alt="Hipspace Logo" />
         <p>You carefully cultivate your appearance. </p>
         <p>You know the difference between Barterhouse and Speakeasy.  </p>
         <p>You would rather give up coffee than go to Starbucks.</p>
@@ -32,12 +32,12 @@
       <div id="hipscore" class="ui raised very padded text container segment">
 <!-- PERSONALIZED NEIGHBORHOOD RIGHT SIDE MAP -->
         <div class="ui raised very padded right floated segment">
-          <h2 class="ui header"><span class="purple-head">YOUR IDEAL 'HOOD</span></h2>
+          <h2 class="ui header"><span class="purple-head">YOUR IDEAL 'HOOD: <%= locationData.name %></span></h2>
           <div id='map'></div>
         </div>
 <!-- LEFT SIDE TOGGLES CONTROLLING MAP PINS -->
         <div class="ui raised very padded left floated segment">
-          <h2 class="ui header"><span class="purple-head">HIPSTER SHIT</span></h2>
+          <h2 class="ui header"><span class="purple-head">AMENITIES</span></h2>
           <div class="ui form">
             <div class="inline field">
             <div class="ui toggle checkbox">
@@ -115,17 +115,17 @@
         </div>
       </div>
 
-<!-- ADS AND APARTMENT LISTINGS -->
-      <div id="adspace" class="ui raised very padded text container segment">
+<!-- LOCAL BUSINESS AND APARTMENT LISTINGS -->
+      <div id="custom-graphics-space" class="ui raised very padded text container segment">
 <!-- APARTMENT LISTINGS HEADER -->
         <div id="listings" class="ui raised very padded right floated segment">
           <h2 class="ui header"><span class="purple-head">AVAILABLE LISTINGS</span></h2>
 <!-- INDIVIDUAL APARTMENT LISTINGS -->
             <div class="rental-container">
 <!-- LISTING 1 -->
-              <div class="conatiner">
+              <div class="container">
                 <div class="photo">
-                  <img src="/images/listing-1.jpg" alt="" />
+                  <img src="/images/apartment_listings/listing-1.jpg" alt="" />
                 </div>
                 <div class="text">
                   <div class="rental-head">
@@ -147,9 +147,9 @@
                 <hr>
               </div>
 <!-- LISTING 2 -->
-              <div class="conatiner">
+              <div class="container">
                 <div class="photo">
-                  <img src="/images/listing-2.jpg" alt="" />
+                  <img src="/images/apartment_listings/listing-2.jpg" alt="" />
                 </div>
                 <div class="text">
                   <div class="rental-head">
@@ -171,9 +171,9 @@
                 <hr>
               </div>
 <!-- LISTING 3 -->
-              <div class="conatiner">
+              <div class="container">
                 <div class="photo">
-                  <img src="/images/listing-3.jpg" alt="" />
+                  <img src="/images/apartment_listings/listing-3.jpg" alt="" />
                 </div>
                 <div class="text">
                   <div class="rental-head">
@@ -197,17 +197,18 @@
 
             </div>
         </div>
-<!-- ADVERTISEMENTS -->
-        <div id="ads" class="ui raised very padded left floated segment">
+<!-- LOCAL BUSINESS GRAPHICS -->
+        <div id="custom-graphics" class="ui raised very padded left floated segment">
           <h2 class="ui header"><span class="purple-head">LOCAL WARES</span></h2>
-          <img src="/images/ad-carpet-01.png">
-          <img src="/images/ad-fixies-01.png">
-          <img src="/images/ad-interiorDesign-01.png">
-          <img src="/images/ad-lamps-01.png">
-          <img src="/images/ad-moustacheCream-01.png">
-          <img src="/images/ad-wallpaper-01.png">
-          <img src="/images/ad-yoga-01.png">
-          <img src="/images/ad-carpet-01.png">
+          <img src="/images/local_businesses/carpet-01.png">
+          <img src="/images/local_businesses/hats-01.png">
+          <img src="/images/local_businesses/fixies-01.png">
+          <img src="/images/local_businesses/interiorDesign-01.png">
+          <img src="/images/local_businesses/lamps-01.png">
+          <img src="/images/local_businesses/moustacheCream-01.png">
+          <img src="/images/local_businesses/wallpaper-01.png">
+          <img src="/images/local_businesses/yoga-01.png">
+          <img src="/images/local_businesses/mercantile-01.png">
         </div>
       </div>
     </div>
