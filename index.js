@@ -33,11 +33,11 @@ app.use(cookieParser());
 // Set static file root folder
 app.use(express.static('client/public/'));
 
-app.use('/', indexRouter);
-
 app.use('/api/auth', apiAuthRouter);
+
 app.use('/api/users', apiUsersRouter);
 app.use('/api/locations', locationsRouter);
+app.use('/', indexRouter);
 
 // Listen on port for connections
 // process.env.PORT is needed for when we deploy to Heroku

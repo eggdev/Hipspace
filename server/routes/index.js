@@ -11,26 +11,22 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-
+router.use( passport.authenticate("jwt", { session: false }) );
 
 router.get('/hipmap', function(req, res, next){
-  var currentUser = JSON.parse(req.cookies.current_user);
-  if(currentUser){
-    User.findOne({username: currentUser.username }, function(err, userData){
-      Location.findOne({score: userData.hipscore }, function(err, locationData){
-        res.render('hipmap', { userData: userData, locationData: locationData })
-      });
+  var currentUser = req.user;
+    Location.findOne({score: currentUser.hipscore }, function(err, locationData){
+      res.render('hipmap', { userData: currentUser, locationData: locationData })
     });
-  }
 });
 
 router.get('/profile', function(req, res, next) {
-  var currentUser = JSON.parse(req.cookies.current_user);
-  User.findOne({ _id: currentUser._id }, function(err, userData){
-    Location.findOne({score: userData.hipscore }, function(err, locationData){
-      res.render('profile', { userData: userData, locationData: locationData });
-    })
-  })
+  var currentUser = req.user;
+  if(currentUser){
+      Location.findOne({score: currentUser.hipscore }, function(err, locationData){
+        res.render('profile', { userData: currentUser, locationData: locationData })
+      });
+  }
 });
 
 router.get('/ajax', function(req, res, next){

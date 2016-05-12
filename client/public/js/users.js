@@ -52,7 +52,7 @@ function createUser(){
   // redirect to whatever
 
 function loginUser(){
-  $('#login-submit').on('click', function(e){
+  $('#login-form').on('submit', function(e){
     e.preventDefault();
     var username = $('#username').val();
     var password = $("#password").val();
@@ -65,7 +65,7 @@ function loginUser(){
       success: function(data){
         Cookies.set('jwt_token', data.token);
         Cookies.set('current_user', data.current_user);
-        window.location.replace('/hipmap');
+        window.location = '/hipmap';
       }
     });
   });
