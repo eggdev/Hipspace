@@ -111,7 +111,7 @@ function myformposted(data) {
     $('.ui.form').find("input[type=text], textarea").val("");
     //$('.ui.submit.button').after("<div>Message sent. Thank you.</div>");
     $('.ui.submit.button').after(data);
-}
+    }
 });
 // END OF FORM VALIDATION
 
@@ -126,7 +126,6 @@ function myformposted(data) {
     var $background = $('.bg');
     $background.css("top", ($scrolled * -1) + "px");
 // logo bar thing
-
     var $logoBox = $('#big-logo');
     $logoBox.css("top",  ($scrolled * .5) + "px");
 // custom hipscore

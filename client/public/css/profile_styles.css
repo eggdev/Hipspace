@@ -5,15 +5,13 @@ body {
   top: 0;
   left: 0;
 }
-
 input {
   margin-bottom: 10px;
 }
-
 label{
   font-family: Lucida Grande;
+  margin-left: 5px;
 }
-
 td{
   margin-bottom: 20px;
 }
@@ -80,6 +78,9 @@ td{
   width: 100%;
   text-align: center;
 }
+.column {
+  margin-top: 120px;
+}
 #profile-form{
   position: relative;
 }
@@ -89,6 +90,9 @@ td{
   border-radius: 20px;
   background-color: rgba(255,255,255,1);
   animation: fadein 3.5s;
+}
+.cash-money {
+  text-align: center;
 }
 #preferences-div{
   width: 90%;
