@@ -25,6 +25,9 @@ usersRouter.use(passport.authenticate('jwt', { session: false}));
 
 // GET all users
 usersRouter.get('/', function(req, res, next) {
+
+  console.log(req.user);
+
   User.find(function( err, dbUsers ){
     res.json( dbUsers );
   });

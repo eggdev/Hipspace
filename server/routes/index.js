@@ -11,6 +11,8 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
+
+
 router.get('/hipmap', function(req, res, next){
   var currentUser = JSON.parse(req.cookies.current_user);
   if(currentUser){
