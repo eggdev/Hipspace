@@ -6,23 +6,6 @@ body {
   left: 0;
 }
 
-input {
-  margin-bottom: 10px;
-}
-
-label{
-  font-family: Lucida Grande;
-  margin-left: 5px;
-}
-
-td{
-  margin-bottom: 20px;
-}
-
-.savings-content{
-  margin: 10px;
-}
-
 #top-bar{
   z-index: 50;
   top: 0;
@@ -50,25 +33,25 @@ td{
   bottom: 0;
 }
 
-/*#raindrop {
-  position: absolute;
-  width: 3.5%;
-  top: 0;
-  left: 400px;
-}*/
+input {
+  margin-bottom: 10px;
+}
+
+label{
+  font-family: Lucida Grande;
+  margin-left: 5px;
+}
+
+td{
+  margin-bottom: 20px;
+}
 
 #profile-div{
   width: 90%;
-  height: 430px, auto;
   border-radius: 20px;
   padding: 10px 0px 10px 0px;
   animation: fadein 3.5s;
   margin: 30px auto;
-  text-align: center;
-}
-
-.around{
-  width: 100%;
   text-align: center;
 }
 
@@ -77,11 +60,14 @@ td{
 }
 
 #saved-listings{
-  width: 90%;
+  width: 100%;
   margin: 30px auto;
   border-radius: 20px;
-  background-color: rgba(255,255,255,1);
   animation: fadein 3.5s;
+}
+
+.savings-content{
+  margin: 10px;
 }
 
 .cash-money {
@@ -90,12 +76,9 @@ td{
 
 #preferences-div{
   width: 90%;
-  height: 420px, auto;
   border-radius: 20px;
-  padding-top: 20px;
   padding-bottom: 0;
   margin: 30px auto;
-  background-color: rgba(255,255,255,1);
   animation: fadein 3.5s;
 }
 
@@ -135,11 +118,11 @@ td{
 }
 
 #profile-div .ui.horizontal.divider{
-  margin-bottom: 0;
+  margin-bottom: 3px;
 }
 
 #preferences-div .ui.horizontal.divider{
-  margin-bottom: 0;
+  margin-bottom: 3px;
 }
 
 @media (max-width: 760px) {
