@@ -11,6 +11,11 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
+router.get('/terms', function(req, res, next){
+  res.render('terms');
+});
+
+
 router.use( passport.authenticate("jwt", { session: false }) );
 
 router.get('/hipmap', function(req, res, next){
@@ -23,9 +28,9 @@ router.get('/hipmap', function(req, res, next){
 router.get('/profile', function(req, res, next) {
   var currentUser = req.user;
   if(currentUser){
-      Location.findOne({score: currentUser.hipscore }, function(err, locationData){
-        res.render('profile', { userData: currentUser, locationData: locationData })
-      });
+    Location.findOne({score: currentUser.hipscore }, function(err, locationData){
+      res.render('profile', { userData: currentUser, locationData: locationData })
+    });
   }
 });
 
