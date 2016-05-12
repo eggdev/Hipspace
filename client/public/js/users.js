@@ -57,7 +57,7 @@ function loginUser(){
     var username = $('#username').val();
     var password = $("#password").val();
     var payload = { username: username, password: password };
-    $(this).addClass('loading');
+    $('#login-submit').addClass('loading');
     console.log(username, password);
     $.ajax({
       method: 'post',
@@ -104,7 +104,6 @@ function updateThis(){
     var newPassword = $('#profile-form #password').val();
     var newEmail = $('#profile-form #email').val();
     var hipscore = parseInt($('#userScore').text() );
-    console.log(hipscore);
     var payload = JSON.stringify({username: newUsername,password:newPassword,email:newEmail,hipscore:hipscore});
 
     $.ajax({
@@ -128,10 +127,12 @@ function logout(){
 
 
 $(document).ready(function(){
-  $('#apply').on('click', function(e){
+  $('#create-user').on('submit', function(e){
     e.preventDefault();
     createUser();
+    $('#apply').addClass('loading');
   });
+
 
   loginUser();
   updateThis();
