@@ -29,24 +29,25 @@
             <div class="ui horizontal divider">
               <i class=" user icon"></i>
             </div>
-
+            <span id='userID'><%= userData._id %></span>
+            <span id='userScore'><%= userData.hipscore %></span>
             <div class='around'>
               <form class='ui form' id="profile-form">
                 <div class="twelve wide required field">
                   <label>Username:</label>
-                  <input type="text" name="username" value="Clyde">
+                  <input id="username" type="text" name="username" value="<%= userData.username %>">
                   <br>
                 </div>
 
                 <div class="twelve wide required field">
                 <label>Password:</label>
-                <input type="password" name="password" value="">
+                <input id="password" type="password" name="password" value="<%= userData.password %>">
                 <br>
               </div>
 
               <div class="twelve wide required field">
                 <label>Your email:</label>
-                <input type="text" name="email" value="clyde@davis.com">
+                <input id="email"  type="text" name="email" value="<%= userData.email %>">
                 <br>
               </div>
 
@@ -64,7 +65,7 @@
               </div>
 
                 <div class="ui animated fade button" id="edit-profile-button">
-                  <div class="visible content">Edit</div>
+                  <div class="visible content" id="update-profile">Update</div>
                   <div class="hidden content">:)</div>
                 </div>
 

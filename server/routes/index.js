@@ -30,9 +30,9 @@ router.get('/hipmap', function(req, res, next){
 
 router.get('/profile', function(req, res, next) {
   var currentUser = JSON.parse(req.cookies.current_user);
-  User.findOne({username: currentUser.username }, function(err, userData){
+  User.findOne({ _id: currentUser._id }, function(err, userData){
     Location.findOne({score: userData.hipscore }, function(err, locationData){
-      res.render('profile', {userData: userData, locationData: locationData });
+      res.render('profile', { userData: userData, locationData: locationData });
     })
   })
 });
