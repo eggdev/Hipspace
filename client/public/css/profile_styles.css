@@ -1,5 +1,5 @@
 body {
-  background: url('../images/sativa.png') repeat;
+  background: url('../images/backgrounds_logos/sativa.png') repeat;
   width: 100%;
   height: 100%;
   top: 0;
@@ -50,33 +50,18 @@ td{
   bottom: 0;
 }
 
-#raindrop {
+/*#raindrop {
   position: absolute;
   width: 3.5%;
   top: 0;
   left: 400px;
-}
-
-#logo-thing{
-  font-family: Rock Salt;
-  font-size: 25px;
-  margin-bottom: 0;
-}
-
-#your-score {
-  font-family: Satisfy;
-  color: black;
-  font-size: 60px;
-  text-align: center;
-  animation: fadein 4s;
-}
+}*/
 
 #profile-div{
   width: 90%;
   height: 430px, auto;
   border-radius: 20px;
   padding: 10px 0px 10px 0px;
-  background-color: rgba(255,255,255,1);
   animation: fadein 3.5s;
   margin: 30px auto;
   text-align: center;
@@ -91,12 +76,8 @@ td{
   margin-top: 120px;
 }
 
-#profile-form{
-  position: relative;
-}
-
 #saved-listings{
-  width: 100%;
+  width: 90%;
   margin: 30px auto;
   border-radius: 20px;
   background-color: rgba(255,255,255,1);
