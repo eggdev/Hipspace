@@ -1,5 +1,4 @@
 
-
 // SIGNUP FORM VALIDATION
 // function formSubmit (){
 //
@@ -156,92 +155,6 @@ function checkbox(){
   .checkbox();
 }
 checkbox();
-
-$(".ui.checkbox").on('click', function(){
-  // checkbox();
-  clearMarkers();
-  getChecked();
-})
-
-var map;
-var markers = [];
-function initMap() {
-  var myLatLng = {lat: parseFloat($('#hiddenlat').text()), lng: parseFloat($('#hiddenlong').text())};
-  // Create a map object and specify the DOM element for display.
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: myLatLng,
-    scrollwheel: false,
-    draggable: false,
-    zoom: 15
-  });
-}
-
-function getChecked(){
-  var $location = $('#hiddenloc').text();
-  var $inputs = $('.checked').find('input');
-  var allInputs = $('.ui.toggle.checkbox');
-  console.log($inputs);
-  for(var i=0; i < $inputs.length; i++){
-    $.ajax({
-      index: i,
-      method: 'get',
-      url: '/api/locations/'+$location,
-      success: function(data){
-        createMarkers( data, $inputs[this.index].name );
-      }
-    });
-  }
-}
-
-function createMarkers( location, category ){
-  for(var i=0; i< location.venues.length; i++){
-    if(location.venues[i].category == category ){
-      // console.log( location.venues[i] );
-      venueLoc = {lat: parseFloat(location.venues[i].lat), lng: parseFloat(location.venues[i].long) }
-      // var iconBase = '/images/'
-      var marker = new google.maps.Marker({
-        position: venueLoc,
-        map: map
-        // icon: {url: iconBase + 'yoga.svg', scaledSize: new google.maps.Size(40,40)}
-      });
-      markers.push(marker);
-    }
-  }
-}
-
-function addVenueInfo( venue, marker) {
-  console.log(marker);
-  var infowindow = new google.maps.InfoWindow();
-  marker.addListener('click', function(){
-    console.log('marker clicked');
-    infowindow.open(map, this);
-    var contentStr = '<h5>'+venue.name+'</h5>';
-    infowindow.setContent(contentStr);
-  });
-}
-
-
-// Sets the map on all markers in the array.
-function setMapOnAll(map) {
-  for (var i = 0; i < markers.length; i++) {
-    markers[i].setMap(map);
-  }
-}
-// Removes the markers from the map, but keeps them in the array.
-function clearMarkers() {
-  setMapOnAll(null);
-}
-
-// Shows any markers currently in the array.
-function showMarkers() {
-  setMapOnAll(map);
-}
-
-// Deletes all markers in the array by removing references to them.
-function deleteMarkers() {
-  clearMarkers();
-  markers = [];
-}
 
 
 

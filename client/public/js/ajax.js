@@ -199,7 +199,9 @@ $(document).ready(function(){
 
       for(var x = 0; x < venueArray.length; x++){
         var category = venueArray[x].category;
-        console.log( category );
+        if(category == 'Bar'){
+          category = 'Dive Bar';
+        }
       }
     }
   });

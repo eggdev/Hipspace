@@ -2,9 +2,9 @@ $(document).ready(function(){
   $('#create-user').on('submit', function(e){
     e.preventDefault();
     var userInfo = {};
-    userInfo.username = $('#username').val();
-    userInfo.email = $('#email').val();
-    userInfo.password = $('#password').val();
+    userInfo.username = $('#newusername').val();
+    userInfo.email = $('#newemail').val();
+    userInfo.password = $('#newpassword').val();
 
     $.ajax({
       method: 'post',
@@ -12,6 +12,9 @@ $(document).ready(function(){
       data: userInfo,
       success: function(){
         console.log("SUCCESS IN MIGHTY HIGHGARDEN");
+        //Log user in,
+        //Get rid of the modal,
+        //Have them take quiz
       }
     })
   })
@@ -25,10 +28,10 @@ $(document).ready(function(){
   // redirect to whatever
   $('#login-submit').on('click', function(e){
     e.preventDefault();
-    var username = $('#login-form').find('[name=username]').val();
-    var password = $("#login-form").find('[name=password]').val();
+    var username = $('#username').val();
+    var password = $("#password").val();
     var payload = { username: username, password: password };
-    console.log(payload);
+    console.log(username, password);
     $.ajax({
       method: 'post',
       url: '/api/auth',
@@ -36,7 +39,7 @@ $(document).ready(function(){
       success: function(data){
         Cookies.set('jwt_token', data.token);
         Cookies.set('current_user', data.current_user);
-        window.location.replace('/');
+        window.location.replace('/hipmap');
         //Don't reload when live, but call the remove modal function.
       }
     });
@@ -47,6 +50,6 @@ $(document).ready(function(){
   $('#logout').on('click', function(e){
     e.preventDefault();
     Cookies.remove('user_token');
-    window.location.reload();
+    window.location.replace('/');
   })
 })
