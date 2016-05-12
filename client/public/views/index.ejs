@@ -17,8 +17,7 @@
 <!-- Top Nav Bar - NOT SIGNED IN VERSION -->
       <nav id="top-bar" class="ui inverted clearing segment">
         <a href="/index"><img class="ui left floated header" src="/images/HipSpaceLogoHoriz-White.svg" alt="HipSpace Logo"></a>
-        <a href="login_modal.html"><button class="ui right floated inverted basic button">Sign Up</button></a>
-        <a href="login_modal.html"><button class="ui right floated inverted basic button">Log In</button></a>
+        <button id="log-in-header-button" class="ui right floated inverted basic button">Log In Or Sign Up</button>
       </nav>
 <!-- END of Top Nav Bar - NOT SIGNED IN VERSION -->
 <!-- PURPLE LOGO BOX -->
@@ -29,7 +28,6 @@
         <p>You would rather give up coffee than go to Starbucks.</p>
         <p>You are in the right place! HipSpace is the only real estate listing service that focuses on the the specific neighborhood amenities that matter most to you.</p>
         <p>Simply fill out the brief questionnaire and register with HipSpace to see a custom recommendation based on your unique interests, and save listings to your account for later perusal! </p>
-<!-- FUNCTIONALITY ISSUE ===== THIS BUTTON NEEDS TO TRIGGER THE MODAL -->
         <div id="get-score-button" class="ui inverted animated fade button" tabindex="0">
           <div class="visible content">Get Your Custom Hipspace Score</div>
           <div class="hidden content">
@@ -37,7 +35,7 @@
           </div>
         </div>
         <div class="quiz-block-redirect">
-          <a href="#quiz-block"><i class="huge angle down icon"></i></a>
+          <a href="#quiz-head"><i class="huge angle down icon"></i></a>
         </div>
       </div>
 <!-- END OF PURPLE LOGO BOX -->
@@ -197,10 +195,13 @@
         </div>
       </form>
       <div class="actions">
-          <button type="submit" class="ui green basic button">
+          <button type="submit" id="loginquiz" class="ui green basic button">
             <i class="bicycle icon"></i>
             PROCEED TO REGISTER OR SIGN IN
           </button>
+      </div>
+      <div class="index-head-redirect">
+        <a href="#index-big-logo"><i class="huge angle up icon"></i></a>
       </div>
 
 

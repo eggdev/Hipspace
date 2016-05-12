@@ -136,19 +136,33 @@ function myformposted(data) {
 });
 
 // MODAL FUNCTIONS
-function modal(){
-  $('.ui.modal')
-  .modal('show');
-}
-modal();
+// function modal(){
+//   $('.ui.modal')
+//   .modal('show');
+// }
+// modal();
 
-// THIS FUNCTION IS NOT WORKING FOR SOME REASON
+// LOG IN MODAL - CALLED WHEN GET SCORE BUTTON ON INDEX IS CALLED
 function loginModal(){
-    $('#get-score-button').click($('.ui.modal')
+    $('#get-score-button').click(function(){$('.ui.modal')
         .modal('show')
-    );
+    });
 }
-modal();
+loginModal();
+
+function loginModalHeader(){
+    $('#log-in-header-button').click(function(){$('.ui.modal')
+        .modal('show')
+    });
+}
+loginModalHeader();
+
+function loginModalAfterQuiz(){
+    $('#loginquiz').click(function(){$('.ui.modal')
+        .modal('show')
+    });
+}
+loginModalAfterQuiz();
 
 // CHECKBOX FUNCTIONS
 function checkbox(){
