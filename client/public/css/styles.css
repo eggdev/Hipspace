@@ -1,4 +1,4 @@
-/* vvvv THIS IS FOR ALL PAGES vvvv */
+/* vvvv THIS IS FOR ALL PAGES THAT USE THIS STYLESHEET vvvv */
 
 /*
   OH SHIT, THINGS ARE BROKEN, IT'S:
@@ -62,7 +62,7 @@ color: snow;
 }
 
 /* ====================== */
-/* vvvv THIS IS FOR LOGGED OUT PAGE */
+/* vvvv THESE STYLES AFFECT THE LOGGED OUT (SPLASH) PAGE ONLY */
 
 html {
   background: url('../images/backgrounds_logos/sativa.png') repeat;
@@ -104,7 +104,9 @@ html {
 }
 
 .quiz-block-redirect img {
-  position:inherit;
+  /*position:inherit;*/
+  height: 100px;
+  margin-top: -50px;
 }
 
 /* HIPSCORE QUIZ */
@@ -133,13 +135,19 @@ html {
 }
 
 .index-head-redirect {
-  padding-left: 45%;
+  padding-left: 43%;
   margin-top: 5%;
+}
+
+.index-head-redirect img {
+  /*position:inherit;*/
+  height: 100px;
+  margin-top: -50px;
 }
 
 /* ====================== */
 /* ====================== */
-/* vvv THIS IS ALL FOR LOGGED IN PAGES vvv */
+/* vvv THE STYLES BELOW AFFECT ALL LOGGED IN PAGES THAT USE THIS STYLESHEET vvv */
 
 /* BACKGROUND IMAGE LOGGED IN PAGES */
 .bg {
@@ -185,7 +193,7 @@ html {
 
 /* HIPSCORE MAP + TOGGLES CONTAINER */
 #hipscore {
-  background-color: snow;
+  background-color: white;
   width: 100%;
   height: 400%;
   display: block;
@@ -210,13 +218,13 @@ html {
 #selectors {
   width: 100%;
   height: 60;
-  background-color: snow;
+  background-color: white;
 }
 
 /* AD + LISTINGS CONTAINER */
 #custom-graphics-space {
   margin-top: 2%;
-  background-color: snow;
+  background-color: white;
   width: 100%;
   height: 400%;
   display: block;

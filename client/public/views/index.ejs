@@ -9,15 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/styles.css">
-<!-- For now, keep the .. to be able to do my shit without having the server running. When we're using API stuff,take those out and run nodemon + all the other shit or your scripts files won't load - dummy - CC  -->
   </head>
   <body>
 <!-- BODY BACKGROUND -->
     <div class="logged-out-pages">
 <!-- Top Nav Bar - NOT SIGNED IN VERSION -->
-
         <% include partials/logged-out-nav.ejs %>
-
 <!-- END of Top Nav Bar - NOT SIGNED IN VERSION -->
 <!-- PURPLE LOGO BOX -->
       <div id="index-big-logo">
@@ -27,12 +24,12 @@
         <p>You would rather give up coffee than go to Starbucks.</p>
         <p>You are in the right place! HipSpace is the only real estate listing service that focuses on the the specific neighborhood amenities that matter most to you.</p>
         <p>Simply fill out the brief questionnaire and register with HipSpace to see a custom recommendation based on your unique interests, and save listings to your account for later perusal! </p>
-        <div id="get-score-button" class="ui inverted animated fade button" tabindex="0">
+        <!-- <div id="get-score-button" class="ui inverted animated fade button" tabindex="0">
           <div class="visible content">Get Your Custom Hipspace Score</div>
           <div class="hidden content">
             Take The Quiz!
           </div>
-        </div>
+        </div> -->
         <div class="quiz-block-redirect">
           <a href="#quiz-head"><img src="../images/backgrounds_logos/moustacheWhite.svg" alt="click this moustache to take the quiz" /></a>
           <!-- <a href="#quiz-head"><i class="huge angle down icon"></i></a> -->
@@ -201,7 +198,8 @@
           </button>
       </div>
       <div class="index-head-redirect">
-        <a href="#index-big-logo"><i class="huge angle up icon"></i></a>
+      <a href="#index-big-logo"><img src="/images/backgrounds_logos/moustachePurple.png" alt="Purple mustache that shoots you back up to the top of the page" /></a>
+        <!-- <a href="#index-big-logo"><i class="huge angle up icon"></i></a> -->
       </div>
 
 
@@ -257,7 +255,7 @@
       </div>
       <div class="ui toggle checkbox">
         <input type="checkbox" name="terms" tabindex="0" value='0' class="hidden">
-        <label>I agree to the Hipspace <a href="/terms.html">Terms and Conditions</a></label>
+        <label>I agree to the Hipspace <a href="/terms.ejs">Terms and Conditions</a></label>
       </div>
       <br><br>
       <button class="ui green basic inverted button" id='apply' type="button">Apply</button>
