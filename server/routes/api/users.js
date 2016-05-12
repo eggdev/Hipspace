@@ -16,17 +16,9 @@ usersRouter.put('/:id', function(req, res, next){
   var updated = { _id: req.params.id, username: req.body.username, password: req.body.password, email: req.body.email, hipscore: req.body.hipscore };
 
   User.findOneAndUpdate({ _id: req.params.id }, updated, function(err, response){
-    if(err){
-      console.log(err);
-    }
-    // console.log(response);
-    // console.log(updated);
+    if(err){console.log(err);}
     res.json( response );
   })
-  // console.log(req.params.id);
-  // console.log(req.body.username);
-  // console.log(req.body.password);
-  // console.log(req.body.email);
 })
 
 usersRouter.use(passport.authenticate('jwt', { session: false}));
