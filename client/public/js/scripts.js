@@ -132,7 +132,7 @@ dropdown();
 
 function saveButton(){
   $('.save').on('click', function(){
-    $(this).css({'background-color': '#9600FF', 'color': 'white', 'border': 'none' });
+    $(this).toggleClass('purpleClick');
   })
 }
 saveButton();

@@ -285,6 +285,11 @@ html {
   border: 2px solid gold;
   float: right;
 }
+.purpleClick{
+  background-color: #9600FF;
+  color: white;
+  border: none;
+}
 
 .save:hover {
   background-color: gold;
