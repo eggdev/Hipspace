@@ -22,7 +22,7 @@
       <!-- Top Nav Bar - NOT SIGNED IN VERSION -->
       <nav id="top-bar" class="ui inverted clearing segment">
        <img class="ui left floated header" src="/images/HipSpaceLogoHoriz-White.svg" alt="HipSpace Logo">
-       <button class="ui right floated inverted basic button">Log Out</button>
+       <button class="ui right floated inverted basic button" id='logout'>Log Out</button>
        <a href="/profile"><button class="ui right floated inverted basic button">Profile</button></a>
        <div class="social-buttons">
        <a href="http://www.facebook.com"><button class="ui left floated inverted icon basic button">
@@ -55,19 +55,19 @@
               <form class='ui form' id="profile-form">
                 <div class="twelve wide required field">
                   <label>Your name:</label>
-                  <input type="text" name="name" value="Clyde">
+                  <input type="text" name="name" value="<%=userData.username%>" >
                   <br>
                 </div>
-
+                
                 <div class="twelve wide required field">
                 <label>Your last name:</label>
-                <input type="text" name="surname" value="Davis">
+                <input type="password" name="surname" value= "<%=userData.password%>" >
                 <br>
               </div>
 
               <div class="twelve wide required field">
                 <label>Your email:</label>
-                <input type="text" name="email" value="clyde@davis.com">
+                <input type="text" name="email" value= "<%=userData.email%>" >
                 <br>
               </div>
 
@@ -253,6 +253,7 @@
     <!-- ADD AJAX JS FILE HERE -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
     <script src="../js/profile_scripts.js" charset="utf-8"></script>
+    <script src="../js/users.js" charset="utf-8"></script>
     <!-- my front end file - CC -->
   </body>
 </html>

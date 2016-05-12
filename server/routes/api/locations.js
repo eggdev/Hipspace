@@ -12,7 +12,7 @@ locationsRouter.get('/', function(req, res){
 locationsRouter.get('/:name', function(req, res){
   locName = req.params.name;
   Location.findOne({name: locName }, function(err, location){
-    res.json( location);
+    res.json( location );
   })
 })
 

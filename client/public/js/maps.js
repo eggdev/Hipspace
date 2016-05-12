@@ -153,7 +153,7 @@ function addVenueInfo( venue, marker) {
   var infowindow = new google.maps.InfoWindow({content: '<p>PIZZA</p>'});
   marker.addListener('click', function(){
     infowindow.open(map, this);
-    var contentStr = '<h5>'+venue.name+'</h5>';
+    var contentStr = '<h4>'+venue.name+'</h4><p>'+venue.category+'</p><p>'+venue.address+'</p>';
     infowindow.setContent(contentStr);
   });
 }

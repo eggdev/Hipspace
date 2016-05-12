@@ -7,7 +7,7 @@ var UserSchema = mongoose.Schema({
   username: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  hipscore: {type: Number, default: 11, required: true},
+  hipscore: {type: Number, default: 0, required: true},
 }, { timestamps: true });
 
 UserSchema.pre('save', function(next){
