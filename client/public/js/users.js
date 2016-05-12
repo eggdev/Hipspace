@@ -1,14 +1,14 @@
 var $hipscore = 0;
 
 
-function addScore(){
+function addScore( score ){
   $inputs = $('.checked').find('input');
   for (var i = 0; i < $inputs.length; i++) {
     $numString = $inputs[i].value;
     $num = parseInt($numString);
-    $hipscore += $num;
+    score += $num;
   }
-  return $hipscore;
+  return score;
 }
 
 
@@ -17,7 +17,7 @@ function createUser(){
   userInfo.username = $('#newusername').val();
   userInfo.email = $('#newemail').val();
   userInfo.password = $('#newpassword').val();
-  userInfo.hipscore = addScore();
+  userInfo.hipscore = addScore( $hipscore );
   console.log( userInfo.hipscore );
   $.ajax({
     method: 'post',
@@ -70,9 +70,52 @@ function loginUser(){
     });
   });
 }
+function updateScore(){
+  var id = $("#userID").text();
+  var newScore = 0;
+  $("#preferences-form").on('click', '#save-preferences-button', function(e){
+    e.preventDefault();
+    var newUsername = $('#profile-form #username').val();
+    var newPassword = $('#profile-form #password').val();
+    var newEmail = $('#profile-form #email').val();
+    var hipscore = addScore(newScore);
+    console.log(hipscore);
+    var payload = JSON.stringify({username: newUsername,password:newPassword,email:newEmail,hipscore:hipscore});
 
-function editUser(){
+    $.ajax({
+      url: '/api/users/'+id,
+      method: 'PUT',
+      contentType: 'application/json',
+      data: payload,
+      success: function(response){
+        window.location.reload();
+      }
+    });
+  });
+}
 
+
+function updateThis(){
+  var id = $("#userID").text();
+  $("#profile-form").on('click', '#edit-profile-button', function(e){
+    e.preventDefault();
+    var newUsername = $('#profile-form #username').val();
+    var newPassword = $('#profile-form #password').val();
+    var newEmail = $('#profile-form #email').val();
+    var hipscore = parseInt($('#userScore').text() );
+    console.log(hipscore);
+    var payload = JSON.stringify({username: newUsername,password:newPassword,email:newEmail,hipscore:hipscore});
+
+    $.ajax({
+      url: '/api/users/'+id,
+      method: 'PUT',
+      contentType: 'application/json',
+      data: payload,
+      success: function(response){
+        window.location.reload();
+      }
+    });
+  });
 }
 
 function logout(){
@@ -90,7 +133,8 @@ $(document).ready(function(){
   });
 
   loginUser();
-
+  updateThis();
+  updateScore();
 
   $('#logout').on('click', function(e){
     e.preventDefault();

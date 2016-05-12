@@ -23,7 +23,7 @@ JwtOpts.secretOrKey = process.env.JWT_SECRET;
 passport.use(new JwtStrategy(JwtOpts, function(jwt_payload, done) {
     console.log(jwt_payload);
 
-    User.findOne({username: jwt_payload._doc.username}, function(err, user) {
+    User.findOne({_id: jwt_payload._doc._id}, function(err, user) {
         if (err) {
             return done(err, false);
         }
