@@ -19,7 +19,7 @@ usersRouter.put('/:id', function(req, res, next){
     if(err){console.log(err);}
     res.json( response );
   })
-})
+});
 
 usersRouter.use(passport.authenticate('jwt', { session: false}));
 
