@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title> Hipspace </title>
+    <title> _Hipspace_ </title>
 
     <!-- Semantic UI -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
@@ -10,35 +10,14 @@
     <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../css/profile_styles.css">
 
-    <!-- Local styles -->
-    <link rel="stylesheet" href="../css/animate.css">
-
-    <!-- jQuery lib -->
-
   </head>
   <body>
     <!-- Main Container Div -->
     <div class="container">
       <!-- Top Nav Bar - NOT SIGNED IN VERSION -->
-      <nav id="top-bar" class="ui inverted clearing segment">
-       <img class="ui left floated header" src="/images/HipSpaceLogoHoriz-White.svg" alt="HipSpace Logo">
-       <button class="ui right floated inverted basic button">Log Out</button>
-       <a href="/profile"><button class="ui right floated inverted basic button">Profile</button></a>
-       <div class="social-buttons">
-       <a href="http://www.facebook.com"><button class="ui left floated inverted icon basic button">
-         <i class="facebook icon"></i>
-       </button></a>
-       <a href="http://www.twitter.com"><button class="ui left floated inverted icon basic button">
-         <i class="twitter icon"></i>
-       </button></a>
-       <a href="http://www.mail.google.com"><button class="ui left floated inverted icon basic button">
-         <i class="envelope icon"></i>
-       </button></a>
-       </div>
-     </nav>
+      <% include partials/logged-in-nav.ejs %>
 
       <!-- <h1 id="your-score">Your score is <i id="score">_</i> </h1> -->
-
 
       <div class="ui stackable three column grid">
 
@@ -247,12 +226,13 @@
     </div> -->
 <!-- V SCRIPTS AND SHIT V -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" charset="utf-8"></script>
+    <script src="/js/users.js" charset="utf-8"></script>
     <!-- Cookies lib -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.1/js.cookie.min.js" charset="utf-8"></script>
     <!-- Local JavaScript -->
     <!-- ADD AJAX JS FILE HERE -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+
     <script src="../js/profile_scripts.js" charset="utf-8"></script>
-    <!-- my front end file - CC -->
   </body>
 </html>
