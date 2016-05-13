@@ -8,7 +8,7 @@ var express             = require('express'),
 usersRouter.post('/', function(req, res, next) {
   // console.log(req.body);
   User.create(req.body, function( err, dbUser ) {
-    if (err) { res.status(500).end() }
+    if (err) { return res.status(500).end() }
     res.json( dbUser );
   });
 });
