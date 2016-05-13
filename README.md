@@ -30,6 +30,9 @@ This is a higher fidelity wireframe based on user testing done by the PMI team:
 
 [hi-fi] https://drive.google.com/file/d/0BzZ_cUMX9Ti4UnRjbGdrVzB4Njg/view?usp=sharing
 
+###User Stories
+*See User Story File*
+
 ###Screenshots Of Our App In Action
 
 [landing page]
@@ -52,10 +55,10 @@ https://drive.google.com/file/d/0BzZ_cUMX9Ti4bE82aWprVjRUOXM/view?usp=sharing
 https://drive.google.com/file/d/0BzZ_cUMX9Ti4aklLYkxwbERFQVE/view?usp=sharing
 
 [profile page]
-https://drive.google.com/file/d/0BzZ_cUMX9Ti4LUFCV1cwbWtfcGc/view?usp=sharing
-
-
-
-
+https://drive.google.com/file/d/0BzZ_cUMX9Ti4LUFCV1cwbWtfcGc/view?usp=sharin
 
 ###Unsolved Problems & Major Hurdles
+
+Unsolved Problems: Getting third party real estate APIs to play nice in the amount of time we had was problematic. Full and awesome form validation using Semantic UI was also problematic. We were unable to get the forms to submit without hitting enter, too. 
+
+Major Hurdles: We didn't have any super major hurdles - learning Semantic was less easy than zero effort; getting APIs to play nicely together was not instantaneous; and contemplating what was needed for creating the scores was also a trick of logic.
