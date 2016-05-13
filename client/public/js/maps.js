@@ -1,9 +1,11 @@
+//When the check box is clicked, it will update the map by clearing the markers that were there intially and then adding the markers that were needed.
 $(".ui.checkbox").on('click', function(){
   // checkbox();
   clearMarkers();
   getChecked();
-})
+});
 
+//Initializes the map on the hipmap page at the location that matches the users hipscore
 var map;
 var markers = [];
 function initMap() {
@@ -17,6 +19,7 @@ function initMap() {
   });
 }
 
+// When a checkbox is clicked by the user it is updated on the map on the hipmap page to show the custom icons that relate to that given venue's category.
 function getChecked(){
   var $location = $('#hiddenloc').text();
   var $inputs = $('.checked').find('input');
@@ -45,6 +48,9 @@ function getChecked(){
 // 'Street Fair'
 // 'Art Gallery'
 // 'Distillery'
+
+
+//This content organizes all of the venues categories into select situations. 
 function categorizePlaces( category ){
   if ( category == 'Speakeasy' || category == 'American Restaurant' || category == 'Bar' || category == 'Sake Bar' || category == 'Beer Garden' || category == 'Gastropub' || category == 'Brewery' || category == 'Pub'){
     return 'Dive Bar';

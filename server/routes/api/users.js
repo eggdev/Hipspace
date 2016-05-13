@@ -6,27 +6,26 @@ var express             = require('express'),
 
 // Create a new user
 usersRouter.post('/', function(req, res, next) {
+  // console.log(req.body);
   User.create(req.body, function( err, dbUser ) {
     if (err) { res.status(500).end() }
-    res.json(dbUser);
+    res.json( dbUser );
   });
 });
 
 usersRouter.put('/:id', function(req, res, next){
-  var updated = { _id: req.params.id, username: req.body.username, password: req.body.password, email: req.body.email, hipscore: req.body.hipscore };
-
+  var updated = { _id: req.params.id, username: req.body.username, email: req.body.email, hipscore: req.body.hipscore };
   User.findOneAndUpdate({ _id: req.params.id }, updated, function(err, response){
     if(err){console.log(err);}
     res.json( response );
   })
 });
 
+
 usersRouter.use(passport.authenticate('jwt', { session: false}));
 
 // GET all users
 usersRouter.get('/', function(req, res, next) {
-
-  console.log(req.user);
 
   User.find(function( err, dbUsers ){
     res.json( dbUsers );
