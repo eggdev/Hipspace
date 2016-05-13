@@ -1,3 +1,4 @@
+/*SETTING THE FOUNDATION*/
 body {
   background: url('../images/backgrounds_logos/sativa.png') repeat;
   width: 100%;
@@ -6,6 +7,7 @@ body {
   left: 0;
 }
 
+/*NAV BAR*/
 #top-bar{
   z-index: 50;
   top: 0;
@@ -13,6 +15,7 @@ body {
   width: 100%;
 }
 
+/*TARGETING THE LOGO IN THE NAV BAR*/
 #top-bar img {
   width: 15%;
   height: 80%;
@@ -23,29 +26,35 @@ body {
   bottom: 0;
 }
 
+/*MARGIN ON THE NAV BUTTONS*/
 #top-bar button {
   margin-left: 0.5%;
 }
 
+/*SETTING BASE POSITION FOR THE ONE AND ONLY OWL #REPRESENT*/
 #owl {
   position: absolute;
   width: 8.5%;
   bottom: 0;
 }
 
+/*MICRO ADJUSTMENTS FOR THE INPUTS IN FORMS*/
 input {
   margin-bottom: 10px;
 }
 
+/*CONSISTENT FONT FOR LABELS*/
 label{
   font-family: Lucida Grande;
   margin-left: 5px;
 }
 
+/*STYLING THE CELLS*/
 td{
   margin-bottom: 20px;
 }
 
+/*UPDATE YOUR PROFILE FORM, WITH ANIMATION*/
 #profile-div{
   width: 90%;
   border-radius: 20px;
@@ -55,10 +64,12 @@ td{
   text-align: center;
 }
 
+/*ALL COLUMNS SPECIFIC HEIGHT FROM TOP*/
 .column {
   margin-top: 120px;
 }
 
+/*MIDDLE COLUMN LARGER WIDTH THAN OTHERS*/
 #saved-listings{
   width: 100%;
   margin: 30px auto;
@@ -66,14 +77,17 @@ td{
   animation: fadein 3.5s;
 }
 
+/*CONTENT OF MIDDLE COLUMN DIV*/
 .savings-content{
   margin: 10px;
 }
 
+/*ALIGN THE TEXT OF FLAT LISTINGS*/
 .cash-money {
   text-align: center;
 }
 
+/*COLUMN 3 DIV FOR UPDATING HIPSCORE*/
 #preferences-div{
   width: 90%;
   border-radius: 20px;
@@ -82,10 +96,12 @@ td{
   animation: fadein 3.5s;
 }
 
+/*PREFERENCES FORM*/
 #preferences-form{
   padding: 5% 5% 0 5%;
 }
 
+/*STYLING THE PROFILE HEADER*/
 #profile-h2{
   font-family: Lucida Grande;
   font-size: 30px;
@@ -93,6 +109,7 @@ td{
   color: black;
 }
 
+/*CONSISTENT STYLING FOR PREFERENCES HEADER*/
 #preferences-h2{
   font-family: Lucida Grande;
   font-size: 30px;
@@ -100,16 +117,19 @@ td{
   color: black;
 }
 
-#save-preferences-button{
-  margin: 0 auto;
-  margin-bottom: 10px;
-}
-
+/*PADDING FOR THE PROFILE FORM CONTENT*/
 .ui.form .twelve.wide.field{
   padding: 8px;
   margin: 0 auto;
 }
 
+/*INDIVIDUAL PREFERENCES BUTTON*/
+#save-preferences-button{
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+/*ADDITIONAL STYLING ON PREFERENCES BUTTON */
 .button-div {
   bottom: 0;
   width: 100%;
@@ -117,14 +137,17 @@ td{
   margin-top: 20px;
 }
 
+/*ADD MARGIN TO PROFILE DIVIDER*/
 #profile-div .ui.horizontal.divider{
   margin-bottom: 3px;
 }
 
+/*ADD MARGIN TO PREFERENCES DIVIDER*/
 #preferences-div .ui.horizontal.divider{
   margin-bottom: 3px;
 }
 
+/*MEDIA QUERY TO ADD RESPONSIVENESS*/
 @media (max-width: 760px) {
   #saved-listings {
     width: 90%;
@@ -140,7 +163,7 @@ td{
     width: 70%;
   }
 }
-
+/*ANIMATION REQUIREMENT*/
 @keyframes fadein {
   from {
       opacity:0;
