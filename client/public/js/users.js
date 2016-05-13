@@ -1,6 +1,6 @@
 var $hipscore = 0;
 
-
+//Updates the score of the hipscore based on the variable that is passed. Is used to create the initial score from the index page as well as update the score on the profile page.
 function addScore( score ){
   $inputs = $('.checked').find('input');
   for (var i = 0; i < $inputs.length; i++) {
@@ -11,10 +11,9 @@ function addScore( score ){
   return score;
 }
 
-
+//This function will gather the information from the create user form when the form is submitted and passes it to an AJAX call to the API/USERS database. It will then post the information and make another call to the API/AUTH route to create tokens so the user can be considered logged in.
 function createUser(){
-
-  $('#create-user').on('submit', function(e){
+  $('#create-user').off().on('submit', function(e){
     e.preventDefault();
     $('#apply').addClass('loading');
     var userInfo = {};
@@ -40,11 +39,13 @@ function createUser(){
             Cookies.set('jwt_token', data.token);
             Cookies.set('current_user', data.current_user);
             window.location = '/hipmap';
+          },
+          error: function(data){
+            console.log(data);
           }
         })
       }
     });
-
   });
 }
   // login on click
@@ -55,7 +56,6 @@ function createUser(){
   // on success, cookies.set user_token, data.token
   // cookes.set current_user, data.current_user
   // redirect to whatever
-
 function loginUser(){
   $('#login-form').on('submit', function(e){
     e.preventDefault();
@@ -75,17 +75,17 @@ function loginUser(){
     });
   });
 }
+
+// This is used on the profile.ejs page. It takes the information from the updated profile form page and applies it with a new hipscore to the the database. It updates the information so that the user can update both the name and email as well as the score.
 function updateScore(){
   var id = $("#userID").text();
   var newScore = 0;
   $("#preferences-form").on('click', '#save-preferences-button', function(e){
     e.preventDefault();
     var newUsername = $('#profile-form #username').val();
-    var newPassword = $('#profile-form #password').val();
     var newEmail = $('#profile-form #email').val();
     var hipscore = addScore(newScore);
-    var payload = JSON.stringify({username: newUsername,password:newPassword,email:newEmail,hipscore:hipscore});
-
+    var payload = JSON.stringify({username: newUsername ,email:newEmail,hipscore:hipscore});
     $.ajax({
       url: '/api/users/'+id,
       method: 'PUT',
@@ -98,21 +98,19 @@ function updateScore(){
   });
 }
 
-
+//This is used so that the user is able to update only their information, such as name and email. It will keep their score the same. This is so that people don't update just thier username and password and their score gets set to 0 or adds unintentially. It will update only if they actively attempt to update it.
 function updateThis(){
   var id = $("#userID").text();
   $("#profile-form").on('click', '#edit-profile-button', function(e){
     e.preventDefault();
     var newUsername = $('#profile-form #username').val();
-    var newPassword = $('#profile-form #password').val();
     var newEmail = $('#profile-form #email').val();
     var hipscore = parseInt($('#userScore').text() );
-    var payload = JSON.stringify({username: newUsername,password:newPassword,email:newEmail,hipscore:hipscore});
+    var payload = {username: newUsername,email:newEmail,hipscore:hipscore};
 
     $.ajax({
       url: '/api/users/'+id,
-      method: 'PUT',
-      contentType: 'application/json',
+      method: 'put',
       data: payload,
       success: function(response){
         window.location.reload();
@@ -121,6 +119,7 @@ function updateThis(){
   });
 }
 
+//Removes the cookies from the page.
 function logout(){
   //logout on click
   Cookies.remove('jwt_token');
@@ -128,7 +127,7 @@ function logout(){
   window.location = '/';
 }
 
-
+// Runs all the functions for the document.
 $(document).ready(function(){
   createUser();
   loginUser();

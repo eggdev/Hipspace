@@ -1,9 +1,11 @@
+//When the check box is clicked, it will update the map by clearing the markers that were there intially and then adding the markers that were needed.
 $(".ui.checkbox").on('click', function(){
   // checkbox();
   clearMarkers();
   getChecked();
-})
+});
 
+//Initializes the map on the hipmap page at the location that matches the users hipscore
 var map;
 var markers = [];
 function initMap() {
@@ -17,6 +19,7 @@ function initMap() {
   });
 }
 
+// When a checkbox is clicked by the user it is updated on the map on the hipmap page to show the custom icons that relate to that given venue's category.
 function getChecked(){
   var $location = $('#hiddenloc').text();
   var $inputs = $('.checked').find('input');
@@ -45,6 +48,9 @@ function getChecked(){
 // 'Street Fair'
 // 'Art Gallery'
 // 'Distillery'
+
+
+//This content organizes all of the venues categories into select situations.
 function categorizePlaces( category ){
   if ( category == 'Speakeasy' || category == 'American Restaurant' || category == 'Bar' || category == 'Sake Bar' || category == 'Beer Garden' || category == 'Gastropub' || category == 'Brewery' || category == 'Pub'){
     return 'Dive Bar';
@@ -85,7 +91,7 @@ function categorizePlaces( category ){
 }
 
 
-
+//Gets the specific image from our images folder based on the category that the venue falls under.
 function getImageFromFolder( cat ){
   if( cat == 'Yoga Studio'){
     return 'yoga';
@@ -127,7 +133,7 @@ function getImageFromFolder( cat ){
 }
 
 
-
+//Places the markers on the map.
 function createMarkers( location, category ){
   for(var i=0; i< location.venues.length; i++){
     if(categorizePlaces(location.venues[i].category) == category ){
@@ -148,6 +154,7 @@ function createMarkers( location, category ){
   }
 }
 
+//Adds info to the venues when they are clicked on the map so that the user can see the venue name, address and the category it falls into.
 function addVenueInfo( venue, marker) {
   // console.log(marker);
   var infowindow = new google.maps.InfoWindow({content: '<p>PIZZA</p>'});
