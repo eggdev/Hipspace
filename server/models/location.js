@@ -4,6 +4,8 @@ var mongoose = require('mongoose');
 
 //Locations to include - Williamsburg, Red Hook, Greenpoint, Fort Greene, Lower East Side, Harlem, East Harlem, Brooklyn Heights, Park Slope, Hoboken, Upper West Side, Upper East Side, Midtown, Greenwich Village, Astoria, Long Island City, Journal Square
 
+
+//Sets up the locations schema with a name, lat/long, a custom hipscore for each location as well as an array of all of the venues that were included at each location
 var LocationSchema = mongoose.Schema({
     name: { type: String },
     latitude: {type: String},
