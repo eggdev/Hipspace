@@ -22,6 +22,7 @@ function createUser(){
     userInfo.email = $('#newemail').val();
     userInfo.password = $('#newpassword').val();
     userInfo.hipscore = addScore( $hipscore );
+
     $.ajax({
       method: 'post',
       url: '/api/users',

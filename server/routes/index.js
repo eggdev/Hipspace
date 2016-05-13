@@ -21,7 +21,24 @@ router.use( passport.authenticate("jwt", { session: false }) );
 router.get('/hipmap', function(req, res, next){
   var currentUser = req.user;
     Location.findOne({score: currentUser.hipscore }, function(err, locationData){
-      res.render('hipmap', { userData: currentUser, locationData: locationData })
+      if(err){
+       console.log(err)
+      } else {
+        console.log("location data: " + locationData);
+        // app was crashing because there wasnt logic to account for a null location
+        // i jokingly seeded this data but dont know if its the format you guys use
+        // this is likely why it was crashing on heroku
+        if( !locationData ){
+          locationData = Location.create({
+            name: "The Commodore",
+            latitude: "40.714574",
+            longitude: "-73.9581547",
+            score: 100,
+            venues: []
+          })
+        }
+          res.render('hipmap', { userData: currentUser, locationData: locationData })
+      }
     });
 });
 
