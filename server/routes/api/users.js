@@ -13,6 +13,7 @@ usersRouter.post('/', function(req, res, next) {
   });
 });
 
+//Updates a users information based on their username, email and hipscore based on what occurs on the profile page.
 usersRouter.put('/:id', function(req, res, next){
   var updated = { _id: req.params.id, username: req.body.username, email: req.body.email, hipscore: req.body.hipscore };
   User.findOneAndUpdate({ _id: req.params.id }, updated, function(err, response){
@@ -21,7 +22,7 @@ usersRouter.put('/:id', function(req, res, next){
   })
 });
 
-
+//Protects the get user route.
 usersRouter.use(passport.authenticate('jwt', { session: false}));
 
 // GET all users

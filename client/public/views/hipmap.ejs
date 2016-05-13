@@ -3,20 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title> _HipSpace_ </title>
-<!-- Google Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Cutive+Mono' rel='stylesheet' type='text/css'>
 <!-- Semantic UI -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
-<!-- Local styles -->
-    <link rel="stylesheet" href="../css/animate.css">
+<!-- Local Stylsheet -->
     <link rel="stylesheet" href="../css/styles.css">
-<!-- For now, keep the .. to be able to do my shit without having the server running. When we're using API stuff,take those out and run nodemon + all the other shit or your scripts files won't load - dummy - CC  -->
   </head>
   <body>
 <!-- Top Nav Bar - SIGNED IN VERSION -->
       <% include partials/logged-in-nav.ejs %>
 <!-- END OF Top Nav Bar - SIGNED IN VERSION -->
-
 <!-- PURPLE LOGO BOX (background in parallax) -->
       <div id="big-logo">
         <img src="/images/backgrounds_logos/HipSpaceLogoOutl-White.svg" alt="Hipspace Logo" />
@@ -32,7 +27,7 @@
       <div id="hipscore" class="ui raised very padded text container segment">
 <!-- PERSONALIZED NEIGHBORHOOD RIGHT SIDE MAP -->
         <div class="ui raised very padded right floated segment">
-          <h2 class="ui header"><span class="purple-head">YOUR IDEAL 'HOOD: <%= locationData.name %></span></h2>
+          <h2 class="ui header"><span class="purple-head">YOUR IDEAL 'HOOD: <%= locationData.name %> (Hipscore: <%= userData.hipscore%>)</span></h2>
           <div id='map'></div>
         </div>
 <!-- LEFT SIDE TOGGLES CONTROLLING MAP PINS -->
@@ -114,7 +109,6 @@
           </div>
         </div>
       </div>
-
 <!-- LOCAL BUSINESS AND APARTMENT LISTINGS -->
       <div id="custom-graphics-space" class="ui raised very padded text container segment">
 <!-- APARTMENT LISTINGS HEADER -->
@@ -194,7 +188,6 @@
                 </div>
                 <hr>
               </div>
-
             </div>
         </div>
 <!-- LOCAL BUSINESS GRAPHICS -->
@@ -213,38 +206,27 @@
       </div>
     </div>
 <!-- END OF PERSONALIZED HIPSCORE LANDING SPOT -->
-
-
-
-
 <!-- end of container -->
     </div>
 <!-- end of container -->
-
 <!-- BACKGROUND IMAGE -->
 <div class="bg"></div>
-
-
-
 <!-- hidden -->
   <span class='hidden' id='hiddenloc'><%= locationData.name %></span>
   <span class='hidden' id='hiddenlat'><%= locationData.latitude %></span>
   <span class='hidden' id='hiddenlong'><%= locationData.longitude %></span>
-
-
 <!-- V SCRIPTS AND SHIT V -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" charset="utf-8"></script>
-    <!-- Cookies lib -->
+<!-- Cookies lib -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.1/js.cookie.min.js" charset="utf-8"></script>
-    <!-- ADD AJAX JS FILE HERE -->
-    <!-- Semantic UI JS -->
+<!-- Semantic UI JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
-    <!-- Local JavaScript -->
+<!-- Local JavaScript Files -->
     <script src="../js/scripts.js" charset="utf-8"></script>
     <script src="../js/users.js" charset="utf-8"></script>
     <script src="../js/ajax.js" charset="utf-8"></script>
     <script src="../js/maps.js" charset="utf-8"></script>
+<!-- Google Maps -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAc9EXE72TMHf3k91hH-uRfKyaj8bftpko&callback=initMap" async defer></script>
-
   </body>
 </html>

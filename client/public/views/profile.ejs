@@ -3,47 +3,53 @@
   <head>
     <meta charset="utf-8">
     <title> _Hipspace_ </title>
-
-    <!-- Semantic UI -->
+<!-- Semantic UI -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="../css/profile_styles.css">
 
   </head>
   <body>
     <!-- Main Container Div -->
     <div class="container">
-      <!-- Top Nav Bar - NOT SIGNED IN VERSION -->
+      <!-- Top Nav Bar - LOGGED IN VERSION -->
 
       <% include partials/logged-in-nav.ejs %>
 
-      <!-- <h1 id="your-score">Your score is <i id="score">_</i> </h1> -->
-
+      <!-- Three columns side by side  -->
       <div class="ui stackable three column grid">
 
+        <!-- COLUMN 1  -->
         <div class="column">
-          <div class="ui raised very padded segment" id="profile-div">
-
+          <!-- semantic class to raise it above the page a.k.a give slight shadow -->
+          <div class="ui raised segment" id="profile-div">
+            <!-- locally style the profile header  -->
             <h2 id="profile-h2">Profile</h2>
-
+            <!-- divider with icon -->
             <div class="ui horizontal divider">
               <i class=" user icon"></i>
             </div>
+            <!-- in order to grab full data we add a hidden rendering of the user id and hipscore, in order to run the update function -->
             <span id='userID' style="display:none;"><%= userData._id %></span>
             <span id='userScore' style="display:none;"><%= userData.hipscore %></span>
-
+            <!-- form to update the profile  -->
               <form class='ui form' id="profile-form">
+                <!-- sets the length of the input, semantic ui at play  -->
                 <div class="twelve wide required field">
-
 
                   <label>Username:</label>
                   <input id="username" type="text" name="username" value="<%= userData.username %>">
-
                   <br>
                 </div>
-
-            
+                <!-- we decided to hide the password since it was displayed as a hashed version and decided not to render the actual one -->
+                <div class="twelve wide required field" style="display:none;">
+                <label>Password:</label>
+                <input id="password" type="password" name="password" value="<%= userData.password %>">
+                <br>
+              </div>
 
               <div class="twelve wide required field">
                 <label>Your email:</label>
@@ -55,7 +61,8 @@
                 <div class="ui form">
                   <div class="field">
                     <label>Favorite beer:</label>
-                    <select class="ui compact dropdown" form="carform">
+                    <!-- we have to call a dropdown function in the profile scripts file -->
+                    <select class="ui compact dropdown">
                       <option value="">Brew</option>
                       <option value="0">PBR</option>
                       <option value="1"> Moonshine</option>
@@ -63,56 +70,58 @@
                   </div>
                 </div>
               </div>
-
+              <!-- fancy semantic functionality -->
                 <div class="ui animated fade button" id="edit-profile-button" style="margin-top:10px;">
                   <div class="visible content" id="update-profile">Update</div>
                   <div class="hidden content">:)</div>
                 </div>
 
               </form>
+          </div> <!-- closing raised segment div -->
+        </div> <!-- closing column 1 div -->
 
-          </div>
-        </div>
-
+        <!-- COLUMN 2 -->
         <div class="column">
-          <div class="ui raised very padded segment" id="saved-listings">
+          <div class="ui raised segment" id="saved-listings">
             <h2 id="preferences-h2">Saved Listings</h2>
 
             <div class="ui horizontal divider">
               <i class="home icon"></i>
             </div>
-
+            <!-- target blank will open it in a new tab, centering it with the savings content div -->
             <div class="savings-content">
               <h2 class="cash-money"><a href="http://www.trulia.com/for_rent/5260_nh/" target="_blank">132 Dolly Street #2F</a></h2><p class="cash-money">Rental Unit in Lower East Side, $2540/month</p></h2>
                 <hr>
                 <h2 class="cash-money"><a href="http://www.trulia.com/for_rent/5274_nh/" target="_blank">21 Jump Street #4D</a></h2><p class="cash-money">Condo in Williamsburg, $2300/month</p></h2>
-
             </div>
 
-          </div>
+          </div><!-- closing raised segment -->
+        </div> <!-- closing column div -->
 
-        </div>
-
+        <!-- COLUMN 3 -->
         <div class= "column">
-          <div class="ui raised very padded segment" id="preferences-div">
+          <!-- same as earlier -->
+          <div class="ui raised segment" id="preferences-div">
             <h2 id="preferences-h2">Update Your Score</h2>
-
+            <!-- adding semantic icon and a divider, stylistic purpose -->
             <div class="ui horizontal divider">
               <i class=" options icon"></i>
             </div>
-
+            <!-- setting the class to form applies semantic styling -->
             <form class="ui form" id="preferences-form">
 
               <table style="width:100%">
                 <tr>
                   <td>
+                    <!-- the type of checkbox, with the value set to 1 to determine the hipscore -->
                     <div class="ui toggle checkbox">
-                    <input type="checkbox" name="parks" value="1">
+                    <input type="checkbox" name="dive bars" value="1">
                     <label>Dive Bars</label>
                     <br>
                     </div>
                   </td>
                   <td>
+                    <!-- when a toggle is checked the class adjusts to include 'checked' -->
                     <div class="ui toggle checkbox">
                     <input type="checkbox" name="dog parks" value="1">
                     <label>Dog Parks</label>
@@ -178,7 +187,7 @@
                   </td>
                   <td>
                     <div class="ui toggle checkbox">
-                    <input type="checkbox" name="bike stores" value="1">
+                    <input type="checkbox" name="street fairs" value="1">
                   <label>Street Fairs</label>
                   <br>
                   </div>
@@ -193,38 +202,36 @@
                   </td>
                   <td>
                     <div class="ui toggle checkbox">
-                    <input type="checkbox" name="whisky distillery" value="1">
+                    <input type="checkbox" name="whisky distilleries" value="1">
                   <label>Whisky Distilleries</label>
                   </div>
                   </td>
                 </tr>
               </table>
+              <!-- semantic rendition of the button -->
               <div class="button-div">
+                <!-- fade in function, id for when we listen as a click -->
                 <div class="ui animated fade button middle aligned" id="save-preferences-button">
                   <div class="visible content">Update</div>
                   <div class="hidden content">
                     Now
                   </div>
                 </div>
-              </div>
+              </div><!-- closing button div -->
 
-            </form>
-          </div>
-        </div>
+            </form> <!-- ending form -->
+          </div> <!-- closing raised segment -->
+        </div> <!-- close of column 3 -->
 
-      </div>
-<!-- end of container -->
-    </div>
-<!-- end of container -->
+      </div> <!-- end of stackable div -->
+    </div> <!-- end of container -->
 
+  <!-- the heroic owl png -->
     <div class="owl">
       <img id="owl" src="/images/OwlCycle.png" alt="" />
     </div>
 
-    <!-- <div class="drop">
-      <img id="raindrop" src="/images/raindrop.png" alt="" />
-    </div> -->
-<!-- V SCRIPTS AND SHIT V -->
+<!-- scripts for jquery, analytics, semantic and personal -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -238,10 +245,7 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" charset="utf-8"></script>
     <script src="/js/users.js" charset="utf-8"></script>
-    <!-- Cookies lib -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.1/js.cookie.min.js" charset="utf-8"></script>
-    <!-- Local JavaScript -->
-    <!-- ADD AJAX JS FILE HERE -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
 
     <script src="../js/profile_scripts.js" charset="utf-8"></script>
